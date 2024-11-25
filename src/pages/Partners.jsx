@@ -4,16 +4,22 @@ import Clients from "./Clients";
 
 const Partners = () => {
   return (
-    <div className="w-full">
-      <img src="/assets/partners/partners.jpeg" alt="" className="px-36"/>
-      <section className="text-white p-36">
-        <div className="md:flex justify-between">
-          <h1 className="text-3xl font-bold mb-6 text-center">Partners</h1>
-          <a href="#" className="text-3xl mb-6 underline ">
+    <div className="w-full ">
+      <div className="w-full flex justify-center">
+        <img
+          src="/assets/partners/partners.jpeg"
+          alt=""
+          className="px-4 sm:px-8 h-24"
+        />
+      </div>
+      <section className="text-white p-8 text-md">
+        <div className="flex flex-col md:flex gap-4 md:justify-between">
+          <h1 className="text-3xl font-bold  text-center">Partners</h1>
+          <a href="#" className="text-3xl text-center mb-6 underline ">
             Partners Enquiry
           </a>
         </div>
-        <p className="text-lg text-center sm:text-start font-md">
+        <p className="text-lg text-center md:text-start font-md">
           Orpax Qualtra is a growing company with diverse solution platforms. We
           understand the significance and value of forming relationships of
           strategic alliances. Already we have established several strategic
@@ -49,7 +55,7 @@ const Partners = () => {
           their own niche services and products.
         </p>
       </section>
-      <section className="bg-gray-900 text-white p-36 text-md">
+      <section className="bg-gray-900 text-white p-8 text-md">
         <h1 className="text-3xl font-bold mb-6 text-center">
           Our partnership advantages
         </h1>
@@ -62,7 +68,9 @@ const Partners = () => {
             Exposure to sophisticated and world-class solutions and services
             with speedy implementation options
           </li>
-          <li class="text-lg font-medium">Complete project security</li>
+          <li class="text-lg font-medium">
+            Complete project security
+          </li>
         </ul>
 
         <p className="text-lg font-md">
