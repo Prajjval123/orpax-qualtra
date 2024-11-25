@@ -39,7 +39,7 @@ export const projects = [
       "Health Monitoring System (HMS) is a cost effective comprehensive GIS based decision making system for Urban and Rural Health scenario.",
       "A key goal of this effort is to ensure that the growing collection of high quality health data can be easily integrated into a central health GIS, allowing agencies and donor organizations to derive added value from the synthesis of their own health data with the spatial and health data developed by others.",
     ],
-    image: "/public/assets/projects/project1.jpg",
+    image: "/assets/projects/project1.jpg",
   },
   {
     title:
@@ -52,7 +52,7 @@ export const projects = [
       "GUI based design allows end-users flexibility and ease to view and generate queries intuitively.",
       "The application could be designed as a web-based solution for data sharing across different organizations and countries.",
     ],
-    image: "/public/assets/projects/project2.jpg",
+    image: "/assets/projects/project2.jpg",
   },
   {
     title:
@@ -66,6 +66,6 @@ export const projects = [
       "Calculation of the land use areas.",
       "Contour Generation/ DEM.",
     ],
-    image: "/public/assets/projects/project3.jpg",
+    image: "/assets/projects/project3.jpg",
   },
 ];

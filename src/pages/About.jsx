@@ -62,14 +62,14 @@ const About = () => {
         <div className="flex gap-24">
           <div className="bg-gray-800 flex flex-col gap-8 w-72">
             <img
-              src="/public/assets/arnab.jpg"
+              src="/assets/arnab.jpg"
               alt=""
               className="w-68 h-88 rounded-md"
             />
           </div>
           <div className="bg-gray-800 flex gap-8 w-72">
             <img
-              src="/public/assets/prasun.jpg"
+              src="/assets/prasun.jpg"
               alt=""
               className="w-68 h-88 rounded-md"
             />

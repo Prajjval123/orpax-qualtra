@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <header className="bg-blackBackground flex items-center h-24 text-white py-4">
       <div className="container mx-auto flex justify-between items-center">
-        <img src="/public/assets/logo.png" alt="Logo" className="w-24" />
+        <img src="/assets/logo.png" alt="Logo" className="w-24" />
         {/* Hamburger Icon for Mobile */}
         <button
           className="text-white text-2xl lg:hidden"

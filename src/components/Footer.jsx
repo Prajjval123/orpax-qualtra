@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../public/assets/logo.png";
+import logo from "../../assets/logo.png";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
