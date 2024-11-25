@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <section className="text-white p-36">
+      <section className="text-white p-8 lg:p-24">
         <h1 className="text-3xl font-bold mb-6 text-center">About Us</h1>
         <p className="text-md">
           Since our inauguration in 2001, we have come a long way from a modest
@@ -25,7 +25,7 @@ const About = () => {
           clarity in all our solutions.
         </p>
       </section>
-      <section className="bg-gray-900 text-white p-36">
+      <section className="bg-gray-900 text-white p-8 lg:p-24">
         <h1 className="text-3xl font-bold mb-6 text-center">Our Team</h1>
         <p className="text-md">
           Our team is rich with unrivalled IT experience and expertise with

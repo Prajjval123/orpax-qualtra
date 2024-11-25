@@ -43,7 +43,7 @@ const ServicePage = () => {
           </div>
 
           {/* Bullet Points */}
-          <div className="flex-1">
+          <div className="flex-1 flex justify-center">
             <ul className="list-disc pl-6 text-gray-300 text-lg leading-relaxed">
               {service.points.map((point) => (
                 <li>{point}</li>

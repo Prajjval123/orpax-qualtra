@@ -41,7 +41,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="p-24 min-h-screen bg-black pb-0">
+    <div className="p-8 lg:p-24 min-h-screen bg-black pb-0">
       <h1 className="text-4xl font-semibold mb-10 text-center text-white animate-fade-in">
         Projects
       </h1>
