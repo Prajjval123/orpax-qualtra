@@ -73,7 +73,7 @@ const Partners = () => {
           </li>
         </ul>
 
-        <p className="text-lg font-md">
+        <p className="text-lg font-md text-center md:text-start">
           Together, let us create valuable partnerships that will engage
           customers while delivering them with a much needed service. Join us to
           build value globally through innovative solution marketing. We take
