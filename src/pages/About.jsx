@@ -61,10 +61,18 @@ const About = () => {
         </h1>
         <div className="flex gap-24">
           <div className="bg-gray-800 flex flex-col gap-8 w-72">
-            <img src="src/assets/arnab.jpg" alt="" className="w-68 h-88 rounded-md" />
+            <img
+              src="/public/assets/arnab.jpg"
+              alt=""
+              className="w-68 h-88 rounded-md"
+            />
           </div>
           <div className="bg-gray-800 flex gap-8 w-72">
-            <img src="src/assets/prasun.jpg" alt="" className="w-68 h-88 rounded-md" />
+            <img
+              src="/public/assets/prasun.jpg"
+              alt=""
+              className="w-68 h-88 rounded-md"
+            />
           </div>
         </div>
       </section>

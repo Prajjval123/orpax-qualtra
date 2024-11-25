@@ -44,7 +44,7 @@ const Header = () => {
   return (
     <header className="bg-blackBackground flex justify-center items-center h-24 text-white py-4 px-8">
       <div className="w-full mx-auto flex justify-between items-center">
-        <img src="src/assets/logo.png" alt="Logo" className="w-24 mr-auto" />
+        <img src="/public/assets/logo.png" alt="Logo" className="w-24 mr-auto" />
         {/* Hamburger Icon for Mobile */}
         <div className="ml-auto lg:hidden">
           <button onClick={toggleSidebar}>
