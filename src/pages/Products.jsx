@@ -3,15 +3,15 @@ import React from "react";
 const products = [
   {
     title: "Hospital/Nursing Home Management Software",
-    image: "public/assets/products/product1.jpg",
+    image: "/assets/products/product1.jpg",
   },
   {
     title: "Supply Chain Management Software",
-    image: "public/assets/products/product2.jpg",
+    image: "/assets/products/product2.jpg",
   },
   {
     title: "E-commerce B2B",
-    image: "public/assets/products/product3.png",
+    image: "/assets/products/product3.png",
   },
 ];
 
