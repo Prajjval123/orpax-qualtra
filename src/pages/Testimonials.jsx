@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Testimonial from "../components/Testimonial";
 
 const testimonials = [
   {
@@ -27,26 +26,47 @@ const Testimonials = () => {
       setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="w-full flex-col justify-center items-center bg-black p-24 py-10">
-      <h1 className="text-4xl font-semibold mb-10 text-center text-white animate-fade-in">
+    <div className="w-full bg-black text-white py-16 pt-0 px-6 flex flex-col items-center">
+      <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-12 animate-fade-in">
         Testimonials
       </h1>
-      <div className="sm:w-3/4 lg:w-full h-[28rem] flex mx-auto transition-transform duration-1000 ease-in-out overflow-hidden">
-        {testimonials.map((testimonial, index) => (
-          <div
+      <div className="w-full max-w-4xl overflow-hidden relative">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+            width: `${testimonials.length * 100}%`,
+          }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-full px-4 py-8 sm:px-8 sm:py-12"
+            >
+              <div className="bg-gray-900 rounded-lg shadow-lg text-center p-12 w-1/3 ">
+                <p className="text-lg sm:text-xl italic mb-6">{testimonial.description}</p>
+                <h2 className="text-xl sm:text-2xl font-bold">{testimonial.name}</h2>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-center mt-2 space-x-2">
+        {testimonials.map((_, index) => (
+          <button
             key={index}
-            className="flex-shrink-0 w-full h-full"
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-            }}
-          >
-            <Testimonial testimonial={testimonial} />
-          </div>
+            onClick={() => setCurrentIndex(index)}
+            className={`w-3 h-3 rounded-full ${
+              index === currentIndex
+                ? "bg-red-500"
+                : "bg-gray-500 hover:bg-gray-400"
+            }`}
+          />
         ))}
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa"; // Dropdown icon
 import ServicesDropdown from "./ServicesDropdown";
+import Sidebar from "./Sidebar";
 
 const links = [
   "Home",
@@ -47,13 +48,22 @@ const Header = () => {
         <img src="/assets/logo.png" alt="Logo" className="w-24 mr-auto" />
         {/* Hamburger Icon for Mobile */}
         <div className="ml-auto lg:hidden">
-          <button onClick={toggleSidebar}>
-            {isSidebarOpen ? (
-              <FaTimes className="text-2xl" />
-            ) : (
-              <FaBars className="text-2xl" />
-            )}
-          </button>
+          {/* Hamburger Menu (Mobile View) */}
+          <div className="lg:hidden">
+            <button onClick={toggleSidebar}>
+              {isSidebarOpen ? (
+                <FaTimes className="text-2xl" />
+              ) : (
+                <FaBars className="text-2xl" />
+              )}
+            </button>
+          </div>
+
+          {/* Sidebar Component */}
+          <Sidebar
+            isSidebarOpen={isSidebarOpen}
+            toggleSidebar={toggleSidebar}
+          />
         </div>
         <nav>
           <ul className="hidden lg:flex space-x-6 mx-auto">

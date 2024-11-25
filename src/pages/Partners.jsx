@@ -5,7 +5,7 @@ import Clients from "./Clients";
 const Partners = () => {
   return (
     <div className="w-full">
-      <img src="/assets/partners/partners.jpeg" alt="" />
+      <img src="/assets/partners/partners.jpeg" alt="" className="px-36"/>
       <section className="text-white p-36">
         <div className="md:flex justify-between">
           <h1 className="text-3xl font-bold mb-6 text-center">Partners</h1>

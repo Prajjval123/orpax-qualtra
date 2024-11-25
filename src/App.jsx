@@ -12,6 +12,7 @@ import Clients from "./pages/Clients";
 import Testimonials from "./pages/Testimonials";
 import Partners from "./pages/Partners";
 import MainLayout from "./layouts/MainLayout"
+import ServicePage from "./pages/ServicePage";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
               <Route path={"/home"} element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/services/:serviceName" element={<ServicePage />} />
               <Route path="/products" element={<Products />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/clients" element={<Clients />} />

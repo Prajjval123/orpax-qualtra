@@ -20,101 +20,6 @@ const clients = [
   "/assets/clients/client17.jpg",
   "/assets/clients/client18.jpg",
   "/assets/clients/client19.jpg",
-  "/assets/clients/client1.jpg",
-  "/assets/clients/client2.jpg",
-  "/assets/clients/client3.jpg",
-  "/assets/clients/client4.jpg",
-  "/assets/clients/client5.jpg",
-  "/assets/clients/client6.jpg",
-  "/assets/clients/client7.jpg",
-  "/assets/clients/client8.jpg",
-  "/assets/clients/client9.jpg",
-  "/assets/clients/client10.jpg",
-  "/assets/clients/client11.jpg",
-  "/assets/clients/client12.jpg",
-  "/assets/clients/client13.jpg",
-  "/assets/clients/client14.jpg",
-  "/assets/clients/client15.jpg",
-  "/assets/clients/client16.jpg",
-  "/assets/clients/client17.jpg",
-  "/assets/clients/client18.jpg",
-  "/assets/clients/client19.jpg",
-  "/assets/clients/client1.jpg",
-  "/assets/clients/client2.jpg",
-  "/assets/clients/client3.jpg",
-  "/assets/clients/client4.jpg",
-  "/assets/clients/client5.jpg",
-  "/assets/clients/client6.jpg",
-  "/assets/clients/client7.jpg",
-  "/assets/clients/client8.jpg",
-  "/assets/clients/client9.jpg",
-  "/assets/clients/client10.jpg",
-  "/assets/clients/client11.jpg",
-  "/assets/clients/client12.jpg",
-  "/assets/clients/client13.jpg",
-  "/assets/clients/client14.jpg",
-  "/assets/clients/client15.jpg",
-  "/assets/clients/client16.jpg",
-  "/assets/clients/client17.jpg",
-  "/assets/clients/client18.jpg",
-  "/assets/clients/client19.jpg",
-  "/assets/clients/client1.jpg",
-  "/assets/clients/client2.jpg",
-  "/assets/clients/client3.jpg",
-  "/assets/clients/client4.jpg",
-  "/assets/clients/client5.jpg",
-  "/assets/clients/client6.jpg",
-  "/assets/clients/client7.jpg",
-  "/assets/clients/client8.jpg",
-  "/assets/clients/client9.jpg",
-  "/assets/clients/client10.jpg",
-  "/assets/clients/client11.jpg",
-  "/assets/clients/client12.jpg",
-  "/assets/clients/client13.jpg",
-  "/assets/clients/client14.jpg",
-  "/assets/clients/client15.jpg",
-  "/assets/clients/client16.jpg",
-  "/assets/clients/client17.jpg",
-  "/assets/clients/client18.jpg",
-  "/assets/clients/client19.jpg",
-  "/assets/clients/client1.jpg",
-  "/assets/clients/client2.jpg",
-  "/assets/clients/client3.jpg",
-  "/assets/clients/client4.jpg",
-  "/assets/clients/client5.jpg",
-  "/assets/clients/client6.jpg",
-  "/assets/clients/client7.jpg",
-  "/assets/clients/client8.jpg",
-  "/assets/clients/client9.jpg",
-  "/assets/clients/client10.jpg",
-  "/assets/clients/client11.jpg",
-  "/assets/clients/client12.jpg",
-  "/assets/clients/client13.jpg",
-  "/assets/clients/client14.jpg",
-  "/assets/clients/client15.jpg",
-  "/assets/clients/client16.jpg",
-  "/assets/clients/client17.jpg",
-  "/assets/clients/client18.jpg",
-  "/assets/clients/client19.jpg",
-  "/assets/clients/client1.jpg",
-  "/assets/clients/client2.jpg",
-  "/assets/clients/client3.jpg",
-  "/assets/clients/client4.jpg",
-  "/assets/clients/client5.jpg",
-  "/assets/clients/client6.jpg",
-  "/assets/clients/client7.jpg",
-  "/assets/clients/client8.jpg",
-  "/assets/clients/client9.jpg",
-  "/assets/clients/client10.jpg",
-  "/assets/clients/client11.jpg",
-  "/assets/clients/client12.jpg",
-  "/assets/clients/client13.jpg",
-  "/assets/clients/client14.jpg",
-  "/assets/clients/client15.jpg",
-  "/assets/clients/client16.jpg",
-  "/assets/clients/client17.jpg",
-  "/assets/clients/client18.jpg",
-  "/assets/clients/client19.jpg",
 ];
 
 const Clients = () => {
@@ -124,7 +29,7 @@ const Clients = () => {
   const handleTransitionEnd = () => {
     if (currentIndex === clients.length) {
       setIsTransitioning(false);
-      setCurrentIndex(0);
+      setCurrentIndex(0); // Reset to 0 when last image reaches
     }
   };
 
@@ -132,21 +37,21 @@ const Clients = () => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setCurrentIndex((prevIndex) =>
-        prevIndex === clients.length ? 1 : prevIndex + 1
+        prevIndex === clients.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000);
+    }, 2000); // Slide every 2 seconds
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(interval); // Clear interval when unmounted
+  }, [currentIndex]);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center p-24 py-10 ">
+    <div className="w-full flex flex-col justify-center items-center px-4 md:px-24 py-10 ">
       <h1 className="text-4xl font-semibold mb-10 text-center text-white animate-fade-in">
         Clients
       </h1>
-      <div className="relative  rounded-lg flex justify-center items-center w-full sm:w-3/4 lg:w-full h-[28rem] overflow-hidden bg-gray-900">
+      <div className="relative rounded-lg flex justify-center items-center w-full sm:w-3/4 lg:w-full h-[28rem] overflow-hidden bg-gray-900">
         <div
-          className={`flex  transition-transform duration-1000 ease-in-out`}
+          className={`flex transition-transform duration-1000 ease-in-out`}
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
             transition: isTransitioning ? "transform 1s ease-in-out" : "none",

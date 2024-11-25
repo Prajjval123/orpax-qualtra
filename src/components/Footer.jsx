@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
           {/* Newsletter Signup */}
           <div className="h-full flex items-center justify-center">
-            <div className="w-full sm:w-1/3">
+            <div className="w-full sm:w-1/2">
               <h3 className="text-lg font-semibold mb-4 text-center">
                 Subscribe to our Newsletter
               </h3>
@@ -50,11 +50,11 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full sm:w-3/4 px-4 py-2 rounded-md bg-gray-800 text-gray-300 focus:ring-2 focus:ring-red-500 focus:outline-none"
+                  className="px-4 py-2 rounded-md bg-gray-800 text-gray-300 focus:ring-2 focus:ring-red-500 focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="mt-3 bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600 transition-transform transform hover:scale-105"
+                  className="mt-3 w-full bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600 transition-transform transform hover:scale-105"
                 >
                   Subscribe
                 </button>
