@@ -12,7 +12,6 @@ const links = [
   "Projects",
   "Clients",
   "Testimonials",
-  "Partners",
   "Contact",
 ];
 
@@ -29,7 +28,7 @@ const Header = () => {
   const handleSelection = (link) => {
     setSelected(link);
     if (link !== "Services") {
-      setIsServiceDropdownOpen(false); // Close dropdown for other links
+      setIsServiceDropdownOpen(false); 
     }
   };
 
@@ -45,7 +44,7 @@ const Header = () => {
   return (
     <header className="bg-blackBackground flex justify-center items-center h-24 text-white py-4 px-8">
       <div className="w-full mx-auto flex justify-between items-center">
-        <img src="/assets/logo.png" alt="Logo" className="w-24 mr-auto" />
+        <img src="/assets/logo.png" alt="Logo" className="w-32 mr-auto" />
         {/* Hamburger Icon for Mobile */}
         <div className="ml-auto lg:hidden">
           {/* Hamburger Menu (Mobile View) */}
@@ -66,9 +65,9 @@ const Header = () => {
           />
         </div>
         <nav>
-          <ul className="hidden lg:flex space-x-6 mx-auto">
+          <ul className="hidden lg:flex space-x-6 mx-auto font-light">
             {links.map((link) => (
-              <li key={link} className="relative group">
+              <li key={link} className="relative group flex items-center">
                 <div
                   className={`flex items-center ${
                     link === "Services" ? "cursor-pointer" : ""
@@ -94,7 +93,7 @@ const Header = () => {
                       selected === link
                         ? "text-gray-500 underline"
                         : "text-white"
-                    }`}
+                    } ${link == 'Contact' ? 'bg-red-600 rounded p-1' : ''}`}
                     onMouseOver={(link) =>
                       link === "Services" && isHoverHandle(true)
                     }
@@ -104,7 +103,7 @@ const Header = () => {
                   >
                     {link}
                   </Link>
-                  {link === "Services" && (
+                  {/* {link === "Services" && (
                     <FaChevronDown
                       className={`ml-2 ${
                         isHover ? "text-gray-500" : "text-white"
@@ -112,7 +111,7 @@ const Header = () => {
                         isServiceDropdownOpen ? "rotate-180" : ""
                       } `}
                     />
-                  )}
+                  )} */}
                 </div>
                 {/* Render Dropdown */}
                 {link === "Services" && (

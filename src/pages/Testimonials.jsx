@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Mr. Sandeep Ghosh Executive Director, IIMS Dataworks",
     description:
-      "We are extremely satisfied with the Factfinder 1.0 software they have designed and developed for us and it is now being actively used by over 60 firms and organizations.",
+      "We are extremely satisfied with the Factfinder 1.0 software they have designed and developed for us and it is now being actively used by over 60 firms and organizations (comprising of the leading public and private sector banks, all the major mutual funds, all life insurance firms, financial market regulators, SROs and the Union Government) operating out of India.",
   },
   {
     name: "Mr. John Doe CEO, XYZ Corporation",
@@ -31,24 +31,23 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black text-white py-16 pt-0 px-6 flex flex-col items-center">
-      <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-12 animate-fade-in">
+    <div className="w-full bg-black text-white p-8 md:p-12 pb-0 px-6 flex flex-col gap-6 items-center">
+      <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center text-white animate-fade-in">
         Testimonials
       </h1>
-      <div className="w-full max-w-4xl overflow-hidden relative">
+      <div className="w-full max-w-4xl overflow-hidden relative rounded-xl border border-white shadow-lg hover:shadow-xl transform transition duration-300">
         <div
-          className="flex transition-transform duration-700 ease-in-out"
+          className="flex w-full transition-transform duration-700 ease-in-out"
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
-            width: `${testimonials.length * 100}%`,
           }}
         >
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full px-4 py-8 sm:px-8 sm:py-12"
+              className="flex-shrink-0 w-full flex flex-col justify-center px-24 py-4 "
             >
-              <div className="bg-gray-900 rounded-lg shadow-lg text-center p-12 w-1/3 ">
+              <div className="gap-8 rounded-lg shadow-lg text-center p-12 py-6 w-full ">
                 <p className="text-lg sm:text-xl italic mb-6">{testimonial.description}</p>
                 <h2 className="text-xl sm:text-2xl font-bold">{testimonial.name}</h2>
               </div>
@@ -56,12 +55,12 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center mt-2 space-x-2">
+      <div className="flex justify-center mt-8 space-x-2">
         {testimonials.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-4 h-4 rounded-full ${
               index === currentIndex
                 ? "bg-red-500"
                 : "bg-gray-500 hover:bg-gray-400"

@@ -12,7 +12,7 @@ import HomeProducts from "../components/HomeProducts";
 
 const Home = () => {
   return (
-    <div>
+    <div className="flex flex-col gap-40">
       <Hero />
       <HomeServices />
       <HomeProjects />

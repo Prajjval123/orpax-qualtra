@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const clients = [
   "/assets/clients/client1.jpg",
@@ -23,52 +23,22 @@ const clients = [
 ];
 
 const Clients = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-
-  const handleTransitionEnd = () => {
-    if (currentIndex === clients.length) {
-      setIsTransitioning(false);
-      setCurrentIndex(0); // Reset to 0 when last image reaches
-    }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsTransitioning(true);
-      setCurrentIndex((prevIndex) =>
-        prevIndex === clients.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 2000); // Slide every 2 seconds
-
-    return () => clearInterval(interval); // Clear interval when unmounted
-  }, [currentIndex]);
-
   return (
-    <div className="w-full flex flex-col justify-center items-center px-4 md:px-24 py-10 ">
-      <h1 className="text-4xl font-semibold mb-10 text-center text-white animate-fade-in">
+    <div className="w-full flex flex-col justify-center items-center px-4 md:px-12 py-10">
+      <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center text-white">
         Clients
       </h1>
-      <div className="relative rounded-lg flex justify-center items-center w-full sm:w-3/4 lg:w-full h-[28rem] overflow-hidden bg-gray-900">
-        <div
-          className={`flex transition-transform duration-1000 ease-in-out`}
-          style={{
-            transform: `translateX(-${currentIndex * 100}%)`,
-            transition: isTransitioning ? "transform 1s ease-in-out" : "none",
-          }}
-          onTransitionEnd={handleTransitionEnd}
-        >
-          {/* Duplicate first and last images for smooth looping */}
-          <img src={clients[clients.length - 1]} alt="" className="m-2" />
-          {clients.map((client, index) => (
+      <div className="relative flex items-center w-full h-[28rem] overflow-hidden bg-gray-900">
+        {/* Sliding container */}
+        <div className="flex w-[200%] animate-slide space-x-4">
+          {clients.concat(clients).map((client, index) => (
             <img
+              key={index}
               src={client}
               alt={`Client ${index}`}
-              key={index}
-              className="m-2"
+              className="h-full w-auto object-contain"
             />
           ))}
-          <img src={clients[0]} alt="" className="m-2" />
         </div>
       </div>
     </div>

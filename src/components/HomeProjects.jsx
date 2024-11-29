@@ -41,31 +41,43 @@ const projects = [
 
 const HomeProjects = () => {
   return (
-    <div className="p-8 md:p-24 min-h-screen bg-black pb-0">
-      <h1 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-white animate-fade-in">
+    <div className="p-12 pb-0 flex flex-col gap-6 min-h-screen bg-black">
+      <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Projects
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-12 mx-auto grid grid-cols-1 sm:grid-cols-3 place-items-center gap-8">
+        {/* IT Card */}
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gray-900 text-white w-full p-4 rounded-lg shadow-lg flex flex-col items-center justify-start transform transition-transform duration-300 hover:scale-105 animate-slide-up"
+            className="bg-gray-900 w-full flex flex-col h-full gap-4 p-2 pb-4 text-white rounded-xl border border-white shadow-lg p- hover:shadow-xl transform transition duration-300"
           >
             <img
               src={project.image}
               alt="Project"
-              className="mb-4 rounded-md object-cover w-full h-40"
+              className="mb-4 rounded-md object-cover w-full"
             />
-            <h1 className="text-lg md:text-xl font-semibold text-gray-300 mb-4 text-center">
-              {project.title}
-            </h1>
-            <ol className="text-sm md:text-base text-gray-400 space-y-2 text-left">
-              {project.description.map((desc, i) => (
-                <li key={i}>{desc}</li>
-              ))}
-            </ol>
+            <div>
+              <div className="h-[120px]">
+                <h1 className="text-lg font-semibold px-4 text-gray-300 mb-4">
+                  {project.title}
+                </h1>
+              </div>
+              <ol className="text-sm md:text-base text-gray-300 px-4 space-y-2 text-left">
+                {project.description.map((desc, i) => (
+                  <li key={i} className="flex gap-2">
+                    <div>→</div> {desc}
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         ))}
+      </div>
+      <div className="flex justify-end">
+        <button className="bg-red-800 text-white text-sm w-24 rounded hover:bg-red-600">
+          Know More
+        </button>
       </div>
     </div>
   );
