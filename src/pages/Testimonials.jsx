@@ -31,7 +31,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="w-full text-white py-8 md:py-12 pb-0 flex flex-col gap-6 items-center">
+    <div className="w-fulltext-white pb-0 flex flex-col gap-6 items-center">
       <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center text-white animate-fade-in">
         Testimonials
       </h1>
@@ -47,7 +47,7 @@ const Testimonials = () => {
               key={index}
               className="flex-shrink-0 w-full flex flex-col justify-center px-6 sm:px-24 py-4 "
             >
-              <div className="gap-8 rounded-lg shadow-lg text-center p-12 py-6 w-full ">
+              <div className="gap-8 rounded-lg shadow-lg text-center px-4 py-6 w-full ">
                 <p className="text-lg sm:text-xl italic mb-6">{testimonial.description}</p>
                 <h2 className="text-xl sm:text-2xl font-bold">{testimonial.name}</h2>
               </div>

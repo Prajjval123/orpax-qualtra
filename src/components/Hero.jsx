@@ -53,9 +53,9 @@ const HeroSection = () => {
       </div>
 
       {/* Dropdown Menus */}
-      <div className="mt-6 w-full flex-grow md:mr-2 sm:flex-1">
-        <div className="py-4 w-full sm:py-0 relative md:w-auto inline-block">
-          <select className="bg-transparent w-full text-white text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
+      <div className="mt-6 w-full flex-grow sm:flex-1">
+        <div className="py-4 w-full sm:py-0 relative md:w-auto inline-block md:mr-2">
+          <select className="bg-transparent w-full text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
             <option>IT</option>
             <option>Art</option>
             <option>E-Commerce</option>
@@ -78,7 +78,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="w-full py-4 md:w-auto relative inline-block">
+        <div className="w-full py-4 md:w-auto relative inline-block md:mr-2">
           <select className="bg-transparent w-full text-white text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
             <option>Art</option>
             <option>IT</option>

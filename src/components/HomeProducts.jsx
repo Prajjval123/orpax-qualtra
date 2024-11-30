@@ -17,7 +17,7 @@ const products = [
 
 const Products = () => {
   return (
-    <div className="py-8 md:py-12 pb-0 flex flex-col gap-6 min-h-screen">
+    <div className="pb-0 flex flex-col gap-6 min-h-screen">
       <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Products
       </h1>

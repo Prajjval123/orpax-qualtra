@@ -13,7 +13,7 @@ import Header from "../components/Header";
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-40 px-12">
+    <div className="flex flex-col gap-20 px-12">
       <div className="relative flex flex-col pb">
         <div className="relative z-10 flex flex-col gap-8">
           <Header />
