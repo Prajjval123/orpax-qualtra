@@ -26,18 +26,17 @@ const HeroSection = () => {
   return (
     <div
       className="relative z-10 flex flex-col text-white"
-      style={{ height: "100vh" }}
     >
       {/* Typing Title */}
 
-      <h1 className="text-5xl font-semibold leading-snug text-left max-w-4xl opacity-0 animate-fade-in-later ">
+      <h1 className="text-5xl font-semibold leading-snug text-center md:text-left max-w-4xl opacity-0 animate-fade-in-later ">
         Transforming Your <span className="text-red-500">Challenges</span>
         <br /> Into Tailored Solutions.
       </h1>
 
       {/* Content Section */}
       <div className="mt-6 text-lg opacity-0 animate-fade-in-later">
-        <p className="mt-6 max-w-2xl font-light text-left">
+        <p className="mt-6 max-w-2xl font-light text-center md:text-left">
           Running a business, whether big, small, or medium, constantly involves
           challenges. <br></br>At OQ, we look forward to helping you by working
           as an extension of your team to better understand your requirements,
@@ -47,16 +46,16 @@ const HeroSection = () => {
       </div>
 
       <div className="mt-12">
-        <h2 className="text-5xl font-semibold">We Understand</h2>
-        <h3 className="text-3xl mt-8 text-bold font-medium text-white">
+        <h2 className="text-5xl text-center md:text-left font-semibold">We Understand</h2>
+        <h3 className="text-3xl text-center md:text-left mt-8 text-bold font-medium text-white">
           Our 3 Divisions
         </h3>
       </div>
 
       {/* Dropdown Menus */}
-      <div className="mt-6 sm:flex space-x-4">
-        <div className="py-4 sm:py-0 relative inline-block">
-          <select className="bg-transparent text-white text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
+      <div className="mt-6 w-full flex-grow md:mr-2 sm:flex-1">
+        <div className="py-4 w-full sm:py-0 relative md:w-auto inline-block">
+          <select className="bg-transparent w-full text-white text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
             <option>IT</option>
             <option>Art</option>
             <option>E-Commerce</option>
@@ -79,8 +78,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative inline-block">
-          <select className="bg-transparent text-white text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
+        <div className="w-full py-4 md:w-auto relative inline-block">
+          <select className="bg-transparent w-full text-white text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
             <option>Art</option>
             <option>IT</option>
             <option>E-Commerce</option>
@@ -103,8 +102,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative inline-block">
-          <select className="bg-transparent text-white text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
+        <div className="relative py-4 w-full md:w-auto inline-block">
+          <select className="bg-transparent w-full text-white text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
             <option>E-Commerce</option>
             <option>IT</option>
             <option>Art</option>
@@ -127,7 +126,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="mt-12  grid grid-cols-1 sm:grid-cols-3 gap-8 bg-banner bg-repeat">
+      <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 text-center lg:text-left gap-8 bg-banner bg-repeat">
         {/* IT Card */}
         {cards.map((card) => (
           <div key={card.name} className="flex flex-col justify-between text-white rounded-xl border border-white shadow-lg p-6 hover:shadow-xl transform transition duration-300">

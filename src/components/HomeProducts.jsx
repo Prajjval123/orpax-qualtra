@@ -21,7 +21,7 @@ const Products = () => {
       <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Products
       </h1>
-      <div className="mt-12 mx-auto grid grid-cols-1 sm:grid-cols-3 place-items-center gap-8">
+      <div className="mt-12 mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">
         {/* IT Card */}
         {products.map((product, index) => (
           <div

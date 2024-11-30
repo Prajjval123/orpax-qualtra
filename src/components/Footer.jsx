@@ -12,9 +12,9 @@ const Footer = () => {
         <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center text-white animate-fade-in">
           Contact
         </h1>
-        <div className="grid grid-cols-1 lg:grid-rows-1 md:grid-cols-3 place-items-center justify-between items-start gap-8">
+        <div className="grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 place-items-center justify-between items-start gap-8">
           {/* Logo & Address */}
-          <div className="w-full flex flex-col gap-2 md:grid-cols-3 text-center sm:text-left">
+          <div className="w-full flex flex-col gap-2 md:grid-cols-3 text-center lg:text-left">
             <h1 className="text-3xl">Address:</h1>
             <div>
               <p className="text-md leading-relaxed">
@@ -117,12 +117,12 @@ const Footer = () => {
         </div>
 
         {/* Sitemap */}
-        <div className="border-t border-gray-700 mt-10 pt-6 ">
-          <div className="grid grid-cols-1 lg:grid-rows-1 md:grid-cols-2 place-items-center gap-8">
+        <div className="border-t border-gray-700 mt-10 pt-6">
+          <div className="grid grid-cols-1 lg:grid-rows-1 md:grid-cols-2 gap-8">
             {/* Links */}
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <div className="flex flex-wrap justify-center md:justify-left gap-4 text-sm">
               <a href="#" className="hover:text-white">
-                <i className="fas fa-home mr-1"></i> Home
+                <i className="fas fa-home mr-"></i> Home
               </a>
               <a href="#" className="hover:text-white">
                 <i className="fas fa-info-circle mr-1"></i> About Us
