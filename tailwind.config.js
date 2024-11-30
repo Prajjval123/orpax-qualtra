@@ -8,7 +8,7 @@ module.exports = {
         secondary: "#4b5563",
       },
       backgroundImage: {
-        // banner: "url('/assets/banner.png')",
+        banner: "url('/assets/For_Developing/Background/Motion_Line.png')",
       },
       animation: {
         "fade-in": "fadeIn 1s ease-in-out forwards",

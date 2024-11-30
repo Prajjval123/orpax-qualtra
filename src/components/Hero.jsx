@@ -25,25 +25,12 @@ const cards = [
 const HeroSection = () => {
   return (
     <div
-      className="relative z-10 flex flex-col mb-48 px-12 py-12 text-white bg-banner bg-cover bg-center backdrop-blur-xl"
+      className="relative z-10 flex flex-col text-white"
       style={{ height: "100vh" }}
     >
       {/* Typing Title */}
 
-      <h1 className="text-5xl font-bold leading-snug text-left max-w-4xl opacity-0 animate-fade-in-later ">
-        {/* <Typewriter
-          options={{
-            strings: [
-              'Orpax Qualtra',
-              'We understand, we solve, and we deliver...',
-            ],
-            autoStart: true,
-            loop: true, // Enable looping
-            delay: 75,
-            deleteSpeed: 50, // Speed of deleting text
-            pauseFor: 1000, // Pause before retyping
-          }}
-        /> */}
+      <h1 className="text-5xl font-semibold leading-snug text-left max-w-4xl opacity-0 animate-fade-in-later ">
         Transforming Your <span className="text-red-500">Challenges</span>
         <br /> Into Tailored Solutions.
       </h1>
@@ -67,8 +54,8 @@ const HeroSection = () => {
       </div>
 
       {/* Dropdown Menus */}
-      <div className="mt-6 flex space-x-4">
-        <div className="relative inline-block">
+      <div className="mt-6 sm:flex space-x-4">
+        <div className="py-4 sm:py-0 relative inline-block">
           <select className="bg-transparent text-white text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
             <option>IT</option>
             <option>Art</option>
@@ -140,10 +127,10 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div className="mt-12  grid grid-cols-1 sm:grid-cols-3 gap-8 bg-banner bg-repeat">
         {/* IT Card */}
         {cards.map((card) => (
-          <div className="bg-gray-900 flex flex-col justify-between text-white rounded-xl border border-white shadow-lg p-6 hover:shadow-xl transform transition duration-300">
+          <div key={card.name} className="flex flex-col justify-between text-white rounded-xl border border-white shadow-lg p-6 hover:shadow-xl transform transition duration-300">
             <div>
               <div className="flex flex-col justify-center space-y-2 mb-4">
                 <span className="text-red-600 text-3xl ">0{card.number}.</span>

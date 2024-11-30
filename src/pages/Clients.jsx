@@ -28,7 +28,7 @@ const Clients = () => {
       <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center text-white">
         Clients
       </h1>
-      <div className="relative flex items-center w-full h-[28rem] overflow-hidden bg-gray-900">
+      <div className="relative flex items-center w-full h-[28rem] overflow-hidden">
         {/* Sliding container */}
         <div className="flex w-[200%] animate-slide space-x-4">
           {clients.concat(clients).map((client, index) => (

@@ -3,21 +3,21 @@ import React from "react";
 const products = [
   {
     title: "Hospital/Nursing Home Management Software",
-    image: "/assets/products/product1.jpg",
+    image: "/assets/For_Developing/Products_Section/management software.png",
   },
   {
     title: "Supply Chain Management Software",
-    image: "/assets/products/product2.jpg",
+    image: "/assets/For_Developing/Products_Section/dribbble.png",
   },
   {
     title: "E-commerce B2B",
-    image: "/assets/products/product3.png",
+    image: "/assets/For_Developing/Products_Section/online-payment-gateway.png",
   },
 ];
 
 const Products = () => {
   return (
-    <div className="p-8 md:p-12 pb-0 flex flex-col gap-6 min-h-screen bg-black">
+    <div className="py-8 md:py-12 pb-0 flex flex-col gap-6 min-h-screen">
       <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Products
       </h1>
@@ -26,11 +26,12 @@ const Products = () => {
         {products.map((product, index) => (
           <div
             key={index}
-            className="bg-gray-900 h-full w-full flex flex-col gap-4 p-2 text-white rounded-xl border border-white shadow-lg hover:shadow-xl transform transition duration-300"
+            className="bg-gray-900 h-full w-full flex flex-col justify-between gap-4 p-2 text-white rounded-xl border border-white shadow-lg hover:shadow-xl transform transition duration-300"
           >
             <h1 className="text-xl flex items-center justify-center font-semibold p-4 h-[90px] text-center">
               {product.title}
             </h1>
+            
             <img
               src={product.image}
               alt={product.image}
@@ -39,6 +40,7 @@ const Products = () => {
             <h1 className="text-lg text-center font-semibold p-4 text-gray-300">
               Request a free demo
             </h1>
+            
           </div>
         ))}
       </div>

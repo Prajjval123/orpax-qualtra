@@ -7,7 +7,7 @@ import { FaPinterest } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 py-10">
+    <footer className="py-10">
       <div className="mx-auto px-12">
         <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center text-white animate-fade-in">
           Contact
@@ -17,15 +17,15 @@ const Footer = () => {
           <div className="w-full flex flex-col gap-2 md:grid-cols-3 text-center sm:text-left">
             <h1 className="text-3xl">Address:</h1>
             <div>
-              <p className="text-sm leading-relaxed">
+              <p className="text-md leading-relaxed">
                 97-A, (FFB) Indraprastha Estate Sector-30-33, Faridabad,
                 Haryana-121003.
               </p>
-              <p className="mt-2 text-sm">
+              <p className="mt-2 text-md">
                 <strong>M:</strong> +91-9810041039 <br />
                 <strong>M:</strong> +91-9319644022
               </p>
-              <p className="text-sm mt-2">
+              <p className="text-md mt-2">
                 <strong>Email:</strong>{" "}
                 <a
                   href="mailto:arnab.paul@orpaxqualtra.com"
@@ -41,41 +41,57 @@ const Footer = () => {
           <div className="h-full text-center md:grid-cols-3 flex flex-col gap-2">
             <h1 className="text-3xl text-nowrap">Follow us on:</h1>
             <div className="flex flex-col justify-center gap-3">
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center justify-center">
                 <a
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
-                  <FaSquareXTwitter className="text-3xl" />
+                  <img
+                    src="/assets/For_Developing/Contact_Section/twitter.png"
+                    alt=""
+                    className="w-8 h-8 bg-red-600 rounded-md"
+                  />
                 </a>
-                <h6>Twitter</h6>
+                <h6 className="text-md">Twitter</h6>
               </div>
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center justify-center">
                 <a
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
-                  <FaFacebook className="text-3xl" />
+                  <img
+                    src="/assets/For_Developing/Contact_Section/facebook.png"
+                    alt=""
+                    className="w-8 h-8 bg-red-600 rounded-md"
+                  />
                 </a>
-                <h6>Facebook</h6>
+                <h6 className="text-md">Facebook</h6>
               </div>
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center justify-center">
                 <a
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
-                  <FaLinkedin className="text-3xl" />
+                  <img
+                    src="/assets/For_Developing/Contact_Section/instagram (1).png"
+                    alt=""
+                    className="w-8 h-8 bg-red-600 rounded-md"
+                  />
                 </a>
-                <h6>Linkedin</h6>
+                <h6 className="text-md">Instagram</h6>
               </div>
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center justify-center">
                 <a
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
-                  <FaPinterest className="text-3xl" />
+                  <img
+                    src="/assets/For_Developing/Contact_Section/pinterest.png"
+                    alt=""
+                    className="w-8 h-8 bg-red-600 rounded-md"
+                  />
                 </a>
-                <h6>Pinterest</h6>
+                <h6 className="text-md">Pinterest</h6>
               </div>
             </div>
           </div>
@@ -83,7 +99,7 @@ const Footer = () => {
           <div className="h-full flex flex-col gap-4">
             <h3 className="text-3xl text-nowrap">Newsletter Signup</h3>
             <form className="flex flex-col justify-center">
-              <div className="flex gap-2 items-center">
+              <div className="flex flex-col sm:flex gap-2 items-center">
                 <input
                   type="email"
                   placeholder="Enter Your Email Address"
@@ -91,7 +107,7 @@ const Footer = () => {
                 />
                 <button
                   type="submit"
-                  className=" bg-red-600 font-mono text-sm px-4 text-white p-2 rounded-md hover:bg-red-700 transition-transform transform hover:scale-105"
+                  className="w-full sm:w-auto bg-red-600 font-mono text-sm px-4 text-white p-2 rounded-md hover:bg-red-700 transition-transform transform hover:scale-105"
                 >
                   SUBMIT
                 </button>
@@ -106,7 +122,7 @@ const Footer = () => {
             {/* Links */}
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <a href="#" className="hover:text-white">
-                <i className="fas fa-home mr-1"></i> Home 
+                <i className="fas fa-home mr-1"></i> Home
               </a>
               <a href="#" className="hover:text-white">
                 <i className="fas fa-info-circle mr-1"></i> About Us

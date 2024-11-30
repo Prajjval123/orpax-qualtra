@@ -31,11 +31,11 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black text-white p-8 md:p-12 pb-0 px-6 flex flex-col gap-6 items-center">
+    <div className="w-full text-white py-8 md:py-12 pb-0 flex flex-col gap-6 items-center">
       <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center text-white animate-fade-in">
         Testimonials
       </h1>
-      <div className="w-full max-w-4xl overflow-hidden relative rounded-xl border border-white shadow-lg hover:shadow-xl transform transition duration-300">
+      <div className="w-full backdrop-blur-lg max-w-4xl overflow-hidden relative rounded-xl border border-white shadow-lg hover:shadow-xl transform transition duration-300">
         <div
           className="flex w-full transition-transform duration-700 ease-in-out"
           style={{
@@ -45,7 +45,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full flex flex-col justify-center px-24 py-4 "
+              className="flex-shrink-0 w-full flex flex-col justify-center px-6 sm:px-24 py-4 "
             >
               <div className="gap-8 rounded-lg shadow-lg text-center p-12 py-6 w-full ">
                 <p className="text-lg sm:text-xl italic mb-6">{testimonial.description}</p>

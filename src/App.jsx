@@ -17,8 +17,8 @@ import ServicePage from "./pages/ServicePage";
 const App = () => {
   return (
     <Router>
-      <div className="bg-black text-white min-h-screen flex flex-col">
-        <Header />
+      <div className="bg-[rgb(7,12,21)] text-white min-h-screen flex flex-col">
+        {/* <Header /> */}
         <main className="flex-grow">
           <MainLayout>
             <Routes>
