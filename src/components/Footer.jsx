@@ -117,7 +117,7 @@ const Footer = () => {
               ))}
             </div>
             {/* Copyright */}
-            <p className="text-sm flex justify-center lg:justify-end">
+            <p className="text-sm flex justify-center text-center lg:justify-end">
               © 2024 ORPAX QUALTRA. All Rights Reserved.
             </p>
           </div>
