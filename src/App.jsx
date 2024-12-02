@@ -18,9 +18,12 @@ const App = () => {
   return (
     <Router>
       <div className="bg-[rgb(7,12,21)] text-white min-h-screen flex flex-col">
-        {/* <Header /> */}
+        
         <main className="flex-grow">
           <MainLayout>
+          <div className="relative flex flex-col px-12">
+      <Header />
+      </div>
             <Routes>
               <Route path={"/"} element={<Home />} />
               <Route path={"/home"} element={<Home />} />

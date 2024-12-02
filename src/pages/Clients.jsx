@@ -28,18 +28,19 @@ const Clients = () => {
       <h1 className="text-3xl md:text-5xl font-semibold text-center text-white">
         Clients
       </h1>
-      <div className="relative flex items-center w-full my-24 overflow-hidden">
-        {/* Sliding container */}
-        <div className="flex w-[200%] animate-slide space-x-4">
-          {clients.concat(clients).map((client, index) => (
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 my-24">
+        {clients.map((client, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg flex justify-center items-center p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+          >
             <img
-              key={index}
               src={client}
               alt={`Client ${index}`}
-              className="h-full w-auto object-contain"
+              className="h-28 w-auto object-contain"
             />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

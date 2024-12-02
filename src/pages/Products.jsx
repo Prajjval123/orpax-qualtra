@@ -17,7 +17,7 @@ const products = [
 
 const Products = () => {
   return (
-    <div className="p-8 lg:p-24 pb-0 min-h-screen bg-black">
+    <div className="p-8 lg:p-24 pb-0 min-h-screen">
       <h1 className="text-4xl font-semibold mb-10 text-center text-white animate-fade-in">
         Products
       </h1>

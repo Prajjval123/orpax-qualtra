@@ -25,7 +25,7 @@ const cards = [
 const HeroSection = () => {
   return (
     <div
-      className="relative z-10 flex flex-col text-white"
+      className="gap-8 relative z-10 flex flex-col text-white"
     >
       {/* Typing Title */}
 

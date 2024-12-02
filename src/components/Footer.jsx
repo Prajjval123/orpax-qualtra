@@ -109,7 +109,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-10 pt-6">
           <div className="grid grid-cols-1 lg:grid-rows-1 md:grid-cols-2 gap-8">
             {/* Links */}
-            <div className="flex flex-wrap justify-center md:justify-left gap-4 text-sm">
+            <div className="flex flex-wrap justify-center gap-4 text-sm md:justify-start">
               {sitemap.map((site) => (
                 <a href="#" className="hover:text-white">
                   {site}
