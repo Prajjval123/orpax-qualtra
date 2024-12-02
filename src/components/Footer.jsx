@@ -1,9 +1,34 @@
 import React from "react";
 import logo from "/assets/logo.png";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaPinterest } from "react-icons/fa";
+
+const icons = [
+  {
+    name: "Twitter",
+    image: "/assets/For_Developing/Contact_Section/twitter.png",
+  },
+  {
+    name: "Facebook",
+    image: "/assets/For_Developing/Contact_Section/facebook.png",
+  },
+  {
+    name: "Instagram",
+    image: "/assets/For_Developing/Contact_Section/instagram (1).png",
+  },
+  {
+    name: "Pinterest",
+    image: "/assets/For_Developing/Contact_Section/pinterest.png",
+  },
+];
+
+const sitemap = [
+  "Home",
+  "About Us",
+  "Products",
+  "Projects",
+  "Clients",
+  "Testimonials",
+  "Privacy Policy",
+];
 
 const Footer = () => {
   return (
@@ -18,8 +43,7 @@ const Footer = () => {
             <h1 className="text-3xl">Address:</h1>
             <div>
               <p className="text-md leading-relaxed">
-                97-A, (FFB) Indraprastha Estate Sector-30-33, Faridabad,
-                Haryana-121003.
+                97-A, (FFB) Indraprastha Estate Sector-30-33, Faridabad, Haryana-121003.
               </p>
               <p className="mt-2 text-md">
                 <strong>M:</strong> +91-9810041039 <br />
@@ -37,62 +61,27 @@ const Footer = () => {
             </div>
           </div>
           {/* Social Media */}
-
           <div className="h-full text-center md:grid-cols-3 flex flex-col gap-2">
             <h1 className="text-3xl text-nowrap">Follow us on:</h1>
             <div className="flex flex-col justify-center gap-3">
-              <div className="flex gap-2 items-center justify-center">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+              {icons.map((icon) => (
+                <div
+                  key={icon.name}
+                  className="flex gap-2 items-center justify-center"
                 >
-                  <img
-                    src="/assets/For_Developing/Contact_Section/twitter.png"
-                    alt=""
-                    className="w-8 h-8 bg-red-600 rounded-md"
-                  />
-                </a>
-                <h6 className="text-md">Twitter</h6>
-              </div>
-              <div className="flex gap-2 items-center justify-center">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
-                >
-                  <img
-                    src="/assets/For_Developing/Contact_Section/facebook.png"
-                    alt=""
-                    className="w-8 h-8 bg-red-600 rounded-md"
-                  />
-                </a>
-                <h6 className="text-md">Facebook</h6>
-              </div>
-              <div className="flex gap-2 items-center justify-center">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
-                >
-                  <img
-                    src="/assets/For_Developing/Contact_Section/instagram (1).png"
-                    alt=""
-                    className="w-8 h-8 bg-red-600 rounded-md"
-                  />
-                </a>
-                <h6 className="text-md">Instagram</h6>
-              </div>
-              <div className="flex gap-2 items-center justify-center">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
-                >
-                  <img
-                    src="/assets/For_Developing/Contact_Section/pinterest.png"
-                    alt=""
-                    className="w-8 h-8 bg-red-600 rounded-md"
-                  />
-                </a>
-                <h6 className="text-md">Pinterest</h6>
-              </div>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                  >
+                    <img
+                      src={icon.image}
+                      alt=""
+                      className="w-8 h-8 bg-red-600 rounded-md"
+                    />
+                  </a>
+                  <h6 className="text-lg">{icon.name}</h6>
+                </div>
+              ))}
             </div>
           </div>
           {/* Newsletter Signup */}
@@ -121,30 +110,14 @@ const Footer = () => {
           <div className="grid grid-cols-1 lg:grid-rows-1 md:grid-cols-2 gap-8">
             {/* Links */}
             <div className="flex flex-wrap justify-center md:justify-left gap-4 text-sm">
-              <a href="#" className="hover:text-white">
-                <i className="fas fa-home mr-"></i> Home
-              </a>
-              <a href="#" className="hover:text-white">
-                <i className="fas fa-info-circle mr-1"></i> About Us
-              </a>
-              <a href="#" className="hover:text-white">
-                <i className="fas fa-box-open mr-1"></i> Products
-              </a>
-              <a href="#" className="hover:text-white">
-                <i className="fas fa-briefcase mr-1"></i> Projects
-              </a>
-              <a href="#" className="hover:text-white">
-                <i className="fas fa-users mr-1"></i> Clients
-              </a>
-              <a href="#" className="hover:text-white">
-                <i className="fas fa-star mr-1"></i> Testimonials
-              </a>
-              <a href="#" className="hover:text-white">
-                <i className="fas fa-shield-alt mr-1"></i> Privacy Policy
-              </a>
+              {sitemap.map((site) => (
+                <a href="#" className="hover:text-white">
+                  {site}
+                </a>
+              ))}
             </div>
             {/* Copyright */}
-            <p className="text-sm flex justify-end">
+            <p className="text-sm flex justify-center lg:justify-end">
               © 2024 ORPAX QUALTRA. All Rights Reserved.
             </p>
           </div>

@@ -129,7 +129,7 @@ const HeroSection = () => {
       <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 text-center lg:text-left gap-8 bg-banner bg-repeat">
         {/* IT Card */}
         {cards.map((card) => (
-          <div key={card.name} className="flex flex-col justify-between text-white rounded-xl border border-white shadow-lg p-6 hover:shadow-xl transform transition duration-300">
+          <div key={card.number} className="flex flex-col justify-between text-white rounded-xl border border-white shadow-lg p-6 hover:shadow-xl transform transition duration-300">
             <div>
               <div className="flex flex-col justify-center space-y-2 mb-4">
                 <span className="text-red-600 text-3xl ">0{card.number}.</span>
