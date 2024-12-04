@@ -102,20 +102,36 @@ export const mainServices = {
         {
           name: "Smart City Applications",
           route: "/services/smart-city-applications",
-          points: [],
-          description: "",
+          points: [
+            "IoT systems for smart city applications.",
+            "Applications for waste management, parking management, street lighting, traffic management, efficient water supply, energy-efficient buildings and reliable public transports.",
+            "Integration of sustainable development with technology.",
+            "Promote development, employment, wealth, education and social welfare initiatives.",
+          ],
+          description:
+            "Smart City is one of the initiatives of the Union Government of India. This initiative aims to make the Indian cities smart and intelligent on several parameters of lifestyle. It focusses on providing more reliable and advanced methods of waste management, traffic management, parking management, and street lighting among others. It is a framework to make cities more sustainable. IoT plays a major role in creating a robust infrastructure for smart city applications. Our expertise lies in creating advanced IoT systems for tasks like waste management and traffic management. We make use of advanced sensors, networking, and software development skills to create the best IoT solutions to deploy in smart city initiatives. Our smart city services are centred around our efforts to provide better opportunities to promote development, employment, wealth, education, and social welfare initiatives. We make sure that all the data that we gather from smart city projects is highly secured behind a robust firewall to prevent any misuse or abuse of this data. Our projects are designed and executed with the concepts of sustainable development in mind, without any damage to the environment. We have also expertise in pollution management to keep the pollution levels in check. We have developed applications for Efficient water supply, energy-efficient buildings, and a reliable public transportation system among other implementations to contribute to making the city a truly smart city. We are constantly upgrading ourselves to integrate the latest technologies like blockchain and fintech with our smart city applications to adapt to the changing needs of the city. We aim to make the urban lifestyle to be based on the integration of technology with sustainable development goals to make sure we make the world a better place.",
         },
         {
           name: "Mobile App Development",
           route: "/services/mobile-app-development",
-          points: [],
-          description: "",
+          points: [
+            "Expertise in native, hybrid and cross platform mobile applications.",
+            "Expertise in platforms like iOS and Android.",
+            "Expertise in latest technologies like Swift, C#, React Native and Ionic.",
+            "Experience in building mobile applications for retail, banking, insurance and health care domains.",
+          ],
+          description: "Cross-platform mobile applications are our greatest strength. We have the experience to build mobile applications for retail, banking, insurance, and health care domains among others. This includes both the major mobile application platforms, iOS, and Android. We have expertise in developing mobile applications using technologies like Android, C#, Swift, React Native, and Ionic among others. Integration of third-party services like payment methods and social network services can be done seamlessly by our expert developers. We are involved in every step of your mobile application journey, from conceptualization to launch. We help you in analyzing your business, come up with a design, and to decide the development flow for the application. We have expertise in native mobile app development, hybrid mobile app development, and progressive web app development. We deliver highly optimized applications that are easy to scale and maintain. Our focus is to develop a feature-rich mobile application that does not fall short on any user experience needs and at the same time also ensuring that the performance is not compromised. All this is ensured along with solid security implementations to keep the user data safe and secure. We can go from wireframing and prototyping to the development and launch rapidly without compromising on the quality of the application. We also make sure to implement all the industry approved compliances. Real-time support is provided to handle any sort of glitches that the application might face during the production run.",
         },
         {
           name: "AI Bots",
           route: "/services/ai-bots",
-          points: [],
-          description: "",
+          points: [
+            "Suitable for customer service segment.",
+            "Can be employed in retail, banking and insurance sectors.",
+            "Intelligent systems to create the best set of responses based on customers queries.",
+            "Bring down your response and operations time by automating your process.",
+          ],
+          description: "Chatbots or AI bots are the latest technological advancements that are finding utilization in almost all the fields these days. Specially, these are employed in the customer service segment which requires a quick response time. We help you in developing AI bots for all sorts of utilization which have an intuitive interface and with customized templates. Our specialization in AI helps us to create bots that understand a wide range of responses based on deep learning and machine learning. Apart from customer service, retail, banking, and insurance sector also find great use of these chatbots. Our chatbots help you in refining your operations at various scales.",
         },
       ],
     },
@@ -128,7 +144,7 @@ export const mainServices = {
           name: "GIS Services",
           route: "/services/gis-services",
           points: [],
-          description: "",
+          description: "GIS, which stands for Geographic Information System, is a spatial data management system with its associated features. The system stores data on various objects in the space, and enables reviewing, analysis or data updating, if possible. The system enables the visualization of objects in the space on the appropriate cartographic substrates.We in ORPAX recognized the importance of GIS mapping, as this advanced system found its application in numerous fields of industry and science.Namely, the increased requirements regarding information management and database linking of various geographic locations has created an enhanced necessity for GIS mapping. As more and more organizations venture into this novel technology system, there are many benefits of a vastly improved management of organization resourcesGIS has the capability of linking data sets in order of geographical locations and, therefore, the system facilitates the sharing of inter-department communication and information which in turn leads to better productivityGIS mapping is among the first steps in this process. It is a procedure of collecting data about objects in the space, which necessarily involves recording the geographical position of the object (x and y coordinates)This is why GIS mapping is a very important aspect of GIS that we at ORPAX invest in. Today, we have the resources required to provide a fully automated service for all types of projects that require modern GIS analysis and software tools. Technology on its own has no great value if you don’t have skilled and knowledgeable human resources to put it into practical use, manage and develop it. At ORPAX, we are not only dedicated to GIS mapping, but to people who can apply these solutions to real-world situations. Our dedicated and highly competent team of experts has achieved breakthrough innovations in implementing GIS mapping with aim of integrating spatial data and other data resources and preparing for the phase of GIS digitization.",
         },
         {
           name: "GIS Mapping",
@@ -169,13 +185,13 @@ export const mainServices = {
           description: "",
         },
         {
-          name: 'Topographical & Cadastral Mapping',
+          name: "Topographical & Cadastral Mapping",
           route: "/services/Topographical & Cadastral Mapping",
           points: [],
           description: "",
         },
         {
-          name: 'Land Information System',
+          name: "Land Information System",
           route: "/services/Land Information System",
           points: [],
           description: "",
@@ -187,13 +203,13 @@ export const mainServices = {
           description: "",
         },
         {
-          name:  'Data Base Development',
+          name: "Data Base Development",
           route: "/services/Data Base Development",
           points: [],
           description: "",
         },
         {
-          name: 'Data Integration and Analysis',
+          name: "Data Integration and Analysis",
           route: "/services/Data Integration and Analysis",
           points: [],
           description: "",
@@ -207,13 +223,13 @@ export const mainServices = {
           description: "",
         },
         {
-          name: 'Development of Digital Elevation Model',
+          name: "Development of Digital Elevation Model",
           route: "/services/Development of Digital Elevation Model",
           points: [],
           description: "",
         },
         {
-          name: 'Raster and Vector Data Conversion',
+          name: "Raster and Vector Data Conversion",
           route: "/services/Raster and Vector Data Conversion",
           points: [],
           description: "",
@@ -225,13 +241,13 @@ export const mainServices = {
           description: "",
         },
         {
-          name:  'Data Base Development',
+          name: "Data Base Development",
           route: "/services/Data Base Development",
           points: [],
           description: "",
         },
         {
-          name: 'Data Integration and Analysis',
+          name: "Data Integration and Analysis",
           route: "/services/Data Integration and Analysis",
           points: [],
           description: "",
@@ -240,9 +256,3 @@ export const mainServices = {
     },
   ],
 };
-
-
-
-
-
-

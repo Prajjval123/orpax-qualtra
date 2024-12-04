@@ -8,7 +8,6 @@ const services = [['Home', '/'],
   ['Projects', 'projects'],
   ['Clients', '/clients'],
   ['Testimonials', '/testimonials'],
-  ['Partners', '/partners'],
   ['Contact', '/contact']]
 
 
