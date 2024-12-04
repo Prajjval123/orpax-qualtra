@@ -24,6 +24,10 @@ const App = () => {
               <Header />
             </div>
             <Routes>
+            <Route
+                path="/"
+                element={<div className="animate-fade-in"><Home /></div>}
+              />
               <Route
                 path="/home"
                 element={<div className="animate-fade-in"><Home /></div>}
