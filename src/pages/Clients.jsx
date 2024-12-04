@@ -32,7 +32,7 @@ const Clients = () => {
         {clients.map((client, index) => (
           <div
             key={index}
-            className="bg-white animate-slide shadow-lg rounded-lg flex justify-center items-center p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+            className="bg-white shadow-lg rounded-lg flex justify-center items-center p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
           >
             <img
               src={client}

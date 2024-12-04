@@ -1,5 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
+import Clients from "./Clients";
+import HomeClients from "../components/HomeClients";
 
 const About = () => {
   return (
@@ -58,25 +60,25 @@ const About = () => {
           values.
         </p>
         <div className="flex flex-col gap-8">
-        <h1 className="text-5xl font-bold mb-6 text-center pt-24">
-          Meet Our Team
-        </h1>
-        <div className="flex gap-12">
-          <div className="flex flex-col gap-8 w-64 transform transition-transform duration-300 hover:scale-105 cursor-pointer">
-            <img
-              src="/assets/arnab.jpg"
-              alt=""
-              className="w-68 h-88 rounded-md"
-            />
+          <h1 className="text-5xl font-bold mb-6 text-center pt-24">
+            Meet Our Team
+          </h1>
+          <div className="flex gap-12">
+            <div className="flex flex-col gap-8 w-64 transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+              <img
+                src="/assets/arnab.jpg"
+                alt=""
+                className="w-68 h-88 rounded-md"
+              />
+            </div>
+            <div className="flex gap-8 w-64 transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+              <img
+                src="/assets/prasun.jpg"
+                alt=""
+                className="w-68 h-88 rounded-md"
+              />
+            </div>
           </div>
-          <div className="flex gap-8 w-64 transform transition-transform duration-300 hover:scale-105 cursor-pointer">
-            <img
-              src="/assets/prasun.jpg"
-              alt=""
-              className="w-68 h-88 rounded-md"
-            />
-          </div>
-        </div>
         </div>
       </section>
     </>
