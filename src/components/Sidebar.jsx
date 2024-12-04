@@ -15,7 +15,7 @@ const services = [['Home', '/'],
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   return (
     <div
-    className={`fixed top-0 right-0 h-2/3 backdrop-blur-lg rounded-r-none border border-white shadow-lg p-6 hover:shadow-xl z-40 transform transition-transform duration-300 rounded-lg ${
+    className={`fixed top-0 right-0 h-3/4  bg-black rounded-r-none border border-white shadow-lg p-6 hover:shadow-xl z-40 transform transition-transform duration-300 rounded-lg ${
       isSidebarOpen ? "translate-x-0" : "translate-x-full"
     } w-1/2 sm:w-64 md:w-72`}
   >
@@ -28,7 +28,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
     </button>
 
     {/* Sidebar Links */}
-    <ul className="flex flex-col items-center mt-16 space-y-4 text-white">
+    <ul className="flex flex-col items-center mt-12 space-y-4 text-white">
       {services.map((service, index) => (
         <li className="w-full text-gray-400 hover:bg-red-600 rounded-lg pointer text-center hover:text-white" key={index}>
           <Link to={`${service[1]}`} onClick={toggleSidebar}>

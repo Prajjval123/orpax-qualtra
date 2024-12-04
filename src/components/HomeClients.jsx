@@ -29,7 +29,7 @@ const clients = [
         </h1>
         <div className="relative flex items-center w-full my-24 overflow-hidden">
           {/* Sliding container */}
-          <div className="flex w-[200%] animate-slide space-x-4">
+          <div className="flex w-[200%] sm:animate-slide space-x-4">
             {clients.concat(clients).map((client, index) => (
               <img
                 key={index}

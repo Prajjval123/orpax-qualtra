@@ -6,7 +6,7 @@ const About = () => {
     <>
       <section className="text-white p-8 flex flex-col gap-8 lg:p-24 animate-fade-in-later">
         <h1 className="text-5xl font-bold mb-6 text-center">About Us</h1>
-        <p className="text-lg">
+        <p className="text-center sm:text-left text-lg">
           Since our inauguration in 2001, we have come a long way from a modest
           informal group of service providers to become the industry leading
           cartel representing a group of collective and organized SMEs. We offer
@@ -28,7 +28,7 @@ const About = () => {
       </section>
       <section className="bg-gray-900 text-white p-8 flex flex-col gap-8 lg:p-24">
         <h1 className="text-5xl font-bold mb-6 text-center">Our Team</h1>
-        <p className="text-lg">
+        <p className="text-center sm:text-left text-lg">
           Our team is rich with unrivalled IT experience and expertise with
           resources to provide services personifying responsibility,
           flexibility, agility and end to end visibility. With our assured
@@ -61,15 +61,15 @@ const About = () => {
         <h1 className="text-5xl font-bold mb-6 text-center pt-24">
           Meet Our Team
         </h1>
-        <div className="flex gap-24">
-          <div className="flex flex-col gap-8 w-64">
+        <div className="flex gap-12">
+          <div className="flex flex-col gap-8 w-64 transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <img
               src="/assets/arnab.jpg"
               alt=""
               className="w-68 h-88 rounded-md"
             />
           </div>
-          <div className="flex gap-8 w-64">
+          <div className="flex gap-8 w-64 transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <img
               src="/assets/prasun.jpg"
               alt=""
