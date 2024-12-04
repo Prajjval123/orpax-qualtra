@@ -63,11 +63,11 @@ const Footer = () => {
           {/* Social Media */}
           <div className="h-full text-center md:grid-cols-3 flex flex-col gap-2">
             <h1 className="text-3xl text-nowrap">Follow us on:</h1>
-            <div className="flex flex-col justify-center gap-3">
+            <div className="flex flex-col justify-center gap-3 ">
               {icons.map((icon) => (
                 <div
                   key={icon.name}
-                  className="flex gap-2 items-center justify-center"
+                  className="flex gap-2 items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
                 >
                   <a
                     href="#"
@@ -88,11 +88,11 @@ const Footer = () => {
           <div className="h-full flex flex-col gap-4">
             <h3 className="text-3xl text-nowrap">Newsletter Signup</h3>
             <form className="flex flex-col justify-center">
-              <div className="flex flex-col sm:flex gap-2 items-center">
+              <div className="flex flex-col sm:flex gap-2 items-center ">
                 <input
                   type="email"
                   placeholder="Enter Your Email Address"
-                  className="p-2 w-full rounded-md bg-zinc-800 text-white font-thin text-sm focus:ring-2 focus:ring-red-500 focus:outline-none"
+                  className="p-2 w-full rounded-md bg-zinc-800 text-white font-thin text-sm focus:ring-2 focus:ring-red-500 focus:outline-none transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
                 />
                 <button
                   type="submit"
@@ -109,7 +109,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-10 pt-6">
           <div className="grid grid-cols-1 lg:grid-rows-1 md:grid-cols-2 gap-8">
             {/* Links */}
-            <div className="flex flex-wrap justify-center gap-4 text-sm md:justify-start">
+            <div className="flex flex-wrap justify-center gap-4 text-md  md:justify-start">
               {sitemap.map((site) => (
                 <a href="#" className="hover:text-white">
                   {site}
@@ -117,7 +117,7 @@ const Footer = () => {
               ))}
             </div>
             {/* Copyright */}
-            <p className="text-sm flex justify-center text-center lg:justify-end">
+            <p className="text-md flex justify-center text-center lg:justify-end">
               © 2024 ORPAX QUALTRA. All Rights Reserved.
             </p>
           </div>

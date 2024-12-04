@@ -25,18 +25,17 @@ const cards = [
 const HeroSection = () => {
   return (
     <div
-      className="gap-8 relative z-10 flex flex-col text-white"
+      className="gap-8 relative mt-24 z-10 flex flex-col text-white px-12"
     >
       {/* Typing Title */}
-
-      <h1 className="text-5xl font-semibold leading-snug text-center md:text-left max-w-4xl opacity-0 animate-fade-in-later ">
+      <h1 className="text-5xl font-semibold leading-snug text-center md:text-left max-w-4xl opacity-100 animate-fade-in-later ">
         Transforming Your <span className="text-red-500">Challenges</span>
         <br /> Into Tailored Solutions.
       </h1>
 
       {/* Content Section */}
-      <div className="mt-6 text-lg opacity-0 animate-fade-in-later">
-        <p className="mt-6 max-w-2xl font-light text-center md:text-left">
+      <div className="mt-6 text-lg opacity-100 animate-fade-in-later">
+        <p className=" max-w-2xl font-light text-center md:text-left">
           Running a business, whether big, small, or medium, constantly involves
           challenges. <br></br>At OQ, we look forward to helping you by working
           as an extension of your team to better understand your requirements,
@@ -129,7 +128,7 @@ const HeroSection = () => {
       <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 text-center lg:text-left gap-8 bg-banner bg-repeat">
         {/* IT Card */}
         {cards.map((card) => (
-          <div key={card.number} className="flex flex-col justify-between text-white rounded-xl border border-white shadow-lg p-6 hover:shadow-xl transform transition duration-300">
+          <div key={card.number} className="flex flex-col justify-between text-white rounded-xl border border-white shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
             <div>
               <div className="flex flex-col justify-center space-y-2 mb-4">
                 <span className="text-red-600 text-3xl ">0{card.number}.</span>

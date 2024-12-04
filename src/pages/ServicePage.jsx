@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { mainServices } from "../constants/utils";
 import HomeServices from "../components/HomeServices";
 import Clients from "./Clients";
+import HomeClients from "../components/HomeClients";
 
 const ServicePage = () => {
   const { serviceName } = useParams();
@@ -19,7 +20,8 @@ const ServicePage = () => {
   }
   return (
     <>
-      <div className="bg-gray-900 text-gray-100 p-6 lg:p-12 min-h-screen">
+      <div className="flex flex-col gap-24">
+      <div className=" text-gray-100 p-6 lg:p-12 min-h-screen">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-400 mb-8">
           <span>Services</span> / <span>IT Services</span> /{" "}
@@ -66,7 +68,8 @@ const ServicePage = () => {
         </div>
       </div>
       <HomeServices />
-      <Clients />
+      <HomeClients />
+      </div>
     </>
   );
 };

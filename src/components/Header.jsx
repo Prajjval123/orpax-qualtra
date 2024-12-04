@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa"; // Dropdown icon
+import { FaBars, FaTimes } from "react-icons/fa"; // Dropdown icon
 import ServicesDropdown from "./ServicesDropdown";
 import Sidebar from "./Sidebar";
 
@@ -88,12 +88,12 @@ const Header = () => {
                   }
                 >
                   <Link
-                    to={link === "Services" ? "#" : `/${link.toLowerCase()}`}
-                    className={`hover:text-gray-500 transition duration-100 ${
+                    to={`/${link.toLowerCase()}`}
+                    className={`hover:text-red-500 transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md ${
                       selected === link
-                        ? "text-gray-500 underline"
+                        ? "text-red-500 underline"
                         : "text-white"
-                    } ${link == 'Contact' ? 'bg-red-600 rounded p-1' : ''}`}
+                    } ${link == 'Contact' ? 'bg-red-600 hover:bg-red-700 rounded p-2 hover:text-white' : ''}`}
                     onMouseOver={(link) =>
                       link === "Services" && isHoverHandle(true)
                     }
@@ -103,19 +103,10 @@ const Header = () => {
                   >
                     {link}
                   </Link>
-                  {/* {link === "Services" && (
-                    <FaChevronDown
-                      className={`ml-2 ${
-                        isHover ? "text-gray-500" : "text-white"
-                      } transition-transform duration-200 ${
-                        isServiceDropdownOpen ? "rotate-180" : ""
-                      } `}
-                    />
-                  )} */}
                 </div>
                 {/* Render Dropdown */}
                 {link === "Services" && (
-                  <div className="absolute top-8 left-0">
+                  <div className="absolute top-8 left-0 z-50">
                     <ServicesDropdown
                       isServiceDropdownOpen={isServiceDropdownOpen}
                     />

@@ -41,7 +41,7 @@ const projects = [
 
 const HomeProjects = () => {
   return (
-    <div className="py-12 pb-0 flex flex-col gap-6 min-h-screen">
+    <div className="py-12 pb-0 flex flex-col gap-6 min-h-screen px-12">
       <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Projects
       </h1>
@@ -50,7 +50,7 @@ const HomeProjects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gray-900 w-full flex flex-col h-full gap-4 p-2 pb-4 text-white rounded-xl border border-white shadow-lg hover:shadow-xl transform transition duration-300"
+            className="bg-gray-900 w-full flex flex-col h-full gap-4 p-2 pb-4 text-white rounded-xl border border-white shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             <img
               src={project.image}

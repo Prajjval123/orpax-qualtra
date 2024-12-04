@@ -45,14 +45,14 @@ const HomeServices = () => {
   ];
 
   return (
-    <div className="py-12 pb-0 flex flex-col gap-12">
+    <div className="py-12 pb-0 flex flex-col gap-12 px-12">
       <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Services & Domains
       </h1>
       <div className=" mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">
         {/* IT Card */}
         {services.map((service) => (
-          <div key={service.title} className="flex flex-col text-center gap-4 h-full text-white rounded-xl border border-white shadow-lg px-2 py-12 hover:shadow-xl transform transition duration-300">
+          <div key={service.title} className="flex flex-col text-center gap-4 h-full text-white rounded-xl border border-white shadow-lg px-2 py-12 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
             <div className="w-24 h-24 mx-auto">
               <img src={service.image} alt="" className="filter invert" />
             </div>
@@ -64,7 +64,7 @@ const HomeServices = () => {
         ))}
         {/* Below Card */}
         {services_below.map((services) => (
-          <div className="w-full h-full flex flex-col text-left gap-4 text-white rounded-xl border border-white shadow-lg p-6 py-12 hover:shadow-xl transform transition duration-300">
+          <div className="w-full h-full flex flex-col text-left gap-4 text-white rounded-xl border border-white shadow-lg p-6 py-12 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
             {services.map((service) => <h6 className="text-sm text-gray-300 flex gap-2 whitespace-nowrap h-[297.6] justify-center"><div className={service == ""? 'hidden' : 'inline'}>→</div> {service}</h6>)}
           </div>
         ))}

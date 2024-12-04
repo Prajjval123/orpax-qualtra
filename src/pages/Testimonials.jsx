@@ -31,7 +31,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="w-fulltext-white pb-0 flex flex-col gap-6 items-center">
+    <div className="w-fulltext-white pb-0 flex flex-col gap-6 items-center mt-24 px-12">
       <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center text-white animate-fade-in">
         Testimonials
       </h1>
@@ -45,7 +45,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full flex flex-col justify-center px-6 sm:px-24 py-4 "
+              className="flex-shrink-0 w-full flex flex-col justify-center px-6 sm:px-24 py-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
             >
               <div className="gap-8 rounded-lg shadow-lg text-center px-4 py-6 w-full ">
                 <p className="text-lg sm:text-xl italic mb-6">{testimonial.description}</p>

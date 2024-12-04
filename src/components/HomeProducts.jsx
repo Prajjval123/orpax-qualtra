@@ -17,7 +17,7 @@ const products = [
 
 const Products = () => {
   return (
-    <div className="pb-0 flex flex-col gap-6 min-h-screen">
+    <div className="pb-0 flex flex-col gap-6 min-h-screen px-12">
       <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Products
       </h1>
@@ -26,7 +26,7 @@ const Products = () => {
         {products.map((product, index) => (
           <div
             key={index}
-            className="bg-gray-900 h-full w-full flex flex-col justify-between gap-4 p-2 text-white rounded-xl border border-white shadow-lg hover:shadow-xl transform transition duration-300"
+            className="bg-gray-900 h-full w-full flex flex-col justify-between gap-4 p-2 text-white rounded-xl border border-white shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             <h1 className="text-xl flex items-center justify-center font-semibold p-4 h-[90px] text-center">
               {product.title}

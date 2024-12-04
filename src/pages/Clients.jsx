@@ -24,15 +24,15 @@ const clients = [
 
 const Clients = () => {
   return (
-    <div className="w-full flex flex-col justify-center items-center px-4 md:px-12">
+    <div className="w-full flex flex-col justify-center items-center px-4 md:px-12 mt-24">
       <h1 className="text-3xl md:text-5xl font-semibold text-center text-white">
         Clients
       </h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 my-24">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-8 my-24">
         {clients.map((client, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-lg flex justify-center items-center p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+            className="bg-white animate-slide shadow-lg rounded-lg flex justify-center items-center p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
           >
             <img
               src={client}

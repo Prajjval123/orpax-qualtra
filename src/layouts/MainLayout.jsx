@@ -9,19 +9,11 @@ const MainLayout = ({ children }) => {
           alt="Background Decor"
           className="absolute top-0 left-0 w-3/6 object-contain"
         />
-        {/* Right-Side Image */}
-        {/* <div className="">
-        <img
-          src="/assets/For_Developing/Background/First_Section.png"
-          alt="Background Decor"
-          className="absolute top-0 right-0 w-3/6 object-contain bg-gradient-radial opacity-75 from-red-500 via-transparent to-blue-600 mix-blend-lighten shadow-blue-500/50"
-        />
-      </div> */}
         <div>
           <img
             src="/assets/additional_images/Computer_bg.png"
             alt="Background Decor"
-            className="absolute top-10 right-0 w-3/6 object-contain bg-gradient-radial opacity-75 from-red-500 via-transparent to-blue-600 mix-blend-lighten shadow-blue-500/50"
+            className="absolute top-20 right-10 opacity-50 w-2/3 object-contain bg-gradient-radial opacity-75 from-red-500 via-transparent to-blue-600 mix-blend-lighten shadow-blue-500/50 sm:w-3/4 sm:top-20 sm:right-5 md:w-1/2"
           />
         </div>
         {children}

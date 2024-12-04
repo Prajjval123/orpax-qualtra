@@ -9,8 +9,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-gray-900 text-white">
-      <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
+    <section id="contact" className=" text-white mt-24">
+      <h2 className="text-5xl text-center font-bold mb-12">Contact Us</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-lg mx-auto">
         <input
           type="text"

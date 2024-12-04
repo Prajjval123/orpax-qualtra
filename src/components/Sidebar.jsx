@@ -15,9 +15,9 @@ const services = [['Home', '/'],
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   return (
     <div
-    className={`fixed top-0 right-0 h-2/3 bg-black rounded-r-none border border-white shadow-lg p-6 hover:shadow-xl z-40 transform transition-transform duration-300 rounded-lg ${
+    className={`fixed top-0 right-0 h-2/3 backdrop-blur-lg rounded-r-none border border-white shadow-lg p-6 hover:shadow-xl z-40 transform transition-transform duration-300 rounded-lg ${
       isSidebarOpen ? "translate-x-0" : "translate-x-full"
-    } w-3/4 sm:w-64 md:w-72`}
+    } w-1/2 sm:w-64 md:w-72`}
   >
     {/* Close Button */}
     <button
