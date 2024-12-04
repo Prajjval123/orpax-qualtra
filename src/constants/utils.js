@@ -163,7 +163,7 @@ export const mainServices = {
       ],
       value2: [
         {
-          name: "'Digital Photogrammetry'",
+          name: "Digital Photogrammetry",
           route: "/services/digital-photogrammetry",
           points: [],
           description: "",
@@ -181,8 +181,46 @@ export const mainServices = {
           description: "",
         },
         {
-          name: "'Global Positioning System'",
+          name: "Global Positioning System",
           route: "/services/Global Positioning System",
+          points: [],
+          description: "",
+        },
+        {
+          name:  'Data Base Development',
+          route: "/services/Data Base Development",
+          points: [],
+          description: "",
+        },
+        {
+          name: 'Data Integration and Analysis',
+          route: "/services/Data Integration and Analysis",
+          points: [],
+          description: "",
+        },
+      ],
+      value3: [
+        {
+          name: "Terrain Modelling",
+          route: "/services/Terrain Modelling",
+          points: [],
+          description: "",
+        },
+        {
+          name: 'Development of Digital Elevation Model',
+          route: "/services/Development of Digital Elevation Model",
+          points: [],
+          description: "",
+        },
+        {
+          name: 'Raster and Vector Data Conversion',
+          route: "/services/Raster and Vector Data Conversion",
+          points: [],
+          description: "",
+        },
+        {
+          name: "Desktop and Web GIS Application",
+          route: "/services/Desktop and Web GIS Application",
           points: [],
           description: "",
         },
@@ -202,4 +240,9 @@ export const mainServices = {
     },
   ],
 };
+
+
+
+
+
 

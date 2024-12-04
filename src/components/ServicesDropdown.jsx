@@ -11,7 +11,7 @@ function ServicesDropdown({ isServiceDropdownOpen }) {
   return (
     <div className="relative">
       {isServiceDropdownOpen && (
-        <div className="absolute border border-white bg-black mt-2 rounded shadow-lg w-[800px] z-50 p-4 animate-popup ">
+        <div className="absolute border border-white bg-black mt-2 rounded shadow-lg w-[1000px] z-50 p-4 animate-popup ">
           <div className="grid grid-cols-4 gap-4">
             {/* IT Services */}
             <div className="grid-col-1">
@@ -43,7 +43,7 @@ function ServicesDropdown({ isServiceDropdownOpen }) {
                     <h4 className="font-semibold  text-white border-b pb-2 mb-2">
                       {service.name}
                     </h4>
-                    <div className="flex gap-2">
+                    <div className="flex gap-4">
                     <ul className="flex gap-2 w-full max-w-[180px] whitespace-nowrap overflow-hidden text-ellipsis">
                       <li className="space-y-1">
                         {service.value1.map((value) => (
@@ -59,7 +59,7 @@ function ServicesDropdown({ isServiceDropdownOpen }) {
                     </ul>
                     <ul className="flex gap-2 w-full">
                       <li className="space-y-1">
-                        {service.value1.map((value) => (
+                        {service.value2.map((value) => (
                           <li
                             key={value.name}
                             className="hover:text-red-500 cursor-pointer"
@@ -72,7 +72,7 @@ function ServicesDropdown({ isServiceDropdownOpen }) {
                     </ul>
                     <ul className="flex gap-2 w-full">
                       <li className="space-y-1">
-                        {service.value1.map((value) => (
+                        {service.value3.map((value) => (
                           <li
                             key={value.name}
                             className="hover:text-red-500 cursor-pointer"

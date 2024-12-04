@@ -54,7 +54,7 @@ const App = () => {
               />
               <Route
                 path="/clients"
-                element={<div className="animate-zoom-in"><Clients /></div>}
+                element={<div className="s"><Clients /></div>}
               />
               <Route
                 path="/testimonials"

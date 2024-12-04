@@ -24,18 +24,24 @@ const projects = [
     image: "/assets/For_Developing/Projects_Section/pension survey.png",
   },
   {
-    title:
-      "High Speed Railway Corridor : Howrah-Haldia, Client - INECO, PROINTEC",
+    title: "High Speed Railway Corridor, Howrah-Haldia : Client – INECO SPAIN",
     description: [
-      "Geo-referencing of toposheets.",
-      "Geo-referencing of satellite imagery.",
-      "Mosaicking of satellite imagery and toposheets.",
-      "Marking of the alignment on satellite imagery.",
+      "Geo referencing of toposheets.",
+      "Geo referencing of Satellite Imagery",
+      "Mosaicing of satellite Imageries and Toposheets",
+      "Marking of the alignment on satellite Imagery",
+      "Land use and Land Cover Map preparation at 1: 2500 or higher in PDF & JPEG ormat.",
       "All digital layers in soft copy.",
-      "Calculation of the land-use areas.",
-      "Contour generation/ DEM.",
     ],
-    image: "/assets/For_Developing/Projects_Section/high speed.png",
+    image: "/assets/For_Developing/Projects_Section/pension survey.png",
+  },
+  {
+    title: "High Speed Railway Corridor, Howrah-Haldia : Client – INECO SPAIN",
+    description: [
+      "Calculation of the land use areas Working of Satellite Imageries of required area.",
+      "Integration of total station data Contour Generation/ DEM",
+    ],
+    image: "/assets/For_Developing/Projects_Section/pension survey.png",
   },
 ];
 
@@ -45,8 +51,8 @@ const Projects = () => {
       <h1 className="text-5xl font-semibold mb-10 text-center text-white animate-fade-in">
         Projects
       </h1>
-      <div className="grid md:grid-cols-3 gap-8">
-      {projects.map((project, index) => (
+      <div className="grid md:grid-cols-2 gap-8">
+        {projects.map((project, index) => (
           <div
             key={index}
             className="bg-gray-900 w-full flex flex-col h-full gap-4 p-2 pb-4 text-white rounded-xl border border-white shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"

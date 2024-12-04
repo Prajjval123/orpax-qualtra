@@ -10,7 +10,9 @@ const ServicePage = () => {
   // Find the service details from the `services` object
   const allServices = [
     ...mainServices.IT_Services[0].value,
-    ...mainServices.GIS_Services[0].value,
+    ...mainServices.GIS_Services[0].value1,
+    ...mainServices.GIS_Services[0].value2,
+    ...mainServices.GIS_Services[0].value3,
   ];
 
   const service = allServices.find((item) => item.route.includes(serviceName));

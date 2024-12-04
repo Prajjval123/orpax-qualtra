@@ -2,15 +2,35 @@ import React from "react";
 
 const products = [
   {
-    title: "Hospital/Nursing Home Management Software",
+    title: "E-commerce B2B",
+    image: "/assets/For_Developing/Products_Section/online-payment-gateway.png",
+  },
+  {
+    title: "E-commerce B2C",
     image: "/assets/products/product1.jpg",
   },
   {
     title: "Supply Chain Management Software",
+    image: "/assets/For_Developing/Products_Section/dribbble.png",
+  },
+  {
+    title: "Hospital/Nursing Home Management Software",
+    image: "/assets/For_Developing/Products_Section/management software.png",
+  },
+  {
+    title: "Survey Analysis Tool",
     image: "/assets/products/product2.jpg",
   },
   {
-    title: "E-commerce B2B",
+    title: "Spa and Saloon Management System",
+    image: "/assets/products/product3.png",
+  },
+  {
+    title: "School & College Management Software",
+    image: "/assets/products/product3.png",
+  },
+  {
+    title: "Property/Hotel/Hostel Management System",
     image: "/assets/products/product3.png",
   },
 ];
