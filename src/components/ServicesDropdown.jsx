@@ -7,48 +7,89 @@ function ServicesDropdown({ isServiceDropdownOpen }) {
   const handleServiceClick = (route) => {
     navigate(route);
   };
-  
+
   return (
     <div className="relative">
       {isServiceDropdownOpen && (
-        <div className="absolute border border-white bg-black mt-2 rounded shadow-lg w-96 z-10050 hover:bg-black">
-          <div className="grid grid-cols-2 p-4 gap-4"> 
-            {mainServices.IT_Services.map((service) => (
-              <div>
-                <h4 className="font-semibold text-white border-b pb-2 mb-2">
-                  {service.name}
-                </h4>
-                <ul className="space-y-1">
-                  {service.value.map((value) => (
-                    <li
-                      key={value.name}
-                      className=" hover:text-red-500 cursor-pointer"
-                      onClick={() => handleServiceClick(value.route)}
-                    >
-                      {value.name}
-                    </li>
-                  ))}
-                </ul>
+        <div className="absolute border border-white bg-black mt-2 rounded shadow-lg w-[800px] z-50 p-4 animate-popup ">
+          <div className="grid grid-cols-4 gap-4">
+            {/* IT Services */}
+            <div className="grid-col-1">
+              {mainServices.IT_Services.map((service) => (
+                <div key={service.name}>
+                  <h4 className="font-semibold text-white border-b pb-2 mb-2">
+                    {service.name}
+                  </h4>
+                  <ul className="space-y-1">
+                    {service.value.map((value) => (
+                      <li
+                        key={value.name}
+                        className="hover:text-red-500 cursor-pointer"
+                        onClick={() => handleServiceClick(value.route)}
+                      >
+                        {value.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {/* GIS Services */}
+            <div className="flex">
+              <div className=" whitespace-nowrap">
+                {mainServices.GIS_Services.map((service) => (
+                  <div key={service.name}>
+                    <h4 className="font-semibold  text-white border-b pb-2 mb-2">
+                      {service.name}
+                    </h4>
+                    <div className="flex gap-2">
+                    <ul className="flex gap-2 w-full max-w-[180px] whitespace-nowrap overflow-hidden text-ellipsis">
+                      <li className="space-y-1">
+                        {service.value1.map((value) => (
+                          <li
+                            key={value.name}
+                            className="hover:text-red-500 cursor-pointer"
+                            onClick={() => handleServiceClick(value.route)}
+                          >
+                            {value.name}
+                          </li>
+                        ))}
+                      </li>
+                    </ul>
+                    <ul className="flex gap-2 w-full">
+                      <li className="space-y-1">
+                        {service.value1.map((value) => (
+                          <li
+                            key={value.name}
+                            className="hover:text-red-500 cursor-pointer"
+                            onClick={() => handleServiceClick(value.route)}
+                          >
+                            {value.name}
+                          </li>
+                        ))}
+                      </li>
+                    </ul>
+                    <ul className="flex gap-2 w-full">
+                      <li className="space-y-1">
+                        {service.value1.map((value) => (
+                          <li
+                            key={value.name}
+                            className="hover:text-red-500 cursor-pointer"
+                            onClick={() => handleServiceClick(value.route)}
+                          >
+                            {value.name}
+                          </li>
+                        ))}
+                      </li>
+                    </ul>
+                    </div>
+                    
+                  </div>
+                ))}
               </div>
-            ))}
-            {mainServices.GIS_Services.map((service) => (
-              <div>
-                <h4 className="font-semibold text-white border-b pb-2 mb-2">
-                  {service.name}
-                </h4>
-                <ul className="space-y-1 text-white">
-                  {service.value.map((value) => (
-                    <li
-                      key={value.name}
-                      className="hover:hover:text-red-500 cursor-pointer"
-                      onClick={() => handleServiceClick(value.route)}
-                    >
-                      {value.name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+             
+            </div>
           </div>
         </div>
       )}

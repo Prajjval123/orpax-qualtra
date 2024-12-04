@@ -67,7 +67,7 @@ const Header = () => {
         <nav>
           <ul className="hidden lg:flex space-x-6 mx-auto font-light">
             {links.map((link) => (
-              <li key={link} className="relative group flex items-center">
+              <li key={link} className={`relative group flex items-center`} >
                 <div
                   className={`flex items-center ${
                     link === "Services" ? "cursor-pointer" : ""
@@ -106,7 +106,7 @@ const Header = () => {
                 </div>
                 {/* Render Dropdown */}
                 {link === "Services" && (
-                  <div className="absolute top-8 left-0 z-50">
+                  <div className="absolute top-full left-[-600%] z-50">
                     <ServicesDropdown
                       isServiceDropdownOpen={isServiceDropdownOpen}
                     />

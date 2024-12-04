@@ -21,17 +21,26 @@ const Products = () => {
       <h1 className="text-5xl font-semibold mb-10 text-center text-white animate-fade-in">
         Products
       </h1>
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="mt-12 mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">
+        {/* IT Card */}
         {products.map((product, index) => (
           <div
             key={index}
-            className="bg-gray-900 text-white w-full p-2 rounded-lg shadow-lg flex flex-col items-center justify-between transform transition-transform duration-300 hover:scale-105  animate-popup"
+            className="bg-gray-900 h-full w-full flex flex-col justify-between gap-4 p-2 text-white rounded-xl border border-white shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
-            <h1 className=" text-gray-300 mb-4">{product.title}</h1>
-            <div className="relative">
-              <img src={product.image} alt="Project" />
-              <button className="w-full absolute -bottom-0.5 h-12 bg-red-500">Request a free demo</button>
-            </div>
+            <h1 className="text-xl flex items-center justify-center font-semibold p-4 h-[90px] text-center">
+              {product.title}
+            </h1>
+            
+            <img
+              src={product.image}
+              alt={product.image}
+              className="rounded-md object-cover w-full"
+            />
+            <h1 className="text-lg text-center font-semibold p-4 text-gray-300">
+              Request a free demo
+            </h1>
+            
           </div>
         ))}
       </div>

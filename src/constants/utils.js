@@ -123,7 +123,7 @@ export const mainServices = {
   GIS_Services: [
     {
       name: "GIS Services",
-      value: [
+      value1: [
         {
           name: "GIS Services",
           route: "/services/gis-services",
@@ -157,6 +157,44 @@ export const mainServices = {
         {
           name: "Remote Sensing",
           route: "/services/remote-sensing",
+          points: [],
+          description: "",
+        },
+      ],
+      value2: [
+        {
+          name: "'Digital Photogrammetry'",
+          route: "/services/digital-photogrammetry",
+          points: [],
+          description: "",
+        },
+        {
+          name: 'Topographical & Cadastral Mapping',
+          route: "/services/Topographical & Cadastral Mapping",
+          points: [],
+          description: "",
+        },
+        {
+          name: 'Land Information System',
+          route: "/services/Land Information System",
+          points: [],
+          description: "",
+        },
+        {
+          name: "'Global Positioning System'",
+          route: "/services/Global Positioning System",
+          points: [],
+          description: "",
+        },
+        {
+          name:  'Data Base Development',
+          route: "/services/Data Base Development",
+          points: [],
+          description: "",
+        },
+        {
+          name: 'Data Integration and Analysis',
+          route: "/services/Data Integration and Analysis",
           points: [],
           description: "",
         },
