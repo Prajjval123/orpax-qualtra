@@ -34,7 +34,6 @@ const Header = () => {
 
   const handleServiceDropdown = () => {
     setIsServiceDropdownOpen(!isServiceDropdownOpen);
-    console.log(isServiceDropdownOpen);
   };
 
   const isHoverHandle = (hover) => {
@@ -89,11 +88,11 @@ const Header = () => {
                 >
                   <Link
                     to={`/${link.toLowerCase()}`}
-                    className={`hover:text-red-500 transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md ${
+                    className={`hover:text-red-500 ${link === 'Contact' ? 'hover:text-white' : ''} transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md ${
                       selected === link
-                        ? "text-red-500 underline"
+                        ? "text-red-500"
                         : "text-white"
-                    } ${link == 'Contact' ? 'bg-red-600 hover:bg-red-700 rounded p-2 hover:text-white' : ''}`}
+                    } ${link === 'Contact' ? 'bg-red-600 hover:bg-red-700 rounded p-2 text-white' : ''}`}
                     onMouseOver={(link) =>
                       link === "Services" && isHoverHandle(true)
                     }
@@ -109,6 +108,7 @@ const Header = () => {
                   <div className="absolute top-full left-[-900%] z-50">
                     <ServicesDropdown
                       isServiceDropdownOpen={isServiceDropdownOpen}
+                      handleServiceDropdown={handleServiceDropdown}
                     />
                   </div>
                 )}

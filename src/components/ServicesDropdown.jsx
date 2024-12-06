@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { mainServices } from "../constants/utils";
 
-function ServicesDropdown({ isServiceDropdownOpen }) {
+function ServicesDropdown({ isServiceDropdownOpen, handleServiceDropdown }) {
   const navigate = useNavigate();
 
   const handleServiceClick = (route) => {
@@ -11,7 +11,7 @@ function ServicesDropdown({ isServiceDropdownOpen }) {
   return (
     <div className="relative">
       {isServiceDropdownOpen && (
-        <div className="absolute border border-white bg-black mt-2 rounded shadow-lg w-[1000px] z-50 p-4 animate-popup ">
+        <div className="absolute border border-white bg-black mt-2 rounded shadow-lg w-[1000px] z-50 p-4 animate-popup" onClick={handleServiceDropdown}>
           <div className="grid grid-cols-4 gap-4">
             {/* IT Services */}
             <div className="grid-col-1">

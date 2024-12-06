@@ -51,8 +51,8 @@ const HomeServices = () => {
       </h1>
       <div className=" mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">
         {/* IT Card */}
-        {services.map((service) => (
-          <div key={service.title} className="flex flex-col text-center gap-4 h-full text-white rounded-xl border border-white shadow-lg px-2 py-12 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
+        {services.map((service, index) => (
+          <div key={index} className="flex flex-col text-center gap-4 h-full text-white rounded-xl border border-white shadow-lg px-2 py-12 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
             <div className="w-24 h-24 mx-auto">
               <img src={service.image} alt="" className="filter invert" />
             </div>

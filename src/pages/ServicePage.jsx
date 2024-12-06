@@ -17,60 +17,76 @@ const ServicePage = () => {
 
   const service = allServices.find((item) => item.route.includes(serviceName));
 
+  console.log(service);
+
   if (!service) {
     return <div>Service not found</div>;
   }
   return (
     <>
       <div className="flex flex-col gap-24">
-      <div className=" text-gray-100 p-6 lg:p-12 min-h-screen">
-        {/* Breadcrumb */}
-        <nav className="text-sm text-gray-400 mb-8">
-          <span>Services</span> / <span>IT Services</span> /{" "}
-          <span className="text-red-500">{service.name}</span>
-        </nav>
+        <div className=" text-gray-100 p-6 lg:p-12 min-h-screen">
+          {/* Breadcrumb */}
+          <nav className="text-lg text-gray-400 mb-8">
+            <span>Services</span> / <span>IT Services</span> /{" "}
+            <span className="text-red-500">{service.name}</span>
+          </nav>
 
-        {/* Title */}
-        <h1 className="text-4xl font-bold text-gray-100 mb-6 text-center">
-          {service.name}
-        </h1>
+          <div className="lg:mx-8 bg-black p-12 pb-0">
+            {/* Title */}
+            <h1 className="text-5xl font-bold text-gray-100 mb-24 text-center border-b-4 pb-2  border-red-600">
+              {service.name}
+            </h1>
 
-        {/* Image and Bullet Points */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
-          {/* Image */}
-          <div className="flex-shrink-0 w-full max-w-sm md:max-w-md lg:max-w-lg">
-            <img
-              src="/assets/services/cloud-computing.jpg"
-              alt="Cloud Computing"
-              className="rounded-lg shadow-md w-full h-auto"
-            />
+            {/* Image and Bullet Points */}
+            <div className={`flex flex-col lg:flex-row items-center justify-between gap-12 mb-12 `}>
+              {/* Image */}
+              <div className="flex-shrink-0 w-full max-w-sm md:max-w-md lg:max-w-lg border-2 rounded-lg shadow-md border-red-600">
+                <img
+                  src="/assets/services/cloud-computing.jpg"
+                  alt="Cloud Computing"
+                  className="rounded-lg shadow-md w-full h-auto transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+                />
+              </div>
+
+              {/* Bullet Points */}
+              <div className={`flex flex-col gap-8 py-16 items-center w-full`}>
+                {service.points[0].title && (
+                  <h1 className=" text-white text-center lg:text-left font-bold text-3xl">
+                    {service.points[0].title}
+                  </h1>
+                )}
+                <div>
+                  <ul className="text-center lg:text-left text-gray-300 text-xl leading-relaxed">
+                    {service.points[0].points.map((point) => (
+                      <li className="transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Description */}
+            <div className="text-gray-300 text-lg leading-relaxed text-center lg:text-left">
+              <h1 className="text-3xl text-white font-bold pb-8 text-center">
+                Description
+              </h1>
+              <p>{service.description}</p>
+            </div>
           </div>
 
-          {/* Bullet Points */}
-          <div className="flex-1 flex justify-center">
-            <ul className="list-disc pl-6 text-gray-300 text-lg leading-relaxed">
-              {service.points.map((point) => (
-                <li>{point}</li>
-              ))}
-            </ul>
+          {/* Footer */}
+          <div className="mt-16">
+            <p className="text-center text-gray-400 text-sm">
+              For more information, contact us today and explore the
+              possibilities of the cloud.
+            </p>
           </div>
         </div>
-
-        {/* Description */}
-        <div className="text-gray-300 text-lg leading-relaxed text-center md:text-left">
-          <p>{service.description}</p>
-        </div>
-
-        {/* Footer */}
-        <div className="mt-16">
-          <p className="text-center text-gray-400 text-sm">
-            For more information, contact us today and explore the possibilities
-            of the cloud.
-          </p>
-        </div>
-      </div>
-      <HomeServices />
-      <HomeClients />
+        <HomeServices />
+        <HomeClients />
       </div>
     </>
   );

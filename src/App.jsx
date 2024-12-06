@@ -13,6 +13,7 @@ import Testimonials from "./pages/Testimonials";
 import Partners from "./pages/Partners";
 import MainLayout from "./layouts/MainLayout";
 import ServicePage from "./pages/ServicePage";
+import ThankYouPage from "./pages/ThankYouPage";
 
 const App = () => {
   return (
@@ -24,49 +25,101 @@ const App = () => {
               <Header />
             </div>
             <Routes>
-            <Route
+              <Route
                 path="/"
-                element={<div className="animate-fade-in"><Home /></div>}
+                element={
+                  <div className="animate-fade-in">
+                    <Home />
+                  </div>
+                }
               />
               <Route
                 path="/home"
-                element={<div className="animate-fade-in"><Home /></div>}
+                element={
+                  <div className="animate-fade-in">
+                    <Home />
+                  </div>
+                }
               />
               <Route
                 path="/about"
-                element={<div className="animate-zoom-in"><About /></div>}
+                element={
+                  <div className="animate-zoom-in">
+                    <About />
+                  </div>
+                }
               />
               <Route
                 path="/services"
-                element={<div className="animate-slide-left"><Services /></div>}
+                element={
+                  <div className="animate-slide-left">
+                    <Services />
+                  </div>
+                }
               />
               <Route
                 path="/services/:serviceName"
-                element={<div className="animate-zoom-in"><ServicePage /></div>}
+                element={
+                  <div className="animate-zoom-in">
+                    <ServicePage />
+                  </div>
+                }
               />
               <Route
                 path="/products"
-                element={<div className="animate-zoom-in"><Products /></div>}
+                element={
+                  <div className="animate-zoom-in">
+                    <Products />
+                  </div>
+                }
               />
               <Route
                 path="/projects"
-                element={<div className="animate-slide-left"><Projects /></div>}
+                element={
+                  <div className="animate-slide-left">
+                    <Projects />
+                  </div>
+                }
               />
               <Route
                 path="/clients"
-                element={<div className="s"><Clients /></div>}
+                element={
+                  <div className="s">
+                    <Clients />
+                  </div>
+                }
               />
               <Route
                 path="/testimonials"
-                element={<div className="animate-zoom-in"><Testimonials /></div>}
+                element={
+                  <div className="animate-zoom-in">
+                    <Testimonials />
+                  </div>
+                }
               />
               <Route
                 path="/partners"
-                element={<div className="animate-slide-right"><Partners /></div>}
+                element={
+                  <div className="animate-slide-right">
+                    <Partners />
+                  </div>
+                }
               />
               <Route
                 path="/contact"
-                element={<div className="animate-fade-in-slow"><Contact /></div>}
+                element={
+                  <div className="animate-fade-in-slow">
+                    <Contact />
+                  </div>
+                }
+              />
+              <Route
+                path="/thank-you"
+                element={
+                  <div className="animate-fade-in-slow">
+                    <ThankYouPage />
+                  </div>
+                }
               />
             </Routes>
           </MainLayout>
