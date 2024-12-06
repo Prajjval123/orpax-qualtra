@@ -11,7 +11,7 @@ const products = [
   },
   {
     title: "E-commerce B2B",
-    image: "/assets/For_Developing/Products_Section/online-payment-gateway.png",
+    
   },
 ];
 

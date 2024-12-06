@@ -43,23 +43,23 @@ const ServicePage = () => {
               {/* Image */}
               <div className="flex-shrink-0 w-full max-w-sm md:max-w-md lg:max-w-lg border-2 rounded-lg shadow-md border-red-600">
                 <img
-                  src="/assets/services/cloud-computing.jpg"
+                  src={service.image}
                   alt="Cloud Computing"
                   className="rounded-lg shadow-md w-full h-auto transform transition-transform duration-300 hover:scale-105 cursor-pointer"
                 />
               </div>
 
               {/* Bullet Points */}
-              <div className={`flex flex-col gap-8 py-16 items-center w-full`}>
+              <div className={`flex flex-col gap-8 py-16 items-center lg:items-start w-full`}>
                 {service.points[0].title && (
                   <h1 className=" text-white text-center lg:text-left font-bold text-3xl">
                     {service.points[0].title}
                   </h1>
                 )}
                 <div>
-                  <ul className="text-center lg:text-left text-gray-300 text-xl leading-relaxed">
+                  <ul className="text-center lg:text-left text-gray-400 text-xl leading-relaxed pl-8 space-y-2">
                     {service.points[0].points.map((point) => (
-                      <li className="transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+                      <li className="list-none lg:list-disc transform transition-transform duration-300 hover:scale-105 cursor-pointer">
                         {point}
                       </li>
                     ))}

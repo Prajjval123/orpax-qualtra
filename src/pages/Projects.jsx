@@ -13,7 +13,7 @@ const projects = [
         "Land use and Land Cover Map preparation at 1: 2500 or higher in PDF & JPEG ormat.",
         "All digital layers in soft copy.",
       ],
-      image: "/assets/For_Developing/Projects_Section/project-1.jpg",
+      image: "/assets/For_Developing/Projects_Section/pension survey.png",
       description: ''
     },
     {
@@ -21,7 +21,7 @@ const projects = [
         "Calculation of the land use areas Working of Satellite Imageries of required area.",
         "Integration of total station data Contour Generation/ DEM",
       ],
-      image: "/assets/For_Developing/Projects_Section/project-2.jpg",
+      image: "/assets/For_Developing/Projects_Section/high speed.png",
     },
   ],
   [

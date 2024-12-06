@@ -1,25 +1,5 @@
 import React from "react";
-const clients = [
-    "/assets/clients/client1.jpg",
-    "/assets/clients/client2.jpg",
-    "/assets/clients/client3.jpg",
-    "/assets/clients/client4.jpg",
-    "/assets/clients/client5.jpg",
-    "/assets/clients/client6.jpg",
-    "/assets/clients/client7.jpg",
-    "/assets/clients/client8.jpg",
-    "/assets/clients/client9.jpg",
-    "/assets/clients/client10.jpg",
-    "/assets/clients/client11.jpg",
-    "/assets/clients/client12.jpg",
-    "/assets/clients/client13.jpg",
-    "/assets/clients/client14.jpg",
-    "/assets/clients/client15.jpg",
-    "/assets/clients/client16.jpg",
-    "/assets/clients/client17.jpg",
-    "/assets/clients/client18.jpg",
-    "/assets/clients/client19.jpg",
-  ];
+import { clients } from "../constants/utils";
 
   const HomeClients = () => {
     return (
