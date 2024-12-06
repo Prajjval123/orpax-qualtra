@@ -16,15 +16,15 @@ const Contact = () => {
   };
 
   return (
-    <div className=" text-white">
-      <div className="container mx-auto py-16 px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">Contact Us</h2>
+    <div className="text-white">
+      <div className="container mx-auto py-16 px-2 lg:px-6 ">
+        <h2 className="text-5xl md:text-5xl font-bold text-center mb-8">Contact Us</h2>
         <p className="text-lg text-center mb-12">
           Request a quote to get custom pricing. Please take a moment to fill in
           the form.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:px-12">
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
@@ -77,7 +77,7 @@ const Contact = () => {
               <p>Contact Person: <span className="text-gray-400">Mr. Prasun Das</span></p>
               <p>Address: <span className="text-gray-400">11 Schooner Lane, Toronto, M1C5J3</span></p>
               <p>Phone: <span className="text-gray-400">+1 647-771-4348</span></p>
-              <p>Email: <span className="text-gray-400">prasun.das@orpaxqualtra.com</span></p>
+              <p>Email: <span className="text-gray-400 flex-wrap text-wrap">prasun.das@orpaxqualtra.com</span></p>
             </div>
           </div>
         </div>

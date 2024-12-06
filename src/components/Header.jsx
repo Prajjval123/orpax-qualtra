@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <header className="bg-blackBackground flex justify-center items-center h-24 text-white py-4">
       <div className="w-full mx-auto flex justify-between items-center">
-        <img src="/assets/logo.png" alt="Logo" className="w-36 mr-auto" />
+        <img src="/assets/logo.png" alt="Logo" className="w-36 " />
         {/* Hamburger Icon for Mobile */}
         <div className="ml-auto lg:hidden">
           {/* Hamburger Menu (Mobile View) */}

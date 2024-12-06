@@ -11,17 +11,17 @@ const products = [
   },
   {
     title: "E-commerce B2B",
-    
+    image: "/assets/For_Developing/Products_Section/online-payment-gateway.png",
   },
 ];
 
 const Products = () => {
   return (
-    <div className="pb-0 flex flex-col gap-6 min-h-screen px-12">
-      <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
+    <div className="pb-0 flex flex-col gap-6 min-h-screen px-4 md:px-12">
+      <h1 className="text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Products
       </h1>
-      <div className="mt-12 mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">
+      <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">
         {/* IT Card */}
         {products.map((product, index) => (
           <div

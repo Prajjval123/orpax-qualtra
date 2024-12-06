@@ -1,5 +1,5 @@
-import React from "react";
-import logo from "/assets/logo.png";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const icons = [
   {
@@ -31,10 +31,25 @@ const sitemap = [
 ];
 
 const Footer = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+  });
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    navigate("/thank-you");
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <footer className="py-10">
       <div className="mx-auto px-12">
-        <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center text-white animate-fade-in">
+        <h1 className="text-5xl font-semibold mb-12 text-center text-white animate-fade-in">
           Contact
         </h1>
         <div className="grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 place-items-center justify-between items-start gap-8">
@@ -43,7 +58,8 @@ const Footer = () => {
             <h1 className="text-3xl">Address:</h1>
             <div>
               <p className="text-md leading-relaxed">
-                97-A, (FFB) Indraprastha Estate Sector-30-33, Faridabad, Haryana-121003.
+                97-A, (FFB) Indraprastha Estate Sector-30-33, Faridabad,
+                Haryana-121003.
               </p>
               <p className="mt-2 text-md">
                 <strong>M:</strong> +91-9810041039 <br />
@@ -87,16 +103,23 @@ const Footer = () => {
           {/* Newsletter Signup */}
           <div className="h-full flex flex-col gap-4">
             <h3 className="text-3xl text-nowrap">Newsletter Signup</h3>
-            <form className="flex flex-col justify-center">
+            <form
+              className="flex flex-col justify-center"
+              onSubmit={handleSubmit}
+            >
               <div className="flex flex-col sm:flex gap-2 items-center ">
                 <input
                   type="email"
                   placeholder="Enter Your Email Address"
                   className="p-2 w-full rounded-md bg-zinc-800 text-white font-thin text-sm focus:ring-2 focus:ring-red-500 focus:outline-none transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                 />
                 <button
                   type="submit"
-                  className="w-full sm:w-auto bg-red-600 font-mono text-sm px-4 text-white p-2 rounded-md hover:bg-red-700 transition-transform transform hover:scale-105"
+                  className="w-full md:w-auto bg-red-600 font-mono text-sm px-4 text-white p-2 rounded-md hover:bg-red-700 transition-transform transform hover:scale-105"
                 >
                   SUBMIT
                 </button>

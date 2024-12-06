@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { mainServices } from "../constants/utils";
 import HomeServices from "../components/HomeServices";
-import Clients from "./Clients";
 import HomeClients from "../components/HomeClients";
 
 const ServicePage = () => {
@@ -44,7 +43,7 @@ const ServicePage = () => {
               <div className="flex-shrink-0 w-full max-w-sm md:max-w-md lg:max-w-lg border-2 rounded-lg shadow-md border-red-600">
                 <img
                   src={service.image}
-                  alt="Cloud Computing"
+                  alt={service.name}
                   className="rounded-lg shadow-md w-full h-auto transform transition-transform duration-300 hover:scale-105 cursor-pointer"
                 />
               </div>

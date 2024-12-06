@@ -17,9 +17,9 @@ const services = [
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   return (
     <div
-      className={`fixed top-0 right-0   bg-black rounded-r-none border border-white shadow-lg p-4 hover:shadow-xl z-40 transform transition-transform duration-300 rounded-lg ${
+      className={`fixed top-0 right-0  bg-gray-900 rounded-r-none border border-white shadow-lg px-12 hover:shadow-xl z-40 transform transition-transform duration-300 rounded-lg ${
         isSidebarOpen ? "translate-x-0" : "translate-x-full"
-      } w-1/2 sm:w-64 md:w-72`}
+      } sm:w-64 md:w-72`}
     >
       {/* Close Button */}
       <button
@@ -39,7 +39,9 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             <Link to={`${service[1]}`} onClick={toggleSidebar}>
               {service[0]}
             </Link>
+            
           </li>
+          
         ))}
       </ul>
     </div>

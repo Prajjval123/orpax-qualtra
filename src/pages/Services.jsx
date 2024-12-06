@@ -35,8 +35,8 @@ const Services = () => {
   ];
 
   return (
-    <div className="p-8 md:p-24 flex flex-col gap-8 ">
-      <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
+    <div className="p-4 lg:p-16 flex flex-col gap-8 ">
+      <h1 className="text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Services & Domains
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

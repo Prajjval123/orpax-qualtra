@@ -45,8 +45,8 @@ const HomeServices = () => {
   ];
 
   return (
-    <div className="py-12 pb-0 flex flex-col gap-12 px-12">
-      <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
+    <div className="py-12 pb-0 flex flex-col gap-12 px-4 md:px-12">
+      <h1 className="text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Services & Domains
       </h1>
       <div className=" mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">

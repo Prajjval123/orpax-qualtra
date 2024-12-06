@@ -23,7 +23,7 @@ const persons = [
 const About = () => {
   return (
     <>
-      <section className="text-white p-8 flex flex-col gap-8 lg:p-24 animate-fade-in-later">
+      <section className="text-white p-8 flex flex-col gap-8 lg:p-16 animate-fade-in-later">
         <h1 className="text-5xl font-bold mb-6 text-center">About Us</h1>
         <p className="text-center sm:text-left text-lg leading-relaxed">
           Since our inauguration in 2001, we have come a long way from a modest

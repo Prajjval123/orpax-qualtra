@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -41,11 +42,11 @@ const projects = [
 
 const HomeProjects = () => {
   return (
-    <div className="py-12 pb-0 flex flex-col gap-6 min-h-screen px-12">
-      <h1 className="text-3xl md:text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
+    <div className="py-12 pb-0 flex flex-col gap-6 min-h-screen px-4 md:px-12">
+      <h1 className="text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Projects
       </h1>
-      <div className="mt-12 mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">
+      <div className=" mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">
         {/* IT Card */}
         {projects.map((project, index) => (
           <div
@@ -58,7 +59,7 @@ const HomeProjects = () => {
               className="mb-4 h-[300px] rounded-md object-cover w-full"
             />
             <div>
-              <div className="h-[120px]">
+              <div >
                 <h1 className="text-lg font-semibold px-4 text-gray-300 mb-4">
                   {project.title}
                 </h1>
@@ -75,9 +76,9 @@ const HomeProjects = () => {
         ))}
       </div>
       <div className="flex justify-end">
-        <button className="bg-red-800 text-white text-sm w-24 rounded hover:bg-red-600">
+        <Link to="/projects"><button className="bg-red-800 text-white text-sm w-24 rounded hover:bg-red-600">
           Know More
-        </button>
+        </button></Link>
       </div>
     </div>
   );

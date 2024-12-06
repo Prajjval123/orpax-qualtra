@@ -50,9 +50,9 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className=" text-gray-100 py-16 px-6">
-      <div className="container mx-auto lg:px-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center animate-fade-in">
+    <div className=" text-gray-100 p-8 lg:py-16">
+      <div className="container mx-auto lg:px-12 text-center lg:text-left">
+        <h1 className="text-5xl font-semibold mb-12 text-center animate-fade-in">
           Testimonials
         </h1>
         <div className="space-y-12">
@@ -77,12 +77,6 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="mt-16">
-        <HomeServices />
-      </div>
-      <div className="mt-16">
-        <HomeClients />
       </div>
     </div>
   );

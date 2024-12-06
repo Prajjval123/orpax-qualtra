@@ -224,7 +224,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="p-8 lg:p-24 min-h-screen pb-0 ">
+    <div className="p-4 lg:p-16 min-h-screen pb-0">
       <h1 className="text-5xl font-semibold mb-10 text-center p-4 text-white animate-fade-in">
         Projects
       </h1>

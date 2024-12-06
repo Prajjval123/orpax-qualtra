@@ -6,6 +6,7 @@ import Testimonials from "./Testimonials";
 import HomeProducts from "../components/HomeProducts";
 import HomeClients from "../components/HomeClients";
 import Clients from "./Clients";
+import HomeTestimonials from "../components/HomeTestimonials";
 
 const Home = () => {
   return (
@@ -14,9 +15,21 @@ const Home = () => {
       <HomeServices />
       <HomeProjects />
       <HomeProducts />
-      <Testimonials />
-      <div className="hidden md:block"><HomeClients /></div>
-      <div className="md:hidden"><Clients /></div>
+      
+      <div className="hidden lg:block">
+      <HomeClients />
+      </div>
+      {/* Show Testimonials on smaller devices */}
+      <div className="block lg:hidden">
+        <Clients />
+      </div>
+      <div className="hidden lg:block">
+        <HomeTestimonials />
+      </div>
+      {/* Show Testimonials on smaller devices */}
+      <div className="block lg:hidden">
+        <Testimonials />
+      </div>
     </div>
   );
 };
