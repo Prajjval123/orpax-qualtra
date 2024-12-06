@@ -35,7 +35,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="p-4 lg:p-16 flex flex-col gap-8 ">
+    <div className="p-8 lg:p-16 flex flex-col gap-8 ">
       <h1 className="text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
         Services & Domains
       </h1>

@@ -17,7 +17,7 @@ const Contact = () => {
 
   return (
     <div className="text-white">
-      <div className="container mx-auto py-16 px-2 lg:px-6 ">
+      <div className="container mx-auto py-16 p-8 lg:px-6 ">
         <h2 className="text-5xl md:text-5xl font-bold text-center mb-8">Contact Us</h2>
         <p className="text-lg text-center mb-12">
           Request a quote to get custom pricing. Please take a moment to fill in
@@ -63,7 +63,7 @@ const Contact = () => {
           </form>
 
           {/* Contact Details */}
-          <div className="space-y-8">
+          <div className="space-y-12">
             <div className="bg-gray-800 p-6 rounded-lg shadow-md">
               <h3 className="text-2xl font-semibold mb-4">Head Office (INDIA)</h3>
               <p>Contact Person: <span className="text-gray-400">Mr. Arnab Paul</span></p>
