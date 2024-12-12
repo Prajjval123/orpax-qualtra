@@ -3,6 +3,9 @@ export default {
   content: ["./src/**/*.{js,jsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        barlow: ['Barlow', 'sans-serif'],
+      },
       colors: {
         primary: "#1f2937",
         secondary: "#4b5563",

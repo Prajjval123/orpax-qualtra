@@ -18,7 +18,8 @@ import ThankYouPage from "./pages/ThankYouPage";
 const App = () => {
   return (
     <Router>
-      <div className="bg-[rgb(7,12,21)] text-white min-h-screen flex flex-col">
+      {/* bg-[rgb(14,24,43)] */}
+      <div className="bg-[#070C15] min-h-screen flex flex-col font-barlow text-white">
         <main className="flex-grow">
           <MainLayout>
             <div className="relative flex flex-col px-12 z-100">

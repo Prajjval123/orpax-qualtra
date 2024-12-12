@@ -3,61 +3,63 @@ import React from "react";
 const products = [
   {
     title: "E-commerce B2B",
-    image: "/assets/For_Developing/Products_Section/online-payment-gateway.png",
+    image: "/assets/products/E-commerce B2B.png",
   },
   {
     title: "E-commerce B2C",
-    image: "/assets/products/product1.jpg",
+    image: "/assets/products/E-commerce B2C.jpg",
   },
   {
     title: "Supply Chain Management Software",
-    image: "/assets/For_Developing/Products_Section/dribbble.png",
+    image: "/assets/products/Supply Chain Management Software.jpg",
   },
   {
     title: "Hospital/Nursing Home Management Software",
-    image: "/assets/For_Developing/Products_Section/management software.png",
+    image: "/assets/products/Product-4.jpg",
   },
   {
     title: "Survey Analysis Tool",
-    image: "/assets/products/product2.jpg",
+    image: "/assets/products/Survey Analysis Tool.png",
   },
   {
     title: "Spa and Saloon Management System",
-    image: "/assets/products/product3.png",
+    image: "/assets/products/Spa and Saloon Management System.jpg",
   },
   {
     title: "School & College Management Software",
-    image: "/assets/products/product3.png",
+    image: "/assets/products/School & College Management Software.jpg",
   },
   {
     title: "Property/Hotel/Hostel Management System",
-    image: "/assets/products/product3.png",
+    image: "/assets/products/Product-8.jpg",
   },
 ];
 
 const Products = () => {
   return (
     <div className="p-4 lg:p-16 pb-0 min-h-screen ">
-      <h1 className="text-5xl font-semibold mb-10 text-center text-white animate-fade-in">
+      <h1 className="text-5xl font-semibold mb-10 text-center animate-fade-in">
         Products
       </h1>
-      <div className="mt-12 mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">
+      <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-12">
         {/* IT Card */}
         {products.map((product, index) => (
           <div
             key={index}
-            className="bg-gray-900 h-full w-full flex flex-col justify-between gap-4 p-2 text-white rounded-xl border border-white shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="h-full w-full flex flex-col justify-between rounded-xl py-4 border border-gray-600 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
-            <h1 className="text-xl flex items-center justify-center font-semibold p-4 h-[90px] text-center">
+            <h1 className="text-xl flex items-center justify-center font-medium p-6 mx-12 text-center">
               {product.title}
             </h1>
             
+            <div className="h-[360px]">
             <img
               src={product.image}
               alt={product.image}
-              className="rounded-md object-cover w-full"
+              className="rounded-md object-cover w-full h-full"
             />
-            <h1 className="text-lg text-center font-semibold p-4 text-gray-300">
+            </div>
+            <h1 className="text-xl text-center font-medium p-6 text-gray-300">
               Request a free demo
             </h1>
             

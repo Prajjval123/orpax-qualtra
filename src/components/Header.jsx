@@ -5,7 +5,7 @@ import ServicesDropdown from "./ServicesDropdown";
 import Sidebar from "./Sidebar";
 
 const links = [
-  "Home",
+  "Home", 
   "About",
   "Services",
   "Products",
@@ -20,6 +20,7 @@ const Header = () => {
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
   const [isHover, setIsHover] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const isLinkDisabled = true;
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -40,10 +41,19 @@ const Header = () => {
     setIsHover(hover);
   };
 
+  const handleLink = (e) => {
+    // isLinkDisabled  = 0 e.preventDefault()
+    console.log(e.target.value())
+    console.log('geee')
+  }
+
   return (
-    <header className="bg-blackBackground flex justify-center items-center h-24 text-white py-4">
+    <header className="bg-blackBackground flex justify-center items-center h-24 py-4">
       <div className="w-full mx-auto flex justify-between items-center">
-        <img src="/assets/logo.png" alt="Logo" className="w-36 " />
+        <div className="flex flex-col">
+          <img src="/assets/logo.png" alt="Logo" className="w-36 " />
+          <p className="text-sm text-gray-400 font-medium text-center">A Group of Company</p>
+        </div>
         {/* Hamburger Icon for Mobile */}
         <div className="ml-auto lg:hidden">
           {/* Hamburger Menu (Mobile View) */}
@@ -92,13 +102,14 @@ const Header = () => {
                       selected === link
                         ? "text-red-500"
                         : "text-white"
-                    } ${link === 'Contact' ? 'bg-red-600 hover:bg-red-700 rounded p-2 text-white' : ''}`}
+                    } ${link === 'Contact' ? 'bg-red-600 hover:bg-red-700 rounded p-0.5 px-2 text-white' : ''}`}
                     onMouseOver={(link) =>
                       link === "Services" && isHoverHandle(true)
                     }
                     onMouseOut={(link) =>
                       link === "Services" && isHoverHandle(false)
                     }
+                    onClick={(e) => {if(link == "Services") return e.preventDefault()}}
                   >
                     {link}
                   </Link>

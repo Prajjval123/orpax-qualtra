@@ -42,25 +42,27 @@ const projects = [
 
 const HomeProjects = () => {
   return (
-    <div className="py-12 pb-0 flex flex-col gap-6 min-h-screen px-4 md:px-12">
-      <h1 className="text-5xl font-semibold mb-8 text-center text-white animate-fade-in">
+    <div className="pt-12 flex flex-col gap-12 min-h-screen ">
+      <h1 className="text-5xl font-semibold mb-8 text-center animate-fade-in">
         Projects
       </h1>
-      <div className=" mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-8">
+      <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-12">
         {/* IT Card */}
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gray-900 w-full flex flex-col h-full gap-4 p-2 pb-4 text-white rounded-xl border border-white shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="w-full flex flex-col h-full gap-4 p-1 pb-4 rounded-xl border border-gray-600 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
+            <div className="p-4 rounded-xl">
             <img
               src={project.image}
               alt="Project"
-              className="mb-4 h-[300px] rounded-md object-cover w-full"
+              className="h-[300px] w-full rounded-xl"
             />
+            </div>
             <div>
               <div >
-                <h1 className="text-lg font-semibold px-4 text-gray-300 mb-4">
+                <h1 className="text-2xl font-medium px-4 pr-24 mb-4">
                   {project.title}
                 </h1>
               </div>
@@ -76,8 +78,8 @@ const HomeProjects = () => {
         ))}
       </div>
       <div className="flex justify-end">
-        <Link to="/projects"><button className="bg-red-800 text-white text-sm w-24 rounded hover:bg-red-600">
-          Know More
+        <Link to="/projects"><button className="bg-red-800 text-sm w-24 rounded hover:bg-red-600">
+          Read More
         </button></Link>
       </div>
     </div>

@@ -17,7 +17,7 @@ function ServicesDropdown({ isServiceDropdownOpen, handleServiceDropdown }) {
             <div className="grid-col-1">
               {mainServices.IT_Services.map((service) => (
                 <div key={service.name}>
-                  <h4 className="font-semibold text-white border-b pb-2 mb-2">
+                  <h4 className="font-semibold border-b pb-2 mb-2">
                     {service.name}
                   </h4>
                   <ul className="space-y-1">
@@ -40,7 +40,7 @@ function ServicesDropdown({ isServiceDropdownOpen, handleServiceDropdown }) {
               <div className=" whitespace-nowrap">
                 {mainServices.GIS_Services.map((service) => (
                   <div key={service.name}>
-                    <h4 className="font-semibold  text-white border-b pb-2 mb-2">
+                    <h4 className="font-semibold border-b pb-2 mb-2">
                       {service.name}
                     </h4>
                     <div className="flex gap-4">

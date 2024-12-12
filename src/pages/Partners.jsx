@@ -12,7 +12,7 @@ const Partners = () => {
           className="px-4 sm:px-8 h-24"
         />
       </div>
-      <section className="text-white p-8 text-md">
+      <section className=" p-8 text-md">
         <div className="flex flex-col md:flex gap-4 md:justify-between">
           <h1 className="text-3xl font-bold  text-center">Partners</h1>
           <a href="#" className="text-3xl text-center mb-6 underline ">
@@ -55,7 +55,7 @@ const Partners = () => {
           their own niche services and products.
         </p>
       </section>
-      <section className="bg-gray-900 text-white p-8 text-md">
+      <section className="bg-gray-900 p-8 text-md">
         <h1 className="text-3xl font-bold mb-6 text-center">
           Our partnership advantages
         </h1>

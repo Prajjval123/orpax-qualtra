@@ -24,7 +24,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
       {/* Close Button */}
       <button
         onClick={toggleSidebar}
-        className="absolute top-4 left-4 text-white text-2xl hover:text-red-400 transition-colors duration-200"
+        className="absolute top-4 left-4 text-2xl hover:text-red-400 transition-colors duration-200"
       >
         ×
       </button>

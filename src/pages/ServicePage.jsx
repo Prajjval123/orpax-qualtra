@@ -33,7 +33,7 @@ const ServicePage = () => {
 
           <div className="lg:mx-8 bg-black p-12 pb-0">
             {/* Title */}
-            <h1 className="text-5xl font-bold text-gray-100 mb-24 text-center border-b-4 pb-2  border-red-600">
+            <h1 className="text-5xl font-bold text-gray-100 mb-24 text-center pb-2 ">
               {service.name}
             </h1>
 
@@ -51,7 +51,7 @@ const ServicePage = () => {
               {/* Bullet Points */}
               <div className={`flex flex-col gap-8 py-16 items-center lg:items-start w-full`}>
                 {service.points[0].title && (
-                  <h1 className=" text-white text-center lg:text-left font-bold text-3xl">
+                  <h1 className="text-center lg:text-left font-bold text-3xl">
                     {service.points[0].title}
                   </h1>
                 )}
@@ -69,7 +69,7 @@ const ServicePage = () => {
 
             {/* Description */}
             <div className="text-gray-300 text-lg leading-relaxed text-center lg:text-left">
-              <h1 className="text-3xl text-white font-bold pb-8 text-center">
+              <h1 className="text-3xl font-bold pb-8 text-center">
                 Description
               </h1>
               <p>{service.description}</p>
