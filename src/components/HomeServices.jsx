@@ -49,7 +49,7 @@ const HomeServices = () => {
       <h1 className="text-5xl font-semibold mb-8 text-center animate-fade-in">
         Services & Domains
       </h1>
-      <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 place-items-center gap-12">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-12">
         {/* IT Card */}
         {services.map((service, index) => (
           <div key={index} className="flex flex-col text-center gap-4 h-full rounded-xl border border-gray-600 shadow-lg px-2 py-16 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">

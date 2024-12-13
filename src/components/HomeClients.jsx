@@ -7,9 +7,9 @@ import { clients } from "../constants/utils";
         <h1 className="text-5xl font-semibold text-center">
           Clients
         </h1>
-        <div className="relative flex items-center w-full pt-20  overflow-hidden">
+        <div className="relative flex items-center w-full pt-20 overflow-hidden">
           {/* Sliding container */}
-          <div className="flex w-[200%] sm:animate-slide space-x-4">
+          <div className="flex  sm:animate-slide space-x-4">
             {clients.concat(clients).map((client, index) => (
               <img
                 key={index}

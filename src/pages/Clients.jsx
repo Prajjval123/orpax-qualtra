@@ -45,11 +45,11 @@ const clientPoints = [
 
 const Clients = () => {
   return (
-    <div className="w-full flex flex-col justify-center items-center px-4 md:px-12 my-24">
+    <div className="w-full flex flex-col justify-center items-center md:px-0 my-24">
       <h1 className="text-5xl font-semibold text-center">
         Clients
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-3 w-full md:grid-cols-3 lg:grid-cols-4 px-4  gap-8 my-24">
+      <div className="grid grid-cols-2 sm:grid-cols-3 w-full md:grid-cols-3 lg:grid-cols-4 px-4 md:px-8 gap-8 my-24">
         {clients.map((client, index) => (
           <div
             key={index}
@@ -63,7 +63,7 @@ const Clients = () => {
           </div>
         ))}
       </div>
-      <div className="grid md:grid-cols-1 w-full lg:grid-cols-3 px-4 lg:flex-row gap-8">
+      <div className="grid md:grid-cols-1 w-full lg:grid-cols-3 px-4 md:px-8 lg:flex-row gap-8">
         {clientPoints.map((client, index) => (
           <div
             key={index}

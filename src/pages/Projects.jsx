@@ -230,7 +230,7 @@ const Projects = () => {
       </h1>
       {projects.map((projectArr, index) => (
         <div key={index} className="mb-24">
-          <h1 className="text-lg font-semibold px-4 py-2 rounded-xl text-gray-300 text-center my-12">
+          <h1 className="text-2xl font-medium px-4 py-2 rounded-xl text-center my-12">
             {projectArr[0].title}
           </h1>
 
@@ -248,7 +248,7 @@ const Projects = () => {
                   <ol className="text-sm md:text-base text-gray-300 px-4 space-y-2 text-left">
                     {projectArr[0].points.map((desc, i) => (
                       <li key={i} className="flex gap-2">
-                        <div>→</div> {desc}
+                        <img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-3 h-3 mt-2 invert" /> {desc}
                       </li>
                     ))}
                   </ol>
@@ -269,7 +269,7 @@ const Projects = () => {
                   <ol className="text-sm md:text-base text-gray-300 px-4 space-y-2 text-left">
                     {projectArr[1].points.map((desc, i) => (
                       <li key={i} className="flex gap-2">
-                        <div>→</div> {desc}
+                        <img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-3 h-3 mt-2 invert" /> {desc}
                       </li>
                     ))}
                   </ol>

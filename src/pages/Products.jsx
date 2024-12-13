@@ -48,7 +48,7 @@ const Products = () => {
             key={index}
             className="h-full w-full flex flex-col justify-between rounded-xl py-4 border border-gray-600 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
-            <h1 className="text-xl flex items-center justify-center font-medium p-6 mx-12 text-center">
+            <h1 className="text-2xl flex items-center justify-center font-medium p-6 mx-12 text-center">
               {product.title}
             </h1>
             
@@ -59,7 +59,7 @@ const Products = () => {
               className="rounded-md object-cover w-full h-full"
             />
             </div>
-            <h1 className="text-xl text-center font-medium p-6 text-gray-300">
+            <h1 className="text-2xl text-center font-medium p-6 text-gray-300">
               Request a free demo
             </h1>
             

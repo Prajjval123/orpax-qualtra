@@ -100,7 +100,7 @@ const HomeTestimonials = () => {
             onClick={handlePrevious}
             className="px-4 py-2 rounded-lg hover:bg-red-700 transition text-2xl"
           >
-            ←
+            <img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-6 h-6 scale-x-[-1] invert" />
           </button>
         <div className="w-full backdrop-blur-lg max-w-4xl overflow-hidden relative rounded-xl shadow-lg">
           <div
@@ -131,7 +131,7 @@ const HomeTestimonials = () => {
             onClick={handleNext}
             className="px-4 py-2 rounded-lg hover:bg-red-700 transition text-2xl"
           >
-            →
+            <img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-6 h-6 invert" />
           </button>
       </div>
     </div>
