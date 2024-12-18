@@ -22,11 +22,11 @@ const persons = [
 
 const About = () => {
   return (
-    <div>
-      <div className="pt-40 px-60">
-        <section className="p-8 flex flex-col gap-12 lg:p-16 animate-fade-in-later border rounded-xl">
-          <h1 className="text-5xl font-bold mb-6 text-center">About Us</h1>
-          <p className="text-center text-lg leading-relaxed px-4">
+    <div className="pb-20">
+      <div className="pt-40 px-20">
+        <section className="p-8 flex flex-col gap-6 lg:p-4 lg:py-8 animate-fade-in-later border rounded-xl">
+          <h1 className="text-4xl font-bold text-center mt-4">About Us</h1>
+          <p className="text-lg leading-relaxed px-4 text-justify">
             Since our inauguration in 2001, we have come a long way from a
             modest informal group of service providers to become the
             industry-leading cartel representing a group of collective and
@@ -51,10 +51,10 @@ const About = () => {
         </section>
       </div>
 
-      <div className="pt-40 px-60">
-        <section className="p-8 flex flex-col gap-12 lg:p-16 animate-fade-in-later border rounded-xl">
-          <h1 className="text-5xl font-bold mb-6 text-center">Our Team</h1>
-          <p className="text-center text-lg leading-relaxed">
+      <div className="pt-10 px-20 relative">
+        <section className="p-8 flex flex-col gap-6 lg:p-4 lg:py-8 animate-fade-in-later border rounded-xl backdrop-blur-lg">
+          <h1 className="text-4xl font-bold text-center mt-4">Our Team</h1>
+          <p className="text-justify text-lg leading-relaxed px-4">
             Our team is rich with unrivaled IT experience and expertise with
             resources to provide services personifying responsibility,
             flexibility, agility, and end-to-end visibility. With our assured
@@ -82,29 +82,32 @@ const About = () => {
             ensure the deliverance of measurable business values.
           </p>
         </section>
+        <img src="assets/For developer/Red_Dot.png" className="absolute top-8 ml-16 opacity-40 "/>
       </div>
-      <div className="pt-40 px-60">
-        <section className="p-8 flex flex-col gap-12 lg:p-16 animate-fade-in-later border rounded-xl">
+      <div className="pt-10 px-60 relative">
+        <section className="p-8 flex flex-col gap-12 lg:p-4 lg:py-8 animate-fade-in-later border rounded-xl backdrop-blur-lg">
           <div className="flex flex-col gap-12">
-            <h1 className="text-5xl font-bold text-center mb-6">Meet Our Team</h1>
+            <h1 className="text-4xl font-bold text-center mt-4">Meet Our Team</h1>
             <div className="flex flex-wrap justify-center gap-24">
               {persons.map((person, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center gap-4 w-66 transform transition-transform duration-300 hover:scale-105 cursor-pointer border rounded-lg shadow-lg"
+                  className="flex flex-col items-center gap-4 transform transition-transform duration-300 hover:scale-105 cursor-pointer border rounded-xl shadow-lg"
                 >
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="rounded-lg "
+                    className="rounded-xl h-80 w-64"
                   />
+                  <div className="pt-2">
                   <h2 className="text-3xl font-semibold text-center">
                     {person.name}
                   </h2>
                   <p className="text-md text-center">
                     {person.designation}
                   </p>
-                  <div className="flex items-center justify-between w-full p-4">
+                  </div>
+                  <div className="flex items-center justify-between w-full p-4 px-6">
                     <p className="text-sm uppercase">
                       {person.country}
                     </p>
@@ -117,7 +120,7 @@ const About = () => {
                       <img
                         src="/assets/linkedin-icon.png"
                         alt="LinkedIn"
-                        className="w-6 h-6 "
+                        className="w-4 h-4 "
                       />
                     </a>
                   </div>
@@ -125,7 +128,7 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section><img src="assets/For developer/Red_Dot.png" className="absolute top-[460px] right-[60px] w-96 opacity-80"/>
       </div>
     </div>
   );

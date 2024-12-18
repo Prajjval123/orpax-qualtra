@@ -2,17 +2,17 @@ const HomeServices = () => {
   const services = [
     {
       title: "IT Services",
-      description: "Cloud Computing, Full Stack Development, Mobile App Development, Smart City Applications, Data Analysis Tool, AI Bots.",
+      description: "Cloud Computing, Full Stack Development, \n Mobile App Development, Smart City Applications, Data Analysis Tool, AI Bots.",
       image: "/assets/For_Developing/Service & Domain  Section/software-application.png"
     },
     {
       title: "GIS Services",
-      description: "GIS Mapping and Digitization, Data Base Development, Terrain Modelling, Digital Elevation Model, Web GIS Application.",
+      description: "GIS Mapping and Digitization, Data Base \n Development, Terrain Modelling,\n Digital Elevation Model, Web GIS Application.",
       image: "/assets/For_Developing/Service & Domain  Section/geospatial-technology.png"
     },
     {
       title: "Digital Marketing and Designing",
-      description: "Social Media Marketing, SMS Marketing, Email Marketing, Google Ads, Creative and Concept Designing.",
+      description: "Social Media Marketing, SMS Marketing, \n Email Marketing, Google Ads,\n Creative and Concept Designing.",
       image: "/assets/For_Developing/Service & Domain  Section/social-media.png"
     },
   ];
@@ -52,20 +52,20 @@ const HomeServices = () => {
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-12">
         {/* IT Card */}
         {services.map((service, index) => (
-          <div key={index} className="flex flex-col text-center gap-4 h-full rounded-xl border border-gray-600 shadow-lg px-2 py-16 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
+          <div key={index} className="flex flex-col text-center gap-4 h-full w-full rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-20 shadow-lg py-12 px-2 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
             <div className="w-24 h-24 mx-auto">
               <img src={service.image} alt="" className="filter invert" />
             </div>
-            <h3 className="text-2xl font-bold text-red-600">
+            <h3 className="text-2xl px-1 font-bold text-red-600">
               {service.title}
             </h3>
-            <p className="text-sm px-20">{service.description}</p>
+            <p className="text-md px-6 whitespace-pre-line ">{service.description}</p>
           </div>
         ))}
         {/* Below Card */}
         {services_below.map((services) => (
-          <div className="w-full h-full flex flex-col text-left gap-4 rounded-xl border border-gray-600 shadow-lg space-y-4 p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
-            {services.map((service) => <h6 className="text-sm flex gap-2 whitespace-nowrap h-[297.6]"><div className={service == ""? 'hidden' : 'inline'}>→</div> {service}</h6>)}
+          <div className="w-full h-full flex flex-col text-left gap-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-20 shadow-lg space-y-3 p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
+            {services.map((service) => <h6 className="text-md flex gap-2 items-center whitespace-nowrap h-[297.6]"><div className={service == ""? 'hidden' : 'inline'}><img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-3 h-3 invert" /></div> {service}</h6>)}
           </div> 
         ))}
       </div>

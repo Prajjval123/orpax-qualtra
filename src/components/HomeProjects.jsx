@@ -51,13 +51,13 @@ const HomeProjects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="w-full flex flex-col h-full gap-4 p-1 pb-4 rounded-xl border border-gray-600 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="w-full flex flex-col h-full gap-4 p-1 pb-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             <div className="p-4 rounded-xl">
             <img
               src={project.image}
               alt="Project"
-              className="h-[300px] w-full rounded-xl"
+              className="w-full rounded-xl"
             />
             </div>
             <div>

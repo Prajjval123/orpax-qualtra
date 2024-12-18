@@ -25,6 +25,8 @@ const cards = [
   },
 ];
 
+const divisions = [['IT', 'Art', 'E-Commerce'], [ 'Art', 'E-Commerce','IT'], ['E-Commerce', 'IT', 'Art']];
+
 const HeroSection = () => {
   return (
     <div className="gap-8 relative mt-10 z-10 flex flex-col">
@@ -39,7 +41,7 @@ const HeroSection = () => {
           
           {/* Content Section */}
           <div className="mt-2 text-lg opacity-100 animate-fade-in-later">
-            <p className="font-normal max-w-2xl text-center md:text-left">
+            <p className="font-normal max-w-2xl text-justify md:text-left">
               Running a business, whether big, small, or medium, constantly
               involves challenges. <br></br>At OQ, we look forward to helping
               you by working as an extension of your team to better understand
@@ -59,78 +61,16 @@ const HeroSection = () => {
           </div>
 
           {/* Dropdown Menus */}
-          <div className="mt-2 w-full flex-grow sm:flex-1">
-            <div className="py-4 w-full sm:py-0 relative md:w-auto inline-block md:mr-2">
-              <select className="bg-transparent w-full text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
-                <option>IT</option>
-                <option>Art</option>
-                <option>E-Commerce</option>
+          <div className="mt-3 w-full flex-grow sm:flex-1">
+            {divisions.map(division => <div className="py-2 w-full sm:py-0 relative md:w-auto inline-block md:mr-2 ">
+              <select className="bg-transparent w-full text-lg px-6 py-1 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
+                {division.map(service => <option className="bg-black">{service}</option>)}
               </select>
               {/* Arrow inside dropdown */}
               <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                <svg
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className="w-5 h-5 text-gray-300"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+              <img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-3 h-3 invert rotate-90" />
               </div>
-            </div>
-
-            <div className="w-full py-4 md:w-auto relative inline-block md:mr-2">
-              <select className="bg-transparent w-full text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
-                <option>Art</option>
-                <option>IT</option>
-                <option>E-Commerce</option>
-              </select>
-              {/* Arrow inside dropdown */}
-              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                <svg
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className="w-5 h-5 text-gray-300"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            <div className="relative py-4 w-full md:w-auto inline-block">
-              <select className="bg-transparent w-full text-lg px-6 py-2 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
-                <option>E-Commerce</option>
-                <option>IT</option>
-                <option>Art</option>
-              </select>
-              {/* Arrow inside dropdown */}
-              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                <svg
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className="w-5 h-5 text-gray-300"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-            </div>
+            </div>)}
           </div>
         </div>
         {/* Side Image */}
@@ -142,7 +82,7 @@ const HeroSection = () => {
           />
           <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-10 right-10 w-20 h-20 shadow-[0_0_0_0_rgba(255,0,0,0.5)]"/>
           <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-0 right-80 w-10 h-10 mr-52"/>
-          <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-10 right-64 w-80 h-80 opacity-60 rounded-full" />
+          <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-16 right-60 w-80 h-80 opacity-100 rounded-full blur-[20px] shadow-[0_0_100px_0px_rgba(255,0,0,0.5)]" />
           {/* <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-[357px] right-[580px] w-5 h-5 rounded-full shadow-[0_0_50px_20px_rgba(255,0,0,0.5)]"/>
           <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-[250px] right-[566px] w-5 h-5 rounded-full shadow-[0_0_50px_10px_rgba(255,0,0,0.5)]"/> */}
           <img src="/assets/For_Developing/Background/Dot.png" className="absolute w-20 h-20"/>
@@ -156,7 +96,7 @@ const HeroSection = () => {
         {cards.map((card) => (
           <div
             key={card.number}
-            className="flex flex-col justify-between rounded-xl border border-gray-600 shadow-lg p-6 px-8 pr-10 pb-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer backdrop-blur-lg"
+            className="flex flex-col justify-between rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg p-6 px-8 pr-10 pb-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             <div>
               <div className="flex justify-between items-center">

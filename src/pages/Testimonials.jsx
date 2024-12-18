@@ -52,7 +52,7 @@ const Testimonials = () => {
   return (
     <div className=" text-gray-100 p-8 lg:py-16">
       <div className="container mx-auto lg:px-12 text-center lg:text-left">
-        <h1 className="text-5xl font-semibold mb-12 text-center animate-fade-in">
+        <h1 className="text-6xl font-semibold mb-24 text-center animate-fade-in">
           Testimonials
         </h1>
         <div className="space-y-12">
@@ -69,7 +69,7 @@ const Testimonials = () => {
               </div>
               <div className="space-y-4 text-gray-300">
                 {testimonial.descriptions.map((description, idx) => (
-                  <p key={idx} className="leading-relaxed">
+                  <p key={idx} className="leading-relaxed text-justify">
                     {description}
                   </p>
                 ))}

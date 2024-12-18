@@ -4,19 +4,19 @@ import { useNavigate } from "react-router-dom";
 const icons = [
   {
     name: "Twitter",
-    image: "/assets/For_Developing/Contact_Section/twitter.png",
+    image: "/assets/For_Developing/Contact_Section/Twitter.png",
   },
   {
     name: "Facebook",
-    image: "/assets/For_Developing/Contact_Section/facebook.png",
+    image: "/assets/For_Developing/Contact_Section/FB.png",
   },
   {
     name: "Instagram",
-    image: "/assets/For_Developing/Contact_Section/instagram (1).png",
+    image: "/assets/For_Developing/Contact_Section/Insta.png",
   },
   {
     name: "Pinterest",
-    image: "/assets/For_Developing/Contact_Section/pinterest.png",
+    image: "/assets/For_Developing/Contact_Section/Pinterest.png",
   },
 ];
 
@@ -47,7 +47,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-10">
+    <footer className="p-10">
       <div className="mx-auto px-12">
         <h1 className="text-5xl font-semibold mb-12 text-center animate-fade-in">
           Contact
@@ -58,7 +58,7 @@ const Footer = () => {
             <h1 className="text-3xl">Address:</h1>
             <div className="text-gray-300">
               <p className="text-md leading-relaxed">
-                97-A, (FFB) Indraprastha Estate Sector-30-33, Faridabad,
+                97-A, (FFB) Indraprastha Estate Sector-30-33, <br /> Faridabad,
                 Haryana-121003.
               </p>
               <p className="text-md">
@@ -92,7 +92,7 @@ const Footer = () => {
                     <img
                       src={icon.image}
                       alt=""
-                      className="w-8 h-8  bg-red-600 rounded-md"
+                      className="w-8 h-8 rounded-md"
                     />
                   </a>
                   <h6 className="text-lg text-gray-300">{icon.name}</h6>
@@ -101,8 +101,8 @@ const Footer = () => {
             </div>
           </div>
           {/* Newsletter Signup */}
-          <div className="h-full flex flex-col gap-4">
-            <h3 className="text-3xl text-nowrap">Newsletters Signup</h3>
+          <div className="w-full h-full flex flex-col gap-4">
+            <h3 className="text-3xl text-nowrap text-right pr-8">Newsletters Signup</h3>
             <form
               className="flex flex-col justify-center"
               onSubmit={handleSubmit}
@@ -111,7 +111,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter Your Email Address"
-                  className="p-2 w-full rounded-md bg-zinc-800 font-thin text-sm focus:ring-2 focus:ring-red-500 focus:outline-none transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+                  className="p-2 pl-4 w-full rounded-md bg-zinc-800 font-thin text-sm focus:ring-2 focus:ring-red-500 focus:outline-none transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })

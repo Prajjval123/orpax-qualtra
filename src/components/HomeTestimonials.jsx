@@ -93,7 +93,7 @@ const HomeTestimonials = () => {
       <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center">
         Testimonials
       </h1>
-      <div className="flex items-center gap-4 rounded-xl border border-gray-600">
+      <div className="flex items-center gap-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40">
         {/* Testimonial Slider */}
           {/* Left Button */}
           <button
