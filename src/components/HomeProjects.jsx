@@ -43,17 +43,17 @@ const projects = [
 const HomeProjects = () => {
   return (
     <div className="pt-12 flex flex-col gap-12 min-h-screen ">
-      <h1 className="text-5xl font-semibold mb-8 text-center animate-fade-in">
+      <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-center animate-fade-in">
         Projects
       </h1>
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-12">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center gap-8 lg:gap-12">
         {/* IT Card */}
         {projects.map((project, index) => (
           <div
             key={index}
             className="w-full flex flex-col h-full gap-4 p-1 pb-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
-            <div className="p-4 rounded-xl">
+            <div className="md:p-2 lg:p-4 rounded-xl">
             <img
               src={project.image}
               alt="Project"
@@ -62,11 +62,11 @@ const HomeProjects = () => {
             </div>
             <div>
               <div >
-                <h1 className="text-2xl font-medium px-4 mb-4 whitespace-pre-line">
+                <h1 className="md:text-xl lg:text-2xl font-medium px-4 md:mb-2 lg:mb-4 whitespace-pre-line">
                   {project.title}
                 </h1>
               </div>
-              <ol className="text-sm md:text-base text-gray-300 px-4 space-y-2 text-left">
+              <ol className="text-sm md:text-base text-gray-300 px-4 md:space-y-1 lg:space-y-2 text-left">
                 {project.description.map((desc, i) => (
                   <li key={i} className="flex  gap-2">
                     <img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-3 h-3 mt-2 invert" />

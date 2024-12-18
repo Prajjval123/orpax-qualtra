@@ -23,9 +23,9 @@ const persons = [
 const About = () => {
   return (
     <div className="pb-20">
-      <div className="pt-40 px-20">
+      <div className="pt-40 px-10 lg:px-20">
         <section className="p-8 flex flex-col gap-6 lg:p-4 lg:py-8 animate-fade-in-later border rounded-xl">
-          <h1 className="text-4xl font-bold text-center mt-4">About Us</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mt-4">About Us</h1>
           <p className="text-lg leading-relaxed px-4 text-justify">
             Since our inauguration in 2001, we have come a long way from a
             modest informal group of service providers to become the
@@ -51,7 +51,7 @@ const About = () => {
         </section>
       </div>
 
-      <div className="pt-10 px-20 relative">
+      <div className="pt-10 px-10 lg:px-20 relative">
         <section className="p-8 flex flex-col gap-6 lg:p-4 lg:py-8 animate-fade-in-later border rounded-xl backdrop-blur-lg">
           <h1 className="text-4xl font-bold text-center mt-4">Our Team</h1>
           <p className="text-justify text-lg leading-relaxed px-4">
@@ -84,11 +84,11 @@ const About = () => {
         </section>
         <img src="assets/For developer/Red_Dot.png" className="absolute top-8 ml-16 opacity-40 "/>
       </div>
-      <div className="pt-10 px-60 relative">
+      <div className="pt-10 px-10 lg:px-20 lg:px-60 relative">
         <section className="p-8 flex flex-col gap-12 lg:p-4 lg:py-8 animate-fade-in-later border rounded-xl backdrop-blur-lg">
           <div className="flex flex-col gap-12">
             <h1 className="text-4xl font-bold text-center mt-4">Meet Our Team</h1>
-            <div className="flex flex-wrap justify-center gap-24">
+            <div className="flex flex-wrap justify-center gap-12 lg:gap-24">
               {persons.map((person, index) => (
                 <div
                   key={index}
@@ -97,13 +97,13 @@ const About = () => {
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="rounded-xl h-80 w-64"
+                    className="rounded-xl h-52 w-52 lg:h-80 lg:w-64"
                   />
                   <div className="pt-2">
-                  <h2 className="text-3xl font-semibold text-center">
+                  <h2 className="text-2xl lg:text-3xl font-semibold text-center">
                     {person.name}
                   </h2>
-                  <p className="text-md text-center">
+                  <p className="text-sm lg:text-md text-center">
                     {person.designation}
                   </p>
                   </div>

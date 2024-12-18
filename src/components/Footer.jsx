@@ -47,25 +47,25 @@ const Footer = () => {
   };
 
   return (
-    <footer className="p-10">
-      <div className="mx-auto px-12">
-        <h1 className="text-5xl font-semibold mb-12 text-center animate-fade-in">
+    <footer className="p-10 ">
+      <div className="mx-auto lg:px-12">
+        <h1 className="text-4xl lg:text-5xl font-semibold mb-12 text-center animate-fade-in">
           Contact
         </h1>
         <div className="grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 place-items-center justify-between items-start gap-8">
           {/* Logo & Address */}
           <div className="w-full flex flex-col gap-2 md:grid-cols-3 text-center lg:text-left">
-            <h1 className="text-3xl">Address:</h1>
+            <h1 className="text-2xl lg:text-3xl">Address:</h1>
             <div className="text-gray-300">
-              <p className="text-md leading-relaxed">
-                97-A, (FFB) Indraprastha Estate Sector-30-33, <br /> Faridabad,
+              <p className="text-md md:text-lg lg:text-md leading-relaxed">
+                97-A, (FFB) Indraprastha Estate <br className="block md:hidden" />Sector-30-33, <br className="hidden md:block" /> Faridabad,
                 Haryana-121003.
               </p>
-              <p className="text-md">
-                <span>M:</span> +91-9810041039 <br />
-                <span>M:</span> +91-9319644022
+              <p className="text-md md:text-lg lg:text-md">
+                <strong>M:</strong> +91-9810041039 <br />
+                <strong>M:</strong> +91-9319644022
               </p>
-              <p className="text-md">
+              <p className="text-md md:text-lg lg:text-md">
                 <strong>Email:</strong>{" "}
                 <a
                   href="mailto:arnab.paul@orpaxqualtra.com"
@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
           {/* Social Media */}
           <div className="h-full text-center md:grid-cols-3 flex flex-col gap-2">
-            <h1 className="text-3xl text-nowrap">Follow us on:</h1>
+            <h1 className="text-2xl lg:text-3xl text-nowrap">Follow us on:</h1>
             <div className="flex flex-col justify-center gap-3 ">
               {icons.map((icon) => (
                 <div
@@ -92,26 +92,26 @@ const Footer = () => {
                     <img
                       src={icon.image}
                       alt=""
-                      className="w-8 h-8 rounded-md"
+                      className="w-6 lg:w-8 h-6 lg:h-8 rounded-md"
                     />
                   </a>
-                  <h6 className="text-lg text-gray-300">{icon.name}</h6>
+                  <h6 className="text-md md:text-lg text-gray-300">{icon.name}</h6>
                 </div>
               ))}
             </div>
           </div>
           {/* Newsletter Signup */}
           <div className="w-full h-full flex flex-col gap-4">
-            <h3 className="text-3xl text-nowrap text-right pr-8">Newsletters Signup</h3>
+            <h3 className="text-2xl lg:text-3xl text-nowrap text-center lg:text-right lg:pr-8">Newsletters Signup</h3>
             <form
-              className="flex flex-col justify-center"
+              className="flex flex-col items-center justify-center"
               onSubmit={handleSubmit}
             >
-              <div className="flex gap-2 items-center ">
+              <div className="flex flex-col w-full md:w-1/3 lg:w-full lg:flex gap-2 items-center ">
                 <input
                   type="email"
                   placeholder="Enter Your Email Address"
-                  className="p-2 pl-4 w-full rounded-md bg-zinc-800 font-thin text-sm focus:ring-2 focus:ring-red-500 focus:outline-none transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+                  className="p-2 pl-4 w-1/2 md:w-full rounded-md bg-zinc-800 font-thin text-sm focus:ring-2 focus:ring-red-500 focus:outline-none transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -119,7 +119,7 @@ const Footer = () => {
                 />
                 <button
                   type="submit"
-                  className="w-full md:w-auto bg-red-600 text-sm px-4 p-2 rounded-md hover:bg-red-700 transition-transform transform hover:scale-105"
+                  className="w-1/2 md:w-full bg-red-600 text-sm px-4 p-2 rounded-md hover:bg-red-700 transition-transform transform hover:scale-105"
                 >
                   SUBMIT
                 </button>

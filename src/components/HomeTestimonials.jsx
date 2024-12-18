@@ -90,7 +90,7 @@ const HomeTestimonials = () => {
 
   return (
     <div className="w-full pb-24 flex flex-col gap-12 items-center mt-12 px-12">
-      <h1 className="text-3xl md:text-5xl font-semibold mb-12 text-center">
+      <h1 className="text-4xl md:text-5xl font-semibold mb-12 text-center">
         Testimonials
       </h1>
       <div className="flex items-center gap-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40">

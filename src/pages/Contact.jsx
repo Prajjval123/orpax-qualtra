@@ -19,8 +19,8 @@ const Contact = () => {
   return (
     <div className="">
       <div className="container mx-auto py-16 p-8 lg:px-0 ">
-        <h2 className="text-5xl md:text-5xl font-bold text-center mb-8">Contact Us</h2>
-        <p className="text-lg text-center mb-12">
+        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-8">Contact Us</h2>
+        <p className="text-md lg:text-lg text-center mb-12">
           Request a quote to get custom pricing. Please take a moment to fill in
           the form.
         </p>

@@ -33,14 +33,14 @@ const ServicePage = () => {
 
           <div className="lg:mx-8 bg-gray-900 backdrop-blur-xl bg-opacity-50 p-12 ">
             {/* Title */}
-            <h1 className="text-5xl font-bold text-gray-100 mb-24 text-center pb-2 ">
+            <h1 className="text-4xl md:text-5xl font-semibold text-gray-100 mb-24 text-center pb-2 ">
               {service.name}
             </h1>
 
             {/* Image and Bullet Points */}
             {
               <div
-                className={`  flex flex-col ${service.points[0].points.length == [] ? 'lg:flex-col' : ''} lg:flex-row  lg:items-start lg:justify-center gap-12 mb-12 `}
+                className={`  flex flex-col items-center ${service.points[0].points.length == [] ? 'lg:flex-col' : ''} lg:flex-row lg:items-start lg:justify-center gap-12 mb-12 `}
               >
                 {/* Image */}
                 <div className={`w-full max-w-md md:max-w-lg lg:max-w-screen-xl ${service.points[0].points.length == [] ? 'flex justify-center border-none' : ''} border-2 rounded-lg shadow-md border-white`}>

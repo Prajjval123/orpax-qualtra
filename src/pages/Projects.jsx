@@ -227,19 +227,19 @@ const projects = [
 const Projects = () => {
   return (
     <div className="p-4 lg:p-16 min-h-screen pb-0">
-      <h1 className="text-6xl font-semibold mb-20 text-center p-4 animate-fade-in">
+      <h1 className="text-4xl md:text-5xl font-semibold mb-10 text-center p-4 animate-fade-in">
         Projects
       </h1>
       {projects.map((projectArr, index) => (
         <div key={index} className="mb-24 px-10">
-          <h1 className="text-2xl font-medium px-4 py-2 rounded-xl text-center my-12">
+          <h1 className="text-xl lg:text-2xl font-medium px-4 py-2 rounded-xl text-center my-4 md:my-12">
             {projectArr[0].title}
           </h1>
 
           <div className="flex flex-col mb-4">
-            <div className="grid md:grid-cols-2 gap-12 relative">
-              <div className="w-full flex flex-col h-full gap-4 p-2 pb-4 rounded-xl border border-white backdrop-blur-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
-                <div className="p-4 rounded-xl">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 relative">
+              <div className="w-full flex flex-col h-full gap-4 lg:p-2 pb-4 rounded-xl border border-white backdrop-blur-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
+                <div className="lg:p-4 rounded-xl">
                   <img
                     src={projectArr[0].image}
                     alt="Project"
@@ -249,11 +249,11 @@ const Projects = () => {
                 <div>
                   <ol className="text-sm md:text-base text-gray-300 px-4 space-y-2 text-left">
                     {projectArr[0].points.map((desc, i) => (
-                      <li key={i} className="flex items-start gap-2 text-xl">
+                      <li key={i} className="flex items-start gap-2 lg:text-xl">
                         <img
                           src="/assets/For_Developing/Arrow/next.png"
                           alt=""
-                          className="w-4 h-4 invert mt-2"
+                          className="w-2 h-2 lg:w-4 lg:h-4 invert mt-2"
                         />{" "}
                         {desc}
                       </li>
@@ -261,12 +261,12 @@ const Projects = () => {
                   </ol>
                 </div>
               </div>
-              <img src="assets/For developer/Red_Dot.png" className="absolute top-[200px] right-[200px] opacity-100"/>
+              <img src="assets/For developer/Red_Dot.png" className="absolute top-[200px] right-[200px] opacity-40"/>
               <div
                 key={index}
-                className=" w-full flex flex-col h-full gap-4 p-2 pb-4 rounded-xl border border-white backdrop-blur-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+                className=" w-full flex flex-col h-full gap-4 lg:p-2 pb-4 rounded-xl border border-white backdrop-blur-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
               >
-                <div className="p-4 rounded-xl">
+                <div className="lg:p-4 rounded-xl">
                   <img
                     src={projectArr[1].image}
                     alt="Project"
@@ -276,11 +276,11 @@ const Projects = () => {
                 <div>
                   <ol className="text-sm md:text-base text-gray-300 px-4 space-y-2 text-left">
                     {projectArr[1].points.map((desc, i) => (
-                      <li key={i} className="flex items-start gap-2 text-xl">
+                      <li key={i} className="flex items-start gap-2 lg:text-xl">
                         <img
                           src="/assets/For_Developing/Arrow/next.png"
                           alt=""
-                          className="w-4 h-4 invert mt-2"
+                          className="w-2 h-2 lg:w-4 lg:h-4 invert mt-2"
                         />{" "}
                         {desc}
                       </li>

@@ -48,7 +48,7 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-blackBackground flex justify-center items-center h-24 py-4">
+    <header className="bg-blackBackground flex justify-center items-center h-24 py-4 pt-8">
       <div className="w-full mx-auto flex justify-between items-center">
         <div className="flex flex-col">
           <img src="/assets/logo.png" alt="Logo" className="w-36 " />
@@ -98,7 +98,7 @@ const Header = () => {
                 >
                   <Link
                     to={`/${link.toLowerCase()}`}
-                    className={`hover:text-red-500 ${link === 'Contact' ? 'hover:text-white' : ''} transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md ${
+                    className={`hover:text-red-500 ${link === 'Contact' ? 'hover:text-white' : ''} transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md lg:text-lg ${
                       selected === link
                         ? "text-red-500"
                         : "text-white"

@@ -50,16 +50,16 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className=" text-gray-100 p-8 lg:py-16">
-      <div className="container mx-auto lg:px-12 text-center lg:text-left">
-        <h1 className="text-6xl font-semibold mb-24 text-center animate-fade-in">
+    <div className=" text-gray-100 lg:py-16">
+      <div className="container mx-auto p-8 lg:px-16 text-center lg:text-left">
+        <h1 className="text-4xl md:text-5xl font-semibold mb-12 lg:mb-24 text-center animate-fade-in">
           Testimonials
         </h1>
         <div className="space-y-12">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl duration-300 transform transition-transform  hover:scale-105 cursor-pointer"
+              className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl duration-300 transform transition-transform hover:scale-105 cursor-pointer"
             >
               <div className="mb-4">
                 <h2 className="text-xl font-semibold text-teal-400">

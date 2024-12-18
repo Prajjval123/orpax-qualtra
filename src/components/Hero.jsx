@@ -34,9 +34,9 @@ const HeroSection = () => {
       <div>
         <div className="flex flex-col">
           {/* Typing Title */}
-          <h1 className="text-5xl font-semibold leading-snug text-center md:text-left max-w-4xl opacity-100 animate-fade-in-later ">
+          <h1 className="text-4xl lg:text-5xl font-semibold leading-snug text-center md:text-left max-w-4xl opacity-100 animate-fade-in-later ">
             Transforming Your <span className="text-red-500">Challenges</span>
-            <br /> Into Tailored Solutions.
+            <br className="hidden md:block"/> Into <br className="block md:hidden" /> Tailored Solutions.
           </h1>
           
           {/* Content Section */}
@@ -52,10 +52,10 @@ const HeroSection = () => {
           </div>
 
           <div className="mt-12">
-            <h2 className="text-5xl text-center md:text-left font-medium">
+            <h2 className="text-4xl lg:text-5xl text-center md:text-left font-medium">
               We Understand
             </h2>
-            <h3 className="text-3xl text-center md:text-left mt-12 text-bold font-bold">
+            <h3 className="text-3xl text-center md:text-left mt-12 text-bold font-semibold">
               Our 3 Divisions
             </h3>
           </div>
@@ -78,7 +78,7 @@ const HeroSection = () => {
           <img
             src="/assets/additional_images/Computer_bg.png"
             alt="Background Decor"
-            className="absolute w-2/3 object-contain opacity-100 from-red-500 via-transparent to-blue-600 mix-blend-lighten shadow-blue-500/50 sm:w-2/5 sm:-top-16 sm:right-12 md:1/2 hidden lg:block"
+            className="absolute w-2/3 object-contain opacity-100 from-red-500 via-transparent to-blue-600 mix-blend-lighten shadow-blue-500/50 sm:w-2/5 sm:-top-16 sm:right-12 md:top-24 hidden lg:block"
           />
           <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-10 right-10 w-20 h-20 shadow-[0_0_0_0_rgba(255,0,0,0.5)]"/>
           <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-0 right-80 w-10 h-10 mr-52"/>
@@ -91,26 +91,26 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center lg:text-left gap-12 bg-repeat">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 text-center lg:text-left gap-12 bg-repeat">
         {/* IT Card */}
         {cards.map((card) => (
           <div
             key={card.number}
-            className="flex flex-col justify-between rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg p-6 px-8 pr-10 pb-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="flex flex-col justify-between rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg p-4 lg:p-6 px-8 pr-10 md:pb-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             <div>
               <div className="flex justify-between items-center">
               <div className="flex flex-col justify-center space-y-2">
-                <span className="text-red-600 text-4xl font-medium">0{card.number}.</span>
+                <span className="text-red-600 text-3xl md:text-4xl font-medium">0{card.number}.</span>
               </div>
-              <img src={card.image} alt="" className="w-7 h-7 invert" />
+              <img src={card.image} alt="" className="w-6 md:w-7 h-6 md:h-7 invert" />
               </div>
               <div className="space-y-2 pt-6">
-                <h3 className="text-4xl font-bold">{card.industry}</h3>
+                <h3 className="text-3xl md:text-4xl font-bold ">{card.industry}</h3>
                 <p className="text-gray-300">{card.description}</p>
               </div>
             </div>
-            <div className="flex justify-end mt-12">
+            <div className="flex justify-end mt-8 lg:mt-12">
               <button className="bg-gradient-to-b from-red-600 text-xs p-0.5 px-2  rounded hover:bg-red-500">
                 Know More
               </button>

@@ -46,20 +46,20 @@ const HomeServices = () => {
 
   return (
     <div className="pt-12 pb-0 flex flex-col gap-12">
-      <h1 className="text-5xl font-semibold mb-8 text-center animate-fade-in">
+      <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-center animate-fade-in">
         Services & Domains
       </h1>
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-12">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center gap-12">
         {/* IT Card */}
         {services.map((service, index) => (
-          <div key={index} className="flex flex-col text-center gap-4 h-full w-full rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-20 shadow-lg py-12 px-2 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
-            <div className="w-24 h-24 mx-auto">
+          <div key={index} className="flex flex-col text-center gap-4 h-full w-full rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-20 shadow-lg px-2 py-8 lg:py-12 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
+            <div className="w-16 md:w-20 lg:w-24 h-16 md:h-20 lg:h-24 mx-auto">
               <img src={service.image} alt="" className="filter invert" />
             </div>
-            <h3 className="text-2xl px-1 font-bold text-red-600">
+            <h3 className="text-xl lg:text-2xl px-1 font-bold text-red-600">
               {service.title}
             </h3>
-            <p className="text-md px-6 whitespace-pre-line ">{service.description}</p>
+            <p className="text-sm lg:text-md px-6 whitespace-pre-line ">{service.description}</p>
           </div>
         ))}
         {/* Below Card */}

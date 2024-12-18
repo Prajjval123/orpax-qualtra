@@ -17,7 +17,7 @@ const services = [
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   return (
     <div
-      className={`fixed top-0 right-0  bg-gray-900 rounded-r-none border border-white shadow-lg px-12 hover:shadow-xl z-40 transform transition-transform duration-300 rounded-lg ${
+      className={`fixed top-0 right-0  bg-black  rounded-r-none border border-white shadow-lg px-12 hover:shadow-xl z-40 transform transition-transform duration-300 rounded-lg ${
         isSidebarOpen ? "translate-x-0" : "translate-x-full"
       } sm:w-64 md:w-72`}
     >
