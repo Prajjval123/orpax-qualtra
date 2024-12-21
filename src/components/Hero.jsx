@@ -41,7 +41,7 @@ const HeroSection = () => {
           
           {/* Content Section */}
           <div className="mt-2 text-lg opacity-100 animate-fade-in-later">
-            <p className="font-normal max-w-2xl text-justify md:text-left">
+            <p className="font-normal max-w-2xl text-justify">
               Running a business, whether big, small, or medium, constantly
               involves challenges. <br></br>At OQ, we look forward to helping
               you by working as an extension of your team to better understand
@@ -82,7 +82,7 @@ const HeroSection = () => {
           />
           <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-10 right-10 w-20 h-20 shadow-[0_0_0_0_rgba(255,0,0,0.5)]"/>
           <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-0 right-80 w-10 h-10 mr-52"/>
-          <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-16 right-60 w-80 h-80 opacity-100 rounded-full blur-[20px] shadow-[0_0_100px_0px_rgba(255,0,0,0.5)]" />
+          <img src="/assets/For_Developing/Background/Dot.png" className="hidden lg:block absolute top-60 right-60 w-80 h-80 opacity-100 rounded-full blur-[20px] shadow-[0_0_100px_0px_rgba(255,0,0,0.5)]" />
           {/* <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-[357px] right-[580px] w-5 h-5 rounded-full shadow-[0_0_50px_20px_rgba(255,0,0,0.5)]"/>
           <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-[250px] right-[566px] w-5 h-5 rounded-full shadow-[0_0_50px_10px_rgba(255,0,0,0.5)]"/> */}
           <img src="/assets/For_Developing/Background/Dot.png" className="absolute w-20 h-20"/>

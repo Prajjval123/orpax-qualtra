@@ -15,21 +15,8 @@ const Home = () => {
       <HomeServices />
       <HomeProjects />
       <HomeProducts />
-      
-      <div className="hidden lg:block">
       <HomeClients />
-      </div>
-      {/* Show Testimonials on smaller devices */}
-      <div className="block lg:hidden">
-        <Clients />
-      </div>
-      <div className="hidden lg:block">
-        <HomeTestimonials />
-      </div>
-      {/* Show Testimonials on smaller devices */}
-      <div className="block lg:hidden">
-        <Testimonials />
-      </div>
+      <HomeTestimonials />
     </div>
   );
 };

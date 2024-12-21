@@ -51,7 +51,7 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <div className=" text-gray-100 lg:py-16">
-      <div className="container mx-auto p-8 lg:px-16 text-center lg:text-left">
+      <div className="container mx-auto px-8 lg:px-16 text-center lg:text-left">
         <h1 className="text-4xl md:text-5xl font-semibold mb-12 lg:mb-24 text-center animate-fade-in">
           Testimonials
         </h1>

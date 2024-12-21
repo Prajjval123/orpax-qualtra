@@ -39,7 +39,6 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             <Link to={`${service[1]}`} onClick={toggleSidebar}>
               {service[0]}
             </Link>
-            
           </li>
           
         ))}

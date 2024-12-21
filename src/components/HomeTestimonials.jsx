@@ -89,52 +89,97 @@ const HomeTestimonials = () => {
   };
 
   return (
-    <div className="w-full pb-24 flex flex-col gap-12 items-center mt-12 px-12">
-      <h1 className="text-4xl md:text-5xl font-semibold mb-12 text-center">
-        Testimonials
-      </h1>
-      <div className="flex items-center gap-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40">
-        {/* Testimonial Slider */}
-          {/* Left Button */}
-          <button
-            onClick={handlePrevious}
-            className="px-4 py-2 rounded-lg hover:bg-red-700 transition text-2xl"
-          >
-            <img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-6 h-6 scale-x-[-1] invert" />
-          </button>
-        <div className="w-full backdrop-blur-lg max-w-4xl overflow-hidden relative rounded-xl shadow-lg">
-          <div
-            className="flex transition-transform duration-700 ease-in-out"
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-            }}
-          >
-            {testimonials.map((testimonial, index) => (
+    <>
+      <div className="hidden lg:block">
+        <div className="w-full pb-24 flex flex-col gap-12 items-center mt-12 px-12">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-12 text-center">
+            Testimonials
+          </h1>
+          <div className="flex items-center gap-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40">
+            {/* Testimonial Slider */}
+            {/* Left Button */}
+            <button
+              onClick={handlePrevious}
+              className="px-4 py-2 rounded-lg hover:bg-red-700 transition text-2xl"
+            >
+              <img
+                src="/assets/For_Developing/Arrow/next.png"
+                alt=""
+                className="w-6 h-6 scale-x-[-1] invert"
+              />
+            </button>
+            <div className="w-full backdrop-blur-lg max-w-4xl overflow-hidden relative rounded-xl shadow-lg">
               <div
-                key={index}
-                className="flex-shrink-0 w-full flex flex-col justify-center px-6 sm:px-24 py-4"
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                }}
               >
-                <div className="text-center px-4 py-6">
-                  <p className="text-lg sm:text-xl italic mb-6">
-                    {testimonial.descriptions}
-                  </p>
-                  <h2 className="text-xl sm:text-2xl font-bold">
-                    {testimonial.name},{testimonial.designation}
-                  </h2>
-                </div>
+                {testimonials.map((testimonial, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-full flex flex-col justify-center px-6 sm:px-24 py-4"
+                  >
+                    <div className="text-center px-4 py-6">
+                      <p className="text-lg sm:text-xl italic mb-6">
+                        {testimonial.descriptions}
+                      </p>
+                      <h2 className="text-xl sm:text-2xl font-bold">
+                        {testimonial.name},{testimonial.designation}
+                      </h2>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            {/* Right Button */}
+            <button
+              onClick={handleNext}
+              className="px-4 py-2 rounded-lg hover:bg-red-700 transition text-2xl"
+            >
+              <img
+                src="/assets/For_Developing/Arrow/next.png"
+                alt=""
+                className="w-6 h-6 invert"
+              />
+            </button>
           </div>
         </div>
-          {/* Right Button */}
-          <button
-            onClick={handleNext}
-            className="px-4 py-2 rounded-lg hover:bg-red-700 transition text-2xl"
-          >
-            <img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-6 h-6 invert" />
-          </button>
       </div>
-    </div>
+      <div className="block lg:hidden">
+        <div className=" text-gray-100 lg:py-16">
+          <div className="container mx-auto  lg:px-16 text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl font-semibold mb-12 lg:mb-24 text-center animate-fade-in">
+              Testimonials
+            </h1>
+            <div className="space-y-12">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl duration-300 transform transition-transform hover:scale-105 cursor-pointer"
+                >
+                  <div className="mb-4">
+                    <h2 className="text-xl font-semibold text-teal-400">
+                      {testimonial.name}
+                    </h2>
+                    <p className="text-sm text-gray-400">
+                      {testimonial.designation}
+                    </p>
+                  </div>
+                  <div className="space-y-4 text-gray-300">
+                    {testimonial.descriptions.map((description, idx) => (
+                      <p key={idx} className="leading-relaxed text-justify">
+                        {description}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

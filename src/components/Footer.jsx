@@ -69,7 +69,7 @@ const Footer = () => {
                 <strong>Email:</strong>{" "}
                 <a
                   href="mailto:arnab.paul@orpaxqualtra.com"
-                  className="text-red-500 hover:underline"
+                  className="text-red-500 hover:underline flex-wrap"
                 >
                   arnab.paul@orpaxqualtra.com
                 </a>
@@ -102,16 +102,16 @@ const Footer = () => {
           </div>
           {/* Newsletter Signup */}
           <div className="w-full h-full flex flex-col gap-4">
-            <h3 className="text-2xl lg:text-3xl text-nowrap text-center lg:text-right lg:pr-8">Newsletters Signup</h3>
+            <h3 className="text-2xl lg:text-3xl lg:text-nowrap text-center lg:text-right lg:pr-8">Newsletters Signup</h3>
             <form
               className="flex flex-col items-center justify-center"
               onSubmit={handleSubmit}
             >
-              <div className="flex flex-col w-full md:w-1/3 lg:w-full lg:flex gap-2 items-center ">
+              <div className="flex flex-col w-full  lg:flex justify-center gap-2 items-center ">
                 <input
                   type="email"
                   placeholder="Enter Your Email Address"
-                  className="p-2 pl-4 w-1/2 md:w-full rounded-md bg-zinc-800 font-thin text-sm focus:ring-2 focus:ring-red-500 focus:outline-none transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+                  className="p-2 pl-4 w-full md:w-1/3 lg:w-full rounded-md bg-zinc-800 font-thin text-sm focus:ring-2 focus:ring-red-500 focus:outline-none transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -119,7 +119,7 @@ const Footer = () => {
                 />
                 <button
                   type="submit"
-                  className="w-1/2 md:w-full bg-red-600 text-sm px-4 p-2 rounded-md hover:bg-red-700 transition-transform transform hover:scale-105"
+                  className="w-full md:w-1/3 lg:w-full bg-red-600 text-sm px-4 p-2 rounded-md hover:bg-red-700 transition-transform transform hover:scale-105"
                 >
                   SUBMIT
                 </button>

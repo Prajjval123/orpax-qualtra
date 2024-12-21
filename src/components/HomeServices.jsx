@@ -52,7 +52,7 @@ const HomeServices = () => {
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center gap-12">
         {/* IT Card */}
         {services.map((service, index) => (
-          <div key={index} className="flex flex-col text-center gap-4 h-full w-full rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-20 shadow-lg px-2 py-8 lg:py-12 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
+          <div key={index} className="flex flex-col text-center gap-4 h-full w-full rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg px-2 py-8 lg:py-12 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
             <div className="w-16 md:w-20 lg:w-24 h-16 md:h-20 lg:h-24 mx-auto">
               <img src={service.image} alt="" className="filter invert" />
             </div>
@@ -64,7 +64,7 @@ const HomeServices = () => {
         ))}
         {/* Below Card */}
         {services_below.map((services) => (
-          <div className="w-full h-full flex flex-col text-left gap-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-20 shadow-lg space-y-3 p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
+          <div className="w-full h-full flex flex-col text-left gap-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg space-y-3 p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
             {services.map((service) => <h6 className="text-md flex gap-2 items-center whitespace-nowrap h-[297.6]"><div className={service == ""? 'hidden' : 'inline'}><img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-3 h-3 invert" /></div> {service}</h6>)}
           </div> 
         ))}

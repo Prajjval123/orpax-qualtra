@@ -31,7 +31,7 @@ const ServicePage = () => {
             <span className="text-red-500">{service.name}</span>
           </nav>
 
-          <div className="lg:mx-8 bg-gray-900 backdrop-blur-xl bg-opacity-50 p-12 ">
+          <div className="lg:mx-8 bg-gray-900 backdrop-blur-xl bg-opacity-40 p-12 ">
             {/* Title */}
             <h1 className="text-4xl md:text-5xl font-semibold text-gray-100 mb-24 text-center pb-2 ">
               {service.name}

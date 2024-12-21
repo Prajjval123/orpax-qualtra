@@ -84,7 +84,7 @@ const About = () => {
         </section>
         <img src="assets/For developer/Red_Dot.png" className="absolute top-8 ml-16 opacity-40 "/>
       </div>
-      <div className="pt-10 px-10 lg:px-20 lg:px-60 relative">
+      <div className="pt-10 px-10 lg:px-20  relative">
         <section className="p-8 flex flex-col gap-12 lg:p-4 lg:py-8 animate-fade-in-later border rounded-xl backdrop-blur-lg">
           <div className="flex flex-col gap-12">
             <h1 className="text-4xl font-bold text-center mt-4">Meet Our Team</h1>
