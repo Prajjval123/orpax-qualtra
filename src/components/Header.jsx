@@ -50,9 +50,9 @@ const Header = () => {
   return (
     <header className="bg-blackBackground flex justify-center items-center h-24 py-4 pt-8">
       <div className="w-full mx-auto flex justify-between items-center">
-        <div className="flex flex-col">
-          <img src="/assets/logo.png" alt="Logo" className="w-36 " />
-          <p className="text-sm text-gray-400 font-medium text-center">A Group of Company</p>
+        <div className="flex flex-col animate-slide-down">
+          <img src="/assets/logo.png" alt="Logo" className="w-44 " />
+          <p className="text-md text-gray-400 font-medium text-center">A Group of Company</p>
         </div>
         {/* Hamburger Icon for Mobile */}
         <div className="ml-auto lg:hidden">
@@ -75,8 +75,11 @@ const Header = () => {
         </div>
         <nav>
           <ul className="hidden lg:flex space-x-6 mx-auto font-light">
-            {links.map((link) => (
-              <li key={link} className={`relative group flex items-center`} >
+            {links.map((link, index) => 
+            {
+              const animationDelay = `delay-${(index + 1) * 1000}ms`;
+              return (
+              <li key={link} className={`relative group flex items-center animate-slide-down`} >
                 <div
                   className={`flex items-center ${
                     link === "Services" ? "cursor-pointer" : ""
@@ -98,7 +101,7 @@ const Header = () => {
                 >
                   <Link
                     to={`/${link.toLowerCase()}`}
-                    className={`hover:text-red-500 ${link === 'Contact' ? 'hover:text-white' : ''} transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md lg:text-lg ${
+                    className={`hover:text-red-500  ${link === 'Contact' ? 'hover:text-white' : ''} transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md lg:text-lg ${
                       selected === link
                         ? "text-red-500"
                         : "text-white"
@@ -124,7 +127,7 @@ const Header = () => {
                   </div>
                 )}
               </li>
-            ))}
+            )})}
           </ul>
         </nav>
       </div>

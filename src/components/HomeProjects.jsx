@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -41,9 +45,42 @@ const projects = [
 ];
 
 const HomeProjects = () => {
+  const cardsRef = useRef([]);
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    // Animate the heading
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+    );
+
+    // Animate cards on scroll
+    cardsRef.current.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: index * 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+          },
+        }
+      );
+    });
+
+    
+  }, []);
+
   return (
     <div className="pt-12 flex flex-col gap-12 min-h-screen ">
-      <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-center animate-fade-in">
+      <h1 ref={headingRef} className="text-4xl md:text-5xl font-semibold mb-8 text-center animate-fade-in">
         Projects
       </h1>
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center gap-8 lg:gap-12">
@@ -51,6 +88,7 @@ const HomeProjects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
+            ref={(el) => (cardsRef.current[index] = el)}
             className="w-full flex flex-col h-full gap-4 p-1 pb-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             <div className="md:p-2 lg:p-4 rounded-xl">
@@ -79,7 +117,7 @@ const HomeProjects = () => {
         ))}
       </div>
       <div className="flex justify-end">
-        <Link to="/projects"><button className="bg-gradient-to-b from-red-600 text-sm w-24 rounded hover:bg-red-500">
+        <Link to="/projects"><button className="bg-red-700 text-sm w-24 rounded hover:bg-red-500">
           Read More
         </button></Link>
       </div>

@@ -22,14 +22,14 @@ const App = () => {
       <div className="bg-[#070C15] min-h-screen flex flex-col font-barlow text-white">
         <main className="flex-grow">
           <MainLayout>
-            <div className="relative flex flex-col px-12 z-100">
+            <div className="relative flex flex-col px-12 z-1000">
               <Header />
             </div>
             <Routes>
               <Route
                 path="/"
                 element={
-                  <div className="animate-fade-in">
+                  <div className="">
                     <Home />
                   </div>
                 }
@@ -37,7 +37,7 @@ const App = () => {
               <Route
                 path="/home"
                 element={
-                  <div className="animate-fade-in">
+                  <div className="">
                     <Home />
                   </div>
                 }
@@ -77,7 +77,7 @@ const App = () => {
               <Route
                 path="/projects"
                 element={
-                  <div className="animate-slide-left">
+                  <div className="animate-zoom-in">
                     <Projects />
                   </div>
                 }
@@ -85,7 +85,7 @@ const App = () => {
               <Route
                 path="/clients"
                 element={
-                  <div className="s">
+                  <div className="">
                     <Clients />
                   </div>
                 }

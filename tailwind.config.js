@@ -19,6 +19,7 @@ export default {
         "fade-in-slow": "fadeIn 1.5s ease-in-out forwards",
         "slide-left": "slideLeft 1s ease-in-out forwards",
         "slide-right": "slideRight 1s ease-in-out forwards",
+        "slide-down": "slideDown 0.8s ease-in-out forwards",
         "bounce": "bounce 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards",
         spin: "spin 1s linear infinite",
         "zoom-in": "zoomIn 0.8s ease-out forwards",
@@ -41,6 +42,10 @@ export default {
         slideRight: {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0)" },
+        },
+        slideDown: {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(0)" },
         },
         bounce: {
           "0%, 100%": { transform: "translateY(0)" },

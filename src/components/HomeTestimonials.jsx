@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// const testimonials = [
+gsap.registerPlugin(ScrollTrigger);
 //   {
 //     name: "Dr. B. P. Thiagarajan Senior Manager, The Nielsen Company",
 //     description:
@@ -66,8 +68,14 @@ const testimonials = [
 
 const HomeTestimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const headingRef = useRef(null);
 
   useEffect(() => {
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+    );
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
@@ -149,7 +157,7 @@ const HomeTestimonials = () => {
       <div className="block lg:hidden">
         <div className=" text-gray-100 lg:py-16">
           <div className="container mx-auto  lg:px-16 text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl font-semibold mb-12 lg:mb-24 text-center animate-fade-in">
+            <h1 ref={headingRef} className="text-4xl md:text-5xl font-semibold mb-12 lg:mb-24 text-center ">
               Testimonials
             </h1>
             <div className="space-y-12">
