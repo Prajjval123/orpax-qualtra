@@ -89,7 +89,7 @@ const HomeProjects = () => {
           <div
             key={index}
             ref={(el) => (cardsRef.current[index] = el)}
-            className="w-full flex flex-col h-full gap-4 p-1 pb-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="w-full relative flex flex-col h-full gap-4 p-1 pb-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             <div className="md:p-2 lg:p-4 rounded-xl">
             <img
@@ -113,6 +113,11 @@ const HomeProjects = () => {
                 ))}
               </ol>
             </div>
+          
+            <img
+              src="/assets/For_Developing/Background/Dot.png"
+              className="hidden lg:block absolute top-80  w-80 h-80 bg-blue-800 opacity-10 rounded-full blur-[70px] mix-blend-lighten "
+            />
           </div>
         ))}
       </div>

@@ -22,7 +22,7 @@ const App = () => {
       <div className="bg-[#070C15] min-h-screen flex flex-col font-barlow text-white">
         <main className="flex-grow">
           <MainLayout>
-            <div className="relative flex flex-col px-12 z-1000">
+            <div className="relative flex flex-col px-12">
               <Header />
             </div>
             <Routes>
@@ -69,7 +69,7 @@ const App = () => {
               <Route
                 path="/products"
                 element={
-                  <div className="animate-zoom-in">
+                  <div className="">
                     <Products />
                   </div>
                 }
@@ -77,7 +77,7 @@ const App = () => {
               <Route
                 path="/projects"
                 element={
-                  <div className="animate-zoom-in">
+                  <div className="">
                     <Projects />
                   </div>
                 }

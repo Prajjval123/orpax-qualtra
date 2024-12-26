@@ -35,9 +35,10 @@ const cards = [
 
 const divisions = [
   { name: "IT", href: "/" },
-  { name: "Art", href: "https://www.qualtradeal.com" },
-  { name: "E-Commerce", href: "https://www.us-indiaartculturecenter.org" },
+  { name: "Art", href: "https://www.us-indiaartculturecenter.org" },
+  { name: "E-Commerce", href: "https://www.qualtradeal.com" },
 ];
+
 
 const HeroSection = () => {
   const cardsRef = useRef([]);
@@ -100,7 +101,7 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="gap-8 relative mt-10 z-10 flex flex-col">
+    <div className="gap-8 relative mt-16 z-10 flex flex-col">
       {/* Hero Content */}
       <div>
         <div className="flex flex-col">
@@ -117,16 +118,20 @@ const HeroSection = () => {
           {/* Content Section */}
           <div
             ref={subHeadingRef}
-            className="mt-2 text-lg opacity-100 animate-fade-in-later"
+            className="mt-6 text-lg opacity-100 animate-fade-in-later"
           >
-            <p className="font-normal max-w-2xl text-justify">
-              Running a business, whether big, small, or medium, constantly
-              involves challenges. <br></br>At OQ, we look forward to helping
-              you by working as an extension of your team to better understand
-              your requirements, seek solutions for your bottlenecks, and
-              deliver high-quality solutions. We specialize in understanding
+            <p className="font-normal text-lg max-w-2xl text-justify">
+              Running a business, whether{" "}
+              <span className="text-red-500 font-semibold">big</span>,{" "}
+              <span className="text-red-500 font-semibold">small</span>, or{" "}
+              <span className="text-red-500 font-semibold">medium</span>,
+              constantly involves challenges. <br></br>At OQ, we look forward to
+              helping you by working as an extension of your team to better
+              understand your requirements, seek solutions for your bottlenecks,
+              and deliver high-quality solutions. We specialize in understanding
               your needs.
             </p>
+           
           </div>
 
           <div className="mt-12">
@@ -141,7 +146,7 @@ const HeroSection = () => {
                   delay: 75, // Speed for typing text
                   pauseFor: 1000, // Pause between strings
                 }}
-               />
+              />
             </h2>
 
             <h3 className="text-3xl text-center md:text-left mt-8 text-bold font-semibold">
@@ -157,8 +162,10 @@ const HeroSection = () => {
                   target="blank"
                   className={`flex-1 md:flex-none py-2 w-full md:py-0 sm:w-48 relative inline-block md:mr-2 cursor-pointer animate-slide-right `}
                 >
-                  <div className="bg-transparent w-full text-lg px-6 py-1 pr-10 rounded border border-gray-600 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500">
-                    <span className="bg-black animate-slide-down">{division.name}</span>
+                  <div className="bg-transparent w-full text-lg px-6 py-1 pr-10 rounded border border-gray-600 appearance-none hover:outline-none hover:ring-2 hover:ring-red-500">
+                    <span className="bg-black animate-slide-down">
+                      {division.name}
+                    </span>
                   </div>
                   {/* Arrow inside dropdown */}
                   <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
@@ -191,6 +198,14 @@ const HeroSection = () => {
           />
           <img
             src="/assets/For_Developing/Background/Dot.png"
+            className="absolute top-[22rem] left-[20rem] w-10 h-10 mr-52"
+          />
+          <img
+            src="/assets/For_Developing/Background/Dot.png"
+            className="absolute  top-[30rem] left-[40rem] w-16 h-16 mr-52"
+          />
+          <img
+            src="/assets/For_Developing/Background/Dot.png"
             className="hidden lg:block absolute top-20 right-60 w-80 h-80 opacity-100 rounded-full blur-[20px] shadow-[0_0_100px_0px_rgba(255,0,0,0.5)]"
           />
           {/* <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-[357px] right-[580px] w-5 h-5 rounded-full shadow-[0_0_50px_20px_rgba(255,0,0,0.5)]"/>
@@ -207,10 +222,19 @@ const HeroSection = () => {
             src="/assets/For_Developing/Background/Dot.png"
             className="absolute w-20 h-20"
           />
+          {/* motion line */}
+          <img
+            src="/assets/For_Developing/Background/Motion_Line.png"
+            alt="Motion Line"
+            className="absolute top-[12rem] left-[28rem]" />
+            <img
+            src="/assets/For_Developing/Background/Motion_Line.png"
+            alt="Motion Line"
+            className="absolute top-[18rem] left-[16rem] " />
         </div>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 text-center lg:text-left gap-12 bg-repeat">
+      <div className="relative mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 text-center lg:text-left gap-12 bg-repeat">
         {/* IT Card */}
         {cards.map((card, index) => (
           <div
@@ -249,6 +273,10 @@ const HeroSection = () => {
             </div>
           </div>
         ))}
+        <img
+          src="/assets/For_Developing/Background/Dot.png"
+          className="hidden lg:block absolute top-20 right-60 w-80 h-80 bg-blue-800 opacity-20 rounded-full blur-[60px] mix-blend-lighten "
+        />
       </div>
     </div>
   );

@@ -99,7 +99,7 @@ const HomeTestimonials = () => {
   return (
     <>
       <div className="hidden lg:block">
-        <div className="w-full pb-24 flex flex-col gap-12 items-center mt-12 px-12">
+        <div className="relative w-full pb-24 flex flex-col gap-12 items-center mt-12 px-12">
           <h1 className="text-4xl md:text-5xl font-semibold mb-12 text-center">
             Testimonials
           </h1>
@@ -126,7 +126,7 @@ const HomeTestimonials = () => {
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-full flex flex-col justify-center px-6 sm:px-24 py-4"
+                    className=" flex-shrink-0 w-full flex flex-col justify-center px-6 sm:px-24 py-4"
                   >
                     <div className="text-center px-4 py-6">
                       <p className="text-lg sm:text-xl italic mb-6">
@@ -136,9 +136,11 @@ const HomeTestimonials = () => {
                         {testimonial.name},{testimonial.designation}
                       </h2>
                     </div>
+                    
                   </div>
                 ))}
               </div>
+              <img src="assets/For developer/Red_Dot.png" className="absolute top-8 left-20 ml-16 opacity-40 "/>
             </div>
             {/* Right Button */}
             <button
@@ -152,6 +154,10 @@ const HomeTestimonials = () => {
               />
             </button>
           </div>
+          <img
+              src="/assets/For_Developing/Background/Dot.png"
+              className="hidden lg:block absolute top-80 -right-10 w-80 h-80 bg-blue-800 opacity-30 rounded-full blur-[60px]  "
+            />
         </div>
       </div>
       <div className="block lg:hidden">
@@ -164,7 +170,7 @@ const HomeTestimonials = () => {
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl duration-300 transform transition-transform hover:scale-105 cursor-pointer"
+                  className="relative bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl duration-300 transform transition-transform hover:scale-105 cursor-pointer"
                 >
                   <div className="mb-4">
                     <h2 className="text-xl font-semibold text-teal-400">
@@ -181,9 +187,11 @@ const HomeTestimonials = () => {
                       </p>
                     ))}
                   </div>
+                  
                 </div>
               ))}
             </div>
+            
           </div>
         </div>
       </div>

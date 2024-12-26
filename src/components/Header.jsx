@@ -48,7 +48,7 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-blackBackground flex justify-center items-center h-24 py-4 pt-8">
+    <header className="bg-blackBackground flex justify-center items-center h-24 py-4 pt-8 z-50">
       <div className="w-full mx-auto flex justify-between items-center">
         <div className="flex flex-col animate-slide-down">
           <img src="/assets/logo.png" alt="Logo" className="w-44 " />
@@ -119,7 +119,7 @@ const Header = () => {
                 </div>
                 {/* Render Dropdown */}
                 {link === "Services" && (
-                  <div className="absolute top-full left-[-900%] z-50">
+                  <div className="absolute top-full left-[-900%]">
                     <ServicesDropdown
                       isServiceDropdownOpen={isServiceDropdownOpen}
                       handleServiceDropdown={handleServiceDropdown}

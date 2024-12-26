@@ -52,7 +52,7 @@ const Footer = () => {
         <h1 className="text-4xl lg:text-5xl font-semibold mb-12 text-center animate-fade-in">
           Contact
         </h1>
-        <div className="grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 place-items-center justify-between items-start gap-8">
+        <div className="relative grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 place-items-center justify-between items-start gap-8">
           {/* Logo & Address */}
           <div className="w-full flex flex-col gap-2 md:grid-cols-3 text-center lg:text-left">
             <h1 className="text-2xl lg:text-3xl">Address:</h1>
@@ -126,6 +126,11 @@ const Footer = () => {
               </div>
             </form>
           </div>
+         
+          <img
+            src="/assets/For_Developing/Background/Dot.png"
+            className="absolute -top-60 -left-60 hidden lg:block opacity-40"
+          />
         </div>
 
         {/* Sitemap */}

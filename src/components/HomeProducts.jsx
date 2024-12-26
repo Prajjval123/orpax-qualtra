@@ -27,7 +27,7 @@ const Products = () => {
     // Animate the heading
     gsap.fromTo(
       headingRef.current,
-      { opacity: 0, y: -50 },
+      { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
     );
 
@@ -57,14 +57,16 @@ const Products = () => {
       <h1 ref={headingRef} className="text-4xl md:text-5xl font-semibold mb-8 text-center animate-fade-in">
         Products
       </h1>
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center gap-8 lg:gap-12">
+      <div className="relative mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center gap-8 lg:gap-12">
+        
         {/* IT Card */}
         {products.map((product, index) => (
           <div
             key={index}
             ref={(el) => (cardsRef.current[index] = el)}
-            className="h-full w-full flex flex-col md:py-1 lg:py-2 justify-between rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className=" h-full w-full flex flex-col md:py-1 lg:py-2 justify-between rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
+            
             <h1 className="text-xl lg:text-2xl flex items-center justify-center font-medium text-center h-[80px] whitespace-pre-line">
               {product.title}
             </h1>
@@ -79,9 +81,15 @@ const Products = () => {
             <h1 className="text-xl lg:text-2xl text-center font-medium p-6 text-gray-300">
               Request a free demo
             </h1>
+            
           </div>
         ))}
+        <img
+              src="/assets/For_Developing/Background/Dot.png"
+              className="hidden lg:block absolute top-80 right-20 w-80 h-80 bg-blue-800 opacity-30 rounded-full blur-[80px]  "
+            />
       </div>
+      
     </div>
   );
 };

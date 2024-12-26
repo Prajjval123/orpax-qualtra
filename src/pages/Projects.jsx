@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const projects = [
   [
@@ -224,21 +226,91 @@ const projects = [
   ],
 ];
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Projects = () => {
+  const cardsRef = useRef([]);
+  const headingRef = useRef(null);
+  const underlineRef = React.useRef(null);
+
+  const handleMouseEnter = () => {
+    gsap.fromTo(
+      underlineRef.current,
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        transformOrigin: "center",
+        duration: 1.5,
+        ease: "power2.out",
+      }
+    );
+    
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(underlineRef.current,{ scaleX: 1 }, {
+      scaleX: 0,
+      transformOrigin: "center",
+      duration: 2,
+      ease: "power2.inOut",
+    });
+  };
+
+  useEffect(() => {
+    // Animate the heading
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+    );
+
+    // Animate cards on scroll
+    cardsRef.current.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: (index + 2) * 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+          },
+        }
+      );
+    });
+    handleMouseEnter()
+  }, []);
   return (
     <div className="p-4 lg:p-16 min-h-screen pb-0">
-      <h1 className="text-4xl md:text-5xl font-semibold mb-10 text-center p-4 animate-fade-in">
+      <h1
+        ref={headingRef}
+        onMouseLeave={handleMouseLeave}
+        className="text-4xl md:text-5xl font-semibold mb-10 text-center p-4 animate-fade-in"
+      >
         Projects
+        <div
+          ref={underlineRef}
+          className="absolute left-0 bottom-0 h-[2px] bg-red-500 w-full scale-x-0 transform origin-center"
+        ></div>
       </h1>
+      
       {projects.map((projectArr, index) => (
-        <div key={index} className="mb-24 px-10">
+        <div
+          key={index}
+          ref={(el) => (cardsRef.current[index] = el)}
+          className="mb-24 px-10 "
+        >
           <h1 className="text-xl lg:text-2xl font-medium px-4 py-2 rounded-xl text-center my-4 md:my-12">
             {projectArr[0].title}
           </h1>
 
-          <div className="flex flex-col mb-4">
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 relative">
-              <div className="w-full flex flex-col h-full gap-4 lg:p-2 pb-4 rounded-xl border border-white backdrop-blur-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
+          <div className="flex flex-col mb-4 lg:h-[700px]">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 relative h-full">
+              <div className="w-full flex flex-col h-full gap-4 lg:p-2 pb-4 rounded-xl border border-white backdrop-blur-lg shadow-lg transform transition-transform duration-300 hover:scale-x-100 hover:shadow-2xl hover:shadow-red-700 cursor-pointer">
                 <div className="lg:p-4 rounded-xl">
                   <img
                     src={projectArr[0].image}
@@ -261,10 +333,13 @@ const Projects = () => {
                   </ol>
                 </div>
               </div>
-              <img src="assets/For developer/Red_Dot.png" className="absolute top-[200px] right-[200px] opacity-40"/>
+              <img
+                src="assets/For developer/Red_Dot.png"
+                className="absolute top-[200px] right-[200px] opacity-40"
+              />
               <div
                 key={index}
-                className=" w-full flex flex-col h-full gap-4 lg:p-2 pb-4 rounded-xl border border-white backdrop-blur-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+                className=" w-full flex flex-col h-full gap-4 lg:p-2 pb-4 rounded-xl border border-white backdrop-blur-lg shadow-lg transform transition-transform duration-500 hover:scale-x-100 hover:shadow-2xl hover:shadow-red-700 cursor-pointer"
               >
                 <div className="lg:p-4 rounded-xl">
                   <img

@@ -11,7 +11,7 @@ function ServicesDropdown({ isServiceDropdownOpen, handleServiceDropdown }) {
   return (
     <div className="relative">
       {isServiceDropdownOpen && (
-        <div className="absolute border border-white bg-black mt-2 rounded shadow-lg w-[1000px] z-50 p-4 animate-popup" onClick={handleServiceDropdown}>
+        <div className="absolute border border-white bg-black mt-2 rounded shadow-lg w-[1000px]  p-4 animate-popup" onClick={handleServiceDropdown}>
           <div className="grid grid-cols-4 gap-4">
             {/* IT Services */}
             <div className="grid-col-1">

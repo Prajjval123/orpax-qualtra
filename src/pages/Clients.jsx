@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { clients } from "../constants/utils";
 
 const clientPoints = [
@@ -43,17 +45,79 @@ const clientPoints = [
   ],
 ];
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Clients = () => {
+  const cardsRef = useRef([]);
+  const headingRef = useRef(null);
+  const underlineRef = React.useRef(null);
+
+  const handleMouseEnter = () => {
+    gsap.fromTo(
+      underlineRef.current,
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        transformOrigin: "center",
+        duration: 1.5,
+        ease: "power2.out",
+      }
+    );
+    
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(underlineRef.current,{ scaleX: 1 }, {
+      scaleX: 0,
+      transformOrigin: "center",
+      duration: 2,
+      ease: "power2.inOut",
+    });
+  };
+
+  useEffect(() => {
+    // Animate the heading
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }
+    );
+
+    // Animate cards on scroll
+    cardsRef.current.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: (index) * 0.1,
+          ease: "power3.inOut",
+          scrollTrigger: {
+            trigger: card,
+          },
+        }
+      );
+    });
+    handleMouseEnter()
+  }, []);
   return (
-    <div className="w-full flex flex-col justify-center items-center px-8 md:px-0 mt-24">
-      <h1 className="text-4xl md:text-5xl font-semibold text-center">
+    <div className="w-full flex flex-col justify-center items-center px-8 md:px-16 my-24">
+      <h1 ref={headingRef} className="text-4xl md:text-5xl font-semibold text-center w-full p-4 animate-fade-in">
         Clients
+        <div
+          ref={underlineRef}
+          onMouseLeave={handleMouseLeave}
+          className="absolute left-0 bottom-0 h-[2px] bg-red-500 w-full scale-x-0 transform origin-center"
+        ></div>
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-3 w-full md:grid-cols-3 lg:grid-cols-4  lg:px-16 gap-8 mt-24 mb-12">
+      <div className="grid grid-cols-1 px-12 sm:grid-cols-3 w-full md:grid-cols-3 lg:grid-cols-4 lg:px-16 gap-8 mt-24 mb-24">
         {clients.map((client, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-lg flex justify-center items-center p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+            ref={(el) => (cardsRef.current[index] = el)}
+            className="bg-white shadow-lg rounded-lg flex justify-center items-center p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             <img
               src={client}
