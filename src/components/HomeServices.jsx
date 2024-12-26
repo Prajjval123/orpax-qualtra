@@ -120,7 +120,7 @@ const HomeServices = () => {
           <div
             key={index}
             ref={(el) => (aboveCardsRef.current[index] = el)}
-            className="relative flex flex-col text-center gap-4 h-full w-full rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg px-2 py-8 lg:py-12 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="relative flex flex-col text-center gap-4 h-full w-full rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg px-2 py-8 lg:py-12 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-700 cursor-pointer"
           >
             <div className="w-16 md:w-20 lg:w-24 h-16 md:h-20 lg:h-24 mx-auto">
               <img src={service.image} alt="" className="filter invert" />
@@ -138,7 +138,7 @@ const HomeServices = () => {
           <div
             key={index}
             ref={(el) => (belowCardsRef.current[index] = el)}
-            className="w-full h-full flex flex-col text-left gap-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg space-y-3 p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="w-full h-full flex flex-col text-left gap-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg space-y-3 p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-700  cursor-pointer"
           >
             {services.map((service) => (
               <h6 className="text-md flex gap-2 items-center whitespace-nowrap h-[297.6]">
@@ -160,24 +160,24 @@ const HomeServices = () => {
         />
         {/* motion line */}
         <img
-            src="/assets/For_Developing/Background/Motion_Line.png"
-            alt="Motion Line"
-            className="absolute top-[12rem] left-[28rem]" />
-            <img
-            src="/assets/For_Developing/Background/Motion_Line.png"
-            alt="Motion Line"
-            className="absolute top-[18rem] left-[16rem] " />
-
-         
+          src="/assets/For_Developing/Background/Motion_Line.png"
+          alt="Motion Line"
+          className="absolute top-[12rem] left-[28rem]"
+        />
+        <img
+          src="/assets/For_Developing/Background/Motion_Line.png"
+          alt="Motion Line"
+          className="absolute top-[18rem] left-[16rem] "
+        />
       </div>
       <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="absolute left-[20rem] w-10 h-10 mr-52"
-          />
-          <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="absolute  left-[60rem] w-20 h-20 mr-52"
-          />
+        src="/assets/For_Developing/Background/Dot.png"
+        className="absolute left-[20rem] w-10 h-10 mr-52"
+      />
+      <img
+        src="/assets/For_Developing/Background/Dot.png"
+        className="absolute  left-[60rem] w-20 h-20 mr-52"
+      />
     </div>
   );
 };

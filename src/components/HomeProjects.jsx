@@ -89,7 +89,7 @@ const HomeProjects = () => {
           <div
             key={index}
             ref={(el) => (cardsRef.current[index] = el)}
-            className="w-full relative flex flex-col h-full gap-4 p-1 pb-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="w-full relative flex flex-col h-full gap-4 p-1 pb-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-700 cursor-pointer"
           >
             <div className="md:p-2 lg:p-4 rounded-xl">
             <img

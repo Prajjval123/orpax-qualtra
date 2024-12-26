@@ -64,7 +64,7 @@ const Products = () => {
           <div
             key={index}
             ref={(el) => (cardsRef.current[index] = el)}
-            className=" h-full w-full flex flex-col md:py-1 lg:py-2 justify-between rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className=" h-full w-full flex flex-col md:py-1 lg:py-2 justify-between rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-700 cursor-pointer"
           >
             
             <h1 className="text-xl lg:text-2xl flex items-center justify-center font-medium text-center h-[80px] whitespace-pre-line">

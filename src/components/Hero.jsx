@@ -240,7 +240,7 @@ const HeroSection = () => {
           <div
             key={card.number}
             ref={(el) => (cardsRef.current[index] = el)}
-            className="flex flex-col justify-between rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg p-4 lg:p-6 px-8 pr-10 md:pb-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="flex flex-col justify-between rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40 shadow-lg p-4 lg:p-6 px-8 pr-10 md:pb-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer hover:shadow-red-700"
           >
             <div>
               <div className="flex justify-between items-center">

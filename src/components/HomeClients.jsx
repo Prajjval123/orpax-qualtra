@@ -26,7 +26,7 @@ const HomeClients = () => {
           </h1>
           <div className="relative flex items-center w-full pt-20 overflow-hidden">
             {/* Sliding container */}
-            <div className="flex sm:animate-slide space-x-4">
+            <div className="flex sm:animate-slide space-x-4 hover:shadow-2xl ">
               {clients.concat(clients).map((client, index) => (
                 <img
                   key={index}
