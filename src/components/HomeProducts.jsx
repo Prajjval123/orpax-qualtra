@@ -84,10 +84,7 @@ const Products = () => {
             
           </div>
         ))}
-        <img
-              src="/assets/For_Developing/Background/Dot.png"
-              className="hidden lg:block absolute top-80 right-20 w-80 h-80 bg-blue-800 opacity-30 rounded-full blur-[80px]  "
-            />
+        
       </div>
       
     </div>

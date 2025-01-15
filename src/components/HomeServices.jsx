@@ -27,7 +27,7 @@ const HomeServices = () => {
     {
       title: "Digital Marketing and Designing",
       description:
-        "Social Media Marketing, SMS Marketing, \n Email Marketing, Google Ads,\n Creative and Concept Designing.",
+        "Social Media Marketing, Google Ads,\n Creative and Concept Designing.",
       image:
         "/assets/For_Developing/Service & Domain  Section/social-media.png",
     },
@@ -154,21 +154,7 @@ const HomeServices = () => {
             ))}
           </div>
         ))}
-        <img
-          src="/assets/For_Developing/Background/Dot.png"
-          className="hidden lg:block absolute top-60 left-60 w-80 h-80 bg-blue-800 opacity-20 rounded-full blur-[70px] mix-blend-lighten "
-        />
-        {/* motion line */}
-        <img
-          src="/assets/For_Developing/Background/Motion_Line.png"
-          alt="Motion Line"
-          className="absolute top-[12rem] left-[28rem]"
-        />
-        <img
-          src="/assets/For_Developing/Background/Motion_Line.png"
-          alt="Motion Line"
-          className="absolute top-[18rem] left-[16rem] "
-        />
+        
       </div>
       <img
         src="/assets/For_Developing/Background/Dot.png"

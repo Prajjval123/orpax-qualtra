@@ -103,7 +103,7 @@ const HomeTestimonials = () => {
           <h1 className="text-4xl md:text-5xl font-semibold mb-12 text-center">
             Testimonials
           </h1>
-          <div className="flex items-center gap-4 rounded-xl border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40">
+          <div className="flex items-center gap-4 rounded-xl cursor-pointer border border-white bg-gray-900 backdrop-blur-lg bg-opacity-40">
             {/* Testimonial Slider */}
             {/* Left Button */}
             <button
@@ -136,11 +136,13 @@ const HomeTestimonials = () => {
                         {testimonial.name},{testimonial.designation}
                       </h2>
                     </div>
-                    
                   </div>
                 ))}
               </div>
-              <img src="assets/For developer/Red_Dot.png" className="absolute top-8 left-20 ml-16 opacity-40 "/>
+              <img
+                src="assets/For developer/Red_Dot.png"
+                className="absolute top-8 left-20 ml-16 opacity-40 "
+              />
             </div>
             {/* Right Button */}
             <button
@@ -155,15 +157,18 @@ const HomeTestimonials = () => {
             </button>
           </div>
           <img
-              src="/assets/For_Developing/Background/Dot.png"
-              className="hidden lg:block absolute top-80 -right-10 w-80 h-80 bg-blue-800 opacity-30 rounded-full blur-[60px]  "
-            />
+            src="/assets/For_Developing/Background/Dot.png"
+            className="hidden lg:block absolute top-80 -right-10 w-80 h-80 bg-blue-800 opacity-30 rounded-full blur-[60px]  "
+          />
         </div>
       </div>
       <div className="block lg:hidden">
         <div className=" text-gray-100 lg:py-16">
           <div className="container mx-auto  lg:px-16 text-center lg:text-left">
-            <h1 ref={headingRef} className="text-4xl md:text-5xl font-semibold mb-12 lg:mb-24 text-center ">
+            <h1
+              ref={headingRef}
+              className="text-4xl md:text-5xl font-semibold mb-12 lg:mb-24 text-center "
+            >
               Testimonials
             </h1>
             <div className="space-y-12">
@@ -187,11 +192,9 @@ const HomeTestimonials = () => {
                       </p>
                     ))}
                   </div>
-                  
                 </div>
               ))}
             </div>
-            
           </div>
         </div>
       </div>

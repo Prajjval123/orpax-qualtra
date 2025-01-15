@@ -17,7 +17,7 @@ const cards = [
   },
   {
     number: 2,
-    industry: "Art",
+    industry: "Art & Interiors",
     description:
       "Offers a convenient way to discover unique, high-quality pieces from the comfort of their homes. Making art more accessible.",
     image: "/assets/For_Developing/Three_Divisions/abstract.png",
@@ -35,16 +35,20 @@ const cards = [
 
 const divisions = [
   { name: "IT", href: "/" },
-  { name: "Art", href: "https://www.us-indiaartculturecenter.org" },
+  { name: "Art & Interiors", href: "https://www.us-indiaartculturecenter.org" },
   { name: "E-Commerce", href: "https://www.qualtradeal.com" },
 ];
 
-
 const HeroSection = () => {
+  // Main Heading
   const cardsRef = useRef([]);
   const headingRef = useRef(null);
   const subHeadingRef = useRef(null);
+  // We Solve, We Deliver...
   const typingRef = useRef(null);
+  const typingHeadingRef = useRef(null);
+  // Divisions Part
+  const divisionsRef = useRef(null);
 
   const typingTexts = ["We Understand", "We Solve", "We Deliver"];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -53,15 +57,15 @@ const HeroSection = () => {
     // Animate the heading
     gsap.fromTo(
       headingRef.current,
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+      { opacity: 0, x: -50 },
+      { opacity: 1, x: 0, duration: 1, delay: 1 }
     );
 
     // Animate the subheading
     gsap.fromTo(
       subHeadingRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, delay: 0.5, ease: "power3.out" }
+      { opacity: 0, x: -50 },
+      { opacity: 1, x: 0, duration: 1, delay: 1.5 }
     );
 
     // Animate cards on scroll
@@ -97,6 +101,20 @@ const HeroSection = () => {
       });
     };
 
+    //Animate the typing Heading
+    gsap.fromTo(
+      typingHeadingRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, delay: 2 }
+    );
+
+    //Animate the divisions part
+    gsap.fromTo(
+      divisionsRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, delay: 2.5 }
+    );
+
     const interval = setInterval(cycleText, 2000); // Change text every 2 seconds
     return () => clearInterval(interval);
   }, []);
@@ -123,7 +141,7 @@ const HeroSection = () => {
             <p className="font-normal text-lg max-w-2xl text-justify">
               Running a business, whether{" "}
               <span className="text-red-500 font-semibold">big</span>,{" "}
-              <span className="text-red-500 font-semibold">small</span>, or{" "}
+              <span className="text-red-500 font-semibold">small</span> or{" "}
               <span className="text-red-500 font-semibold">medium</span>,
               constantly involves challenges. <br></br>At OQ, we look forward to
               helping you by working as an extension of your team to better
@@ -131,10 +149,9 @@ const HeroSection = () => {
               and deliver high-quality solutions. We specialize in understanding
               your needs.
             </p>
-           
           </div>
 
-          <div className="mt-12">
+          <div className="mt-12" ref={typingHeadingRef}>
             {/* Typing Animation */}
             <h2 className="mt-4 text-4xl lg:text-5xl text-center md:text-left font-medium text-red-600">
               <Typewriter
@@ -148,19 +165,18 @@ const HeroSection = () => {
                 }}
               />
             </h2>
+          </div>
 
+          <div className="flex justify-center flex-col" ref={divisionsRef}>
             <h3 className="text-3xl text-center md:text-left mt-8 text-bold font-semibold">
               Our 3 Divisions
             </h3>
-          </div>
-
-          <div className="flex justify-center">
             <div className="mt-4 w-1/2 flex-grow sm:flex-1 sm:flex  sm:space-x-4">
               {divisions.map((division, index) => (
                 <a
                   href={division.href}
                   target="blank"
-                  className={`flex-1 md:flex-none py-2 w-full md:py-0 sm:w-48 relative inline-block md:mr-2 cursor-pointer animate-slide-right `}
+                  className={`flex-1 md:flex-none py-2 w-full md:py-0 sm:w-48 relative inline-block md:mr-2 cursor-pointer`}
                 >
                   <div className="bg-transparent w-full text-lg px-6 py-1 pr-10 rounded border border-gray-600 appearance-none hover:outline-none hover:ring-2 hover:ring-red-500">
                     <span className="bg-black animate-slide-down">
@@ -186,7 +202,7 @@ const HeroSection = () => {
           <img
             src="/assets/additional_images/Computer_bg.png"
             alt="Background Decor"
-            className="absolute w-2/3 object-contain opacity-100 from-red-500 via-transparent to-blue-600 mix-blend-lighten shadow-blue-500/50 sm:w-2/5 sm:-top-16 sm:right-12 hidden lg:block"
+            className="absolute w-2/3 object-contain opacity-100 from-red-500 via-transparent to-blue-600 mix-blend-lighten shadow-blue-500/50 sm:w-2/5 sm:-top-16 sm:right-12 hidden lg:block animate-fade-in-slow"
           />
           <img
             src="/assets/For_Developing/Background/Dot.png"
@@ -204,12 +220,12 @@ const HeroSection = () => {
             src="/assets/For_Developing/Background/Dot.png"
             className="absolute  top-[30rem] left-[40rem] w-16 h-16 mr-52"
           />
-          <img
+          {/* Computer Bg Light Image */}
+          {/* <img
             src="/assets/For_Developing/Background/Dot.png"
             className="hidden lg:block absolute top-20 right-60 w-80 h-80 opacity-100 rounded-full blur-[20px] shadow-[0_0_100px_0px_rgba(255,0,0,0.5)]"
-          />
-          {/* <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-[357px] right-[580px] w-5 h-5 rounded-full shadow-[0_0_50px_20px_rgba(255,0,0,0.5)]"/>
-          <img src="/assets/For_Developing/Background/Dot.png" className="absolute top-[250px] right-[566px] w-5 h-5 rounded-full shadow-[0_0_50px_10px_rgba(255,0,0,0.5)]"/> */}
+          /> */}
+          
           <img
             src="/assets/For_Developing/Background/Dot.png"
             className="absolute w-20 h-20"
@@ -222,15 +238,6 @@ const HeroSection = () => {
             src="/assets/For_Developing/Background/Dot.png"
             className="absolute w-20 h-20"
           />
-          {/* motion line */}
-          <img
-            src="/assets/For_Developing/Background/Motion_Line.png"
-            alt="Motion Line"
-            className="absolute top-[12rem] left-[28rem]" />
-            <img
-            src="/assets/For_Developing/Background/Motion_Line.png"
-            alt="Motion Line"
-            className="absolute top-[18rem] left-[16rem] " />
         </div>
       </div>
 
@@ -273,10 +280,7 @@ const HeroSection = () => {
             </div>
           </div>
         ))}
-        <img
-          src="/assets/For_Developing/Background/Dot.png"
-          className="hidden lg:block absolute top-20 right-60 w-80 h-80 bg-blue-800 opacity-20 rounded-full blur-[60px] mix-blend-lighten "
-        />
+        
       </div>
     </div>
   );

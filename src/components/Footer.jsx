@@ -63,7 +63,7 @@ const Footer = () => {
               </p>
               <p className="text-md md:text-lg lg:text-md">
                 <strong>M:</strong> +91-9810041039 <br />
-                <strong>M:</strong> +91-9319644022
+                <strong>M:</strong> +91-9319644055
               </p>
               <p className="text-md md:text-lg lg:text-md">
                 <strong>Email:</strong>{" "}
@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
           {/* Newsletter Signup */}
           <div className="w-full h-full flex flex-col gap-4">
-            <h3 className="text-2xl lg:text-3xl lg:text-nowrap text-center lg:text-right lg:pr-8">Newsletters Signup</h3>
+            <h3 className="text-2xl lg:text-3xl lg:text-nowrap text-center lg:text-center lg:pr-8">Newsletters Signup</h3>
             <form
               className="flex flex-col items-center justify-center"
               onSubmit={handleSubmit}

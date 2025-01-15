@@ -94,11 +94,13 @@ const About = () => {
                   key={index}
                   className="flex flex-col items-center gap-4 transform transition-transform duration-300 hover:scale-105 cursor-pointer border rounded-xl shadow-lg"
                 >
+                  <div className="p-4 rounded-xl">
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="rounded-xl h-52 w-52 lg:h-80 lg:w-64"
+                    className="rounded-xl h-52 w-52 lg:h-80 lg:w-64 "
                   />
+                  </div>
                   <div className="pt-2">
                   <h2 className="text-2xl lg:text-3xl font-semibold text-center">
                     {person.name}
