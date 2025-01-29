@@ -87,7 +87,7 @@ const Clients = () => {
     cardsRef.current.forEach((card, index) => {
       gsap.fromTo(
         card,
-        { opacity: 0, y: 50 },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,

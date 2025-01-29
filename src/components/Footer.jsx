@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
 
 const icons = [
@@ -42,8 +43,12 @@ const Footer = () => {
     navigate("/thank-you");
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
+  };
+
+  const onChange = (value) => {
+    setVerified(!verified);
   };
 
   return (
@@ -58,7 +63,9 @@ const Footer = () => {
             <h1 className="text-2xl lg:text-3xl">Address:</h1>
             <div className="text-gray-300">
               <p className="text-md md:text-lg lg:text-md leading-relaxed">
-                97-A, (FFB) Indraprastha Estate <br className="block md:hidden" />Sector-30-33, <br className="hidden md:block" /> Faridabad,
+                97-A, (FFB) Indraprastha Estate{" "}
+                <br className="block md:hidden" />
+                Sector-30-33, <br className="hidden md:block" /> Faridabad,
                 Haryana-121003.
               </p>
               <p className="text-md md:text-lg lg:text-md">
@@ -95,14 +102,18 @@ const Footer = () => {
                       className="w-6 lg:w-8 h-6 lg:h-8 rounded-md"
                     />
                   </a>
-                  <h6 className="text-md md:text-lg text-gray-300">{icon.name}</h6>
+                  <h6 className="text-md md:text-lg text-gray-300">
+                    {icon.name}
+                  </h6>
                 </div>
               ))}
             </div>
           </div>
           {/* Newsletter Signup */}
           <div className="w-full h-full flex flex-col gap-4">
-            <h3 className="text-2xl lg:text-3xl lg:text-nowrap text-center lg:text-center lg:pr-8">Newsletters Signup</h3>
+            <h3 className="text-2xl lg:text-3xl lg:text-nowrap text-center lg:text-center lg:pr-8">
+              Newsletters Signup
+            </h3>
             <form
               className="flex flex-col items-center justify-center"
               onSubmit={handleSubmit}
@@ -117,6 +128,15 @@ const Footer = () => {
                     setFormData({ ...formData, name: e.target.value })
                   }
                 />
+                <div className="flex justify-center">
+                  {/* Optional: ReCAPTCHA */}
+                  <ReCAPTCHA
+                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                    onChange={onChange}
+                    className="rounded-lg shadow-md"
+                    theme="dark"
+                  />
+                </div>
                 <button
                   type="submit"
                   className="w-full md:w-1/3 lg:w-full bg-red-600 text-sm px-4 p-2 rounded-md hover:bg-red-700 transition-transform transform hover:scale-105"
@@ -126,7 +146,7 @@ const Footer = () => {
               </div>
             </form>
           </div>
-         
+
           <img
             src="/assets/For_Developing/Background/Dot.png"
             className="absolute -top-60 -left-60 hidden lg:block opacity-40"
@@ -141,9 +161,9 @@ const Footer = () => {
               {sitemap.map((site) => (
                 <div className="flex gap-3 ">
                   <a href="#" className="hover:text-white ">
-                  {site}
-                </a>
-                <span className="text-xl">|</span>
+                    {site}
+                  </a>
+                  <span className="text-xl">|</span>
                 </div>
               ))}
             </div>

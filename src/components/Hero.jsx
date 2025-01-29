@@ -25,7 +25,7 @@ const cards = [
   },
   {
     number: 3,
-    industry: "Ecommerce",
+    industry: "E-commerce",
     description:
       "It serves as a virtual storefront, allowing customers to browse, compare, and purchase items conveniently from anywhere, at any time.",
     image: "/assets/For_Developing/Three_Divisions/ecommerce.png",
@@ -36,7 +36,7 @@ const cards = [
 const divisions = [
   { name: "IT", href: "/" },
   { name: "Art & Interiors", href: "https://www.us-indiaartculturecenter.org" },
-  { name: "E-Commerce", href: "https://www.qualtradeal.com" },
+  { name: "E-Commerce B2B", href: "https://www.qualtradeal.com" },
 ];
 
 const HeroSection = () => {
@@ -171,12 +171,12 @@ const HeroSection = () => {
             <h3 className="text-3xl text-center md:text-left mt-8 text-bold font-semibold">
               Our 3 Divisions
             </h3>
-            <div className="mt-4 w-1/2 flex-grow sm:flex-1 sm:flex  sm:space-x-4">
+            <div className="mt-4 w-1/2 flex-grow sm:flex-1 sm:flex sm:space-x-4">
               {divisions.map((division, index) => (
                 <a
                   href={division.href}
-                  target="blank"
-                  className={`flex-1 md:flex-none py-2 w-full md:py-0 sm:w-48 relative inline-block md:mr-2 cursor-pointer`}
+                  target="_blank"
+                  className={`flex-1 md:flex py-2 w-full md:py-0 sm:w-48 relative inline-block md:mr-2 cursor-pointer`}
                 >
                   <div className="bg-transparent w-full text-lg px-6 py-1 pr-10 rounded border border-gray-600 appearance-none hover:outline-none hover:ring-2 hover:ring-red-500">
                     <span className="bg-black animate-slide-down">

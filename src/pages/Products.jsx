@@ -13,7 +13,7 @@ const products = [
   },
   {
     title: "Supply Chain \n Management Software",
-    image: "/assets/products/Supply Chain Management Software.jpg",
+    image: "/assets/products/Supply Chain Management Software.webp",
   },
   {
     title: "Hospital/Nursing Home Management Software",

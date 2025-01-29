@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
@@ -9,23 +10,52 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+
   const [verified, setVerified] = useState(false);
+  const form = useRef();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  // Send email
+  const sendEmail = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    navigate("/thank-you");
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+    };
+
+    console.log("Service ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log("Template ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    console.log("Public Key:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log("SUCCESS!", result.text);
+          console.log("Form submitted:", formData);
+          navigate("/thank-you");
+        },
+        (error) => {
+          console.log("FAILED...", error);
+        }
+      );
   };
 
   const onChange = (value) => {
-    console.log("Captcha value:", value);
     setVerified(!verified);
-  }
+  };
 
   return (
-    <div className="">
-      <div className="container mx-auto py-16 p-8 lg:px-0 ">
+    <div>
+      <div className="container mx-auto py-16 p-8 lg:px-0">
         <h2 className="text-4xl lg:text-5xl font-bold text-center mb-8">
           Contact Us
         </h2>
@@ -37,11 +67,13 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:px-12">
           {/* Contact Form */}
           <form
-            onSubmit={handleSubmit}
+            ref={form}
+            onSubmit={sendEmail}
             className="flex flex-col gap-6 w-full max-w-2xl mx-auto lg:mx-0 bg-gray-800 p-8 rounded-lg shadow-md"
           >
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
               value={formData.name}
               onChange={(e) =>
@@ -51,6 +83,7 @@ const Contact = () => {
             />
             <input
               type="email"
+              name="email"
               placeholder="Your Email"
               value={formData.email}
               onChange={(e) =>
@@ -60,6 +93,7 @@ const Contact = () => {
             />
             <input
               type="phone"
+              name="phone"
               placeholder="Your Contact Number"
               value={formData.phone}
               onChange={(e) =>
@@ -68,6 +102,7 @@ const Contact = () => {
               className="p-4 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
             />
             <textarea
+              name="message"
               placeholder="Your Message"
               value={formData.message}
               onChange={(e) =>
@@ -76,12 +111,18 @@ const Contact = () => {
               className="p-4 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg h-40"
             />
             <div className="flex justify-center bg-gray-700">
-            <ReCAPTCHA sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={onChange} />
+              {/* Optional: ReCAPTCHA */}
+              {/* <ReCAPTCHA
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                onChange={onChange}
+                theme="dark"
+                className="rounded-lg shadow-md bg-gray-700 "
+              /> */}
             </div>
             <button
               type="submit"
               className="bg-blue-600 hover:bg-blue-700 p-4 rounded-md font-medium text-lg transition-colors duration-300"
-              disabled={verified}
+              // disabled={!verified}
             >
               Send Message
             </button>
@@ -128,7 +169,7 @@ const Contact = () => {
                 Address:{" "}
                 <span className="text-gray-400">
                   11 Schooner Lane, Toronto, M1C5J3
-                </span>
+               </span>
               </p>
               <p>
                 Phone: <span className="text-gray-400">+1 647-771-4348</span>
