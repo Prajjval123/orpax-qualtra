@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import EnquiryPopup from "../components/EnquiryPopup";
 
 const products = [
   {
@@ -40,6 +41,7 @@ const products = [
 gsap.registerPlugin(ScrollTrigger);
 
 const Products = () => {
+  const [showPopup, setShowPopup] = useState(false);
   const cardsRef = useRef([]);
   const headingRef = useRef(null);
   const underlineRef = React.useRef(null);
@@ -117,7 +119,7 @@ const Products = () => {
           <div
             key={index}
             ref={(el) => (cardsRef.current[index] = el)}
-            className="w-full flex flex-col justify-between rounded-xl border border-white shadow-lg transform transition-transform duration-300 hover:scale-100 hover:shadow-red-700 hover:shadow-2xl cursor-pointer py-2"
+            className="w-full flex flex-col justify-between rounded-xl border border-white shadow-lg transform transition-transform duration-300 hover:scale-100 hover:shadow-red-700 hover:shadow-2xl py-2"
           >
             <h1 className="text-xl lg:text-2xl flex items-center justify-center font-medium text-center h-[80px] whitespace-pre-line">
               {product.title}
@@ -129,12 +131,14 @@ const Products = () => {
               className="h-64 md:h-72 lg:h-96"
             />
 
-            <h1 className="text-xl lg:text-2xl text-center font-medium p-6 text-gray-300">
+            <button onClick={() => setShowPopup(true)} className="text-xl lg:text-2xl cursor-pointer hover:text-red-500 text-center font-medium p-6 text-gray-300">
               Request a free demo
-            </h1>
+            </button>
           </div>
         ))}
       </div>
+      {/* Popup Form */}
+      {showPopup && <EnquiryPopup setShowPopup={setShowPopup} />}
     </div>
   );
 };

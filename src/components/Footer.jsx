@@ -6,18 +6,22 @@ const icons = [
   {
     name: "Twitter",
     image: "/assets/For_Developing/Contact_Section/Twitter.png",
+    link: "https://twitter.com/orpax"
   },
   {
     name: "Facebook",
     image: "/assets/For_Developing/Contact_Section/FB.png",
+    link:"https://www.facebook.com/orpaxqualtrait"
   },
   {
     name: "Instagram",
     image: "/assets/For_Developing/Contact_Section/Insta.png",
+    link: "https://www.linkedin.com/in/orpax-qualtra/"
   },
   {
     name: "Pinterest",
     image: "/assets/For_Developing/Contact_Section/Pinterest.png",
+    link: "https://in.pinterest.com/oqualtra/_saved/"
   },
 ];
 
@@ -89,12 +93,13 @@ const Footer = () => {
             <h1 className="text-2xl lg:text-3xl text-nowrap">Follow us on:</h1>
             <div className="flex flex-col justify-center gap-3 ">
               {icons.map((icon) => (
-                <div
+                <a
+                  href={icon.link}
+                  target="_blank"
                   key={icon.name}
                   className="flex gap-2 items-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
                 >
-                  <a
-                    href="#"
+                  <div
                     className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     <img
@@ -102,11 +107,11 @@ const Footer = () => {
                       alt=""
                       className="w-6 lg:w-8 h-6 lg:h-8 rounded-md"
                     />
-                  </a>
+                  </div>
                   <h6 className="text-md md:text-lg text-gray-300">
                     {icon.name}
                   </h6>
-                </div>
+                </a>
               ))}
             </div>
           </div>

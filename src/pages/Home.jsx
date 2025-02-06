@@ -53,23 +53,6 @@ const Home = () => {
         src="/assets/For_Developing/Background/Dot.png"
         className="absolute top-[125rem] right-[4rem]  w-5 h-5 mr-52"
       />
-      {/* services cards*/}
-      {/* <img
-          src="/assets/For_Developing/Background/Dot.png"
-          className="hidden lg:block absolute top-[1300px] left-80 w-80 h-80 bg-blue-800 opacity-20 rounded-full blur-[70px] mix-blend-lighten "
-        /> */}
-      {/* motion line */}
-      {/* <img
-        src="/assets/For_Developing/Background/Motion_Line.png"
-        alt="Motion Line"
-        className="absolute top-[1300px] left-[28rem]"
-      />
-      <img
-        src="/assets/For_Developing/Background/Motion_Line.png"
-        alt="Motion Line"
-        className="absolute top-[1400px] left-[16rem] "
-      /> */}
-      {/* productimage  */}
       <img
         src="/assets/For_Developing/Background/Dot.png"
         className="hidden lg:block absolute bottom-[1000px] right-20 w-80 h-80 bg-blue-800 opacity-30 rounded-full blur-[80px]  "
