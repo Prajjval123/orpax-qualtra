@@ -5,7 +5,7 @@ import ServicesDropdown from "./ServicesDropdown";
 import Sidebar from "./Sidebar";
 
 const links = [
-  "Home", 
+  "Home",
   "About",
   "Services",
   "Products",
@@ -29,7 +29,7 @@ const Header = () => {
   const handleSelection = (link) => {
     setSelected(link);
     if (link !== "Services") {
-      setIsServiceDropdownOpen(false); 
+      setIsServiceDropdownOpen(false);
     }
   };
 
@@ -43,17 +43,21 @@ const Header = () => {
 
   const handleLink = (e) => {
     // isLinkDisabled  = 0 e.preventDefault()
-    console.log(e.target.value())
-    console.log('geee')
-  }
+    console.log(e.target.value());
+    console.log("geee");
+  };
 
   return (
     <header className="bg-blackBackground flex justify-center items-center h-24 py-4 pt-8 z-50">
       <div className="w-full mx-auto flex justify-between items-center">
-        <div className="flex flex-col animate-slide-down">
-          <img src="/assets/logo.png" alt="Logo" className="w-44 " />
-          <p className="text-md text-gray-400 font-medium text-center">A Group of Company</p>
-        </div>
+        <Link to="/home">
+          <div className="flex flex-col animate-slide-down">
+            <img src="/assets/logo.png" alt="Logo" className="w-44 " />
+            <p className="text-md text-gray-400 font-medium text-center">
+              A Group of Company
+            </p>
+          </div>
+        </Link>
         {/* Hamburger Icon for Mobile */}
         <div className="ml-auto lg:hidden">
           {/* Hamburger Menu (Mobile View) */}
@@ -75,59 +79,68 @@ const Header = () => {
         </div>
         <nav>
           <ul className="hidden lg:flex space-x-6 mx-auto font-light">
-            {links.map((link, index) => 
-            {
+            {links.map((link, index) => {
               const animationDelay = `delay-${(index + 1) * 1000}ms`;
               return (
-              <li key={link} className={`relative group flex items-center animate-slide-down`} >
-                <div
-                  className={`flex items-center ${
-                    link === "Services" ? "cursor-pointer" : ""
-                  }`}
-                  onClick={() => {
-                    handleSelection(link);
-                    if (link == "Services") {
-                      handleServiceDropdown();
-                    } else {
-                      isHoverHandle(false);
-                    }
-                  }}
-                  onMouseEnter={() =>
-                    link === "Services" && isHoverHandle(true)
-                  }
-                  onMouseLeave={() =>
-                    link === "Services" && !isHover && isHoverHandle(false)
-                  }
+                <li
+                  key={link}
+                  className={`relative group flex items-center animate-slide-down`}
                 >
-                  <Link
-                    to={`/${link.toLowerCase()}`}
-                    className={`hover:text-red-500  ${link === 'Contact' ? 'hover:text-white' : ''} transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md lg:text-lg ${
-                      selected === link
-                        ? "text-red-500"
-                        : "text-white"
-                    } ${link === 'Contact' ? 'bg-red-600 hover:bg-red-700 rounded p-0.5 px-2 text-white' : ''}`}
-                    onMouseOver={(link) =>
+                  <div
+                    className={`flex items-center ${
+                      link === "Services" ? "cursor-pointer" : ""
+                    }`}
+                    onClick={() => {
+                      handleSelection(link);
+                      if (link == "Services") {
+                        handleServiceDropdown();
+                      } else {
+                        isHoverHandle(false);
+                      }
+                    }}
+                    onMouseEnter={() =>
                       link === "Services" && isHoverHandle(true)
                     }
-                    onMouseOut={(link) =>
-                      link === "Services" && isHoverHandle(false)
+                    onMouseLeave={() =>
+                      link === "Services" && !isHover && isHoverHandle(false)
                     }
-                    onClick={(e) => {if(link == "Services") return e.preventDefault()}}
                   >
-                    {link}
-                  </Link>
-                </div>
-                {/* Render Dropdown */}
-                {link === "Services" && (
-                  <div className="absolute top-full left-[-900%]">
-                    <ServicesDropdown
-                      isServiceDropdownOpen={isServiceDropdownOpen}
-                      handleServiceDropdown={handleServiceDropdown}
-                    />
+                    <Link
+                      to={`/${link.toLowerCase()}`}
+                      className={`hover:text-red-500  ${
+                        link === "Contact" ? "hover:text-white" : ""
+                      } transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md lg:text-lg ${
+                        selected === link ? "text-red-500" : "text-white"
+                      } ${
+                        link === "Contact"
+                          ? "bg-red-600 hover:bg-red-700 rounded p-0.5 px-2 text-white"
+                          : ""
+                      }`}
+                      onMouseOver={(link) =>
+                        link === "Services" && isHoverHandle(true)
+                      }
+                      onMouseOut={(link) =>
+                        link === "Services" && isHoverHandle(false)
+                      }
+                      onClick={(e) => {
+                        if (link == "Services") return e.preventDefault();
+                      }}
+                    >
+                      {link}
+                    </Link>
                   </div>
-                )}
-              </li>
-            )})}
+                  {/* Render Dropdown */}
+                  {link === "Services" && (
+                    <div className="absolute top-full left-[-900%]">
+                      <ServicesDropdown
+                        isServiceDropdownOpen={isServiceDropdownOpen}
+                        handleServiceDropdown={handleServiceDropdown}
+                      />
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>

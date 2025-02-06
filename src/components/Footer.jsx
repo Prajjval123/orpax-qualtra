@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const icons = [
   {
@@ -23,12 +23,13 @@ const icons = [
 
 const sitemap = [
   "Home",
-  "About Us",
+  "About",
   "Products",
   "Projects",
   "Clients",
   "Testimonials",
   "Privacy Policy",
+  "Contact"
 ];
 
 const Footer = () => {
@@ -75,7 +76,7 @@ const Footer = () => {
               <p className="text-md md:text-lg lg:text-md">
                 <strong>Email:</strong>{" "}
                 <a
-                  href="mailto:arnab.paul@orpaxqualtra.com"
+                   href="mailto:arnab.paul@orpaxqualtra.com"
                   className="text-red-500 hover:underline flex-wrap"
                 >
                   arnab.paul@orpaxqualtra.com
@@ -160,10 +161,10 @@ const Footer = () => {
             <div className="flex flex-wrap justify-center gap-4 text-md md:justify-start">
               {sitemap.map((site) => (
                 <div className="flex gap-3 ">
-                  <a href="#" className="hover:text-white ">
+                  <Link to={`/${site.toLowerCase()}`} className="hover:text-white ">
                     {site}
-                  </a>
-                  <span className="text-xl">|</span>
+                  </Link>
+                  {!(site.toLowerCase() == "contact") && <span className="text-xl">|</span>}
                 </div>
               ))}
             </div>

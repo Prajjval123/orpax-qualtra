@@ -156,7 +156,7 @@ const HeroSection = () => {
             <h2 className="mt-4 text-4xl lg:text-5xl text-center md:text-left font-medium text-red-600">
               <Typewriter
                 options={{
-                  strings: ["We Understand...", "We Solve...", "We Deliver..."],
+                  strings: ["We Understand..", "We Solve..", "We Deliver.."],
                   autoStart: true,
                   loop: true, // Set to false if you want it to stop after one cycle
                   deleteSpeed: 50, // Speed for deleting text

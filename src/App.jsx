@@ -14,6 +14,7 @@ import Partners from "./pages/Partners";
 import MainLayout from "./layouts/MainLayout";
 import ServicePage from "./pages/ServicePage";
 import ThankYouPage from "./pages/ThankYouPage";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const App = () => {
   return (
@@ -47,6 +48,14 @@ const App = () => {
                 element={
                   <div className="animate-zoom-in">
                     <About />
+                  </div>
+                }
+              />
+              <Route
+                path="/privacy policy"
+                element={
+                  <div className="animate-zoom-in">
+                    <PrivacyPolicy />
                   </div>
                 }
               />
