@@ -16,6 +16,7 @@ import ServicePage from "./pages/ServicePage";
 import ThankYouPage from "./pages/ThankYouPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { GlobalContext, GlobalProvider } from "./context/GlobalContext";
+import PopupModal from "./components/PopupModal";
 
 const App = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -38,7 +39,7 @@ const App = () => {
     <Router>
       <GlobalProvider>
         {/* bg-[rgb(14,24,43)] */}
-        <div className="bg-[#070C15] min-h-screen flex flex-col font-barlow text-white">
+        <div className="bg-[hsl(219,50%,5%)] min-h-screen flex flex-col font-barlow text-white">
           {showPopup && <PopupModal onClose={handleClosePopup} />}
           <main className="flex-grow">
             <MainLayout>
