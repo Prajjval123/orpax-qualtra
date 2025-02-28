@@ -19,7 +19,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
     <div
       className={`fixed top-0 right-0  bg-black  rounded-r-none border border-white shadow-lg px-12 hover:shadow-xl z-40 transform transition-transform duration-300 rounded-lg ${
         isSidebarOpen ? "translate-x-0" : "translate-x-full"
-      } sm:w-64 md:w-72`}
+      } sm:w-64 md:w-72 z-99`}
     >
       {/* Close Button */}
       <button

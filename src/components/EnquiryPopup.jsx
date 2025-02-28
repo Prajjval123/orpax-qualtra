@@ -47,7 +47,7 @@ const EnquiryPopup = ({ setShowPopup }) => {
               placeholder="Full Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none"
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none"
               required
             />
             <input
@@ -56,7 +56,7 @@ const EnquiryPopup = ({ setShowPopup }) => {
               placeholder="Email Address"
               value={formData.email}
               onChange={handleChange}
-              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none"
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none"
               required
             />
             <input
@@ -65,7 +65,7 @@ const EnquiryPopup = ({ setShowPopup }) => {
               placeholder="Contact Number"
               value={formData.contact}
               onChange={handleChange}
-              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none"
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none"
               required
             />
             <textarea
@@ -73,7 +73,7 @@ const EnquiryPopup = ({ setShowPopup }) => {
               placeholder="Explain your need..."
               value={formData.message}
               onChange={handleChange}
-              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none h-24"
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none h-24"
               required
             />
 
@@ -98,7 +98,7 @@ const EnquiryPopup = ({ setShowPopup }) => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-green-600 text-white font-semibold p-3 rounded-lg hover:bg-green-700 transition-all duration-300"
+              className="w-full bg-red-600 text-white font-semibold p-3 rounded-lg hover:bg-red-700 transition-all duration-300"
             >
               Submit
             </button>

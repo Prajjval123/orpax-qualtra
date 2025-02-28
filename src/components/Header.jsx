@@ -1,26 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa"; // Dropdown icon
+import { FaBars, FaTimes } from "react-icons/fa";
 import ServicesDropdown from "./ServicesDropdown";
 import Sidebar from "./Sidebar";
+import { GlobalContext } from "../context/GlobalContext";
+import gsap from "gsap";
 
-const links = [
-  "Home",
-  "About",
-  "Services",
-  "Products",
-  "Projects",
-  "Clients",
-  "Testimonials",
-  "Contact",
-];
+// (Optional) If you need ScrollTrigger later
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
   const [selected, setSelected] = useState("");
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
   const [isHover, setIsHover] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const isLinkDisabled = true;
+  const { homepageData, loading, error } = useContext(GlobalContext);
+
+  // Extract links from context data
+  const links = homepageData?.header?.links || [];
+
+  // Refs for GSAP animations
+  const headerRef = useRef(null);
+  const linkRefs = useRef([]); // store refs for each link
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -41,106 +43,132 @@ const Header = () => {
     setIsHover(hover);
   };
 
-  const handleLink = (e) => {
-    // isLinkDisabled  = 0 e.preventDefault()
-    console.log(e.target.value());
-    console.log("geee");
-  };
+  // Animate the header + links after data loads
+  useEffect(() => {
+    if (loading || error || !homepageData) return; // Guard clause
+
+    // Animate the entire header from top
+    if (headerRef.current) {
+      gsap.fromTo(
+        headerRef.current,
+        { opacity: 0, y: -50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.inOut",
+        }
+      );
+    }
+
+    // Animate each nav link in a staggered sequence
+    linkRefs.current.forEach((linkEl, i) => {
+      if (!linkEl) return;
+      gsap.fromTo(
+        linkEl,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power3.inOut",
+          delay: i * 0.2,
+        }
+      );
+    });
+  }, [loading, error, homepageData, links]);
 
   return (
-    <header className="bg-blackBackground flex justify-center items-center h-24 py-4 pt-8 z-50">
+    <header
+      ref={headerRef}
+      className="bg-blackBackground flex justify-center items-center h-24 py-4 pt-8 z-50 px-12"
+    >
       <div className="w-full mx-auto flex justify-between items-center">
         <Link to="/home">
-          <div className="flex flex-col animate-slide-down">
-            <img src="/assets/logo.png" alt="Logo" className="w-44 " />
+          {/* LOGO + Subtext */}
+          <div className="flex flex-col">
+            <img src="/assets/logo.png" alt="Logo" className="w-44" />
             <p className="text-md text-gray-400 font-medium text-center">
               A Group of Company
             </p>
           </div>
         </Link>
+
         {/* Hamburger Icon for Mobile */}
         <div className="ml-auto lg:hidden">
-          {/* Hamburger Menu (Mobile View) */}
-          <div className="lg:hidden">
-            <button onClick={toggleSidebar}>
-              {isSidebarOpen ? (
-                <FaTimes className="text-2xl" />
-              ) : (
-                <FaBars className="text-2xl" />
-              )}
-            </button>
-          </div>
-
+          <button onClick={toggleSidebar}>
+            {isSidebarOpen ? (
+              <FaTimes className="text-2xl" />
+            ) : (
+              <FaBars className="text-2xl" />
+            )}
+          </button>
           {/* Sidebar Component */}
-          <Sidebar
-            isSidebarOpen={isSidebarOpen}
-            toggleSidebar={toggleSidebar}
-          />
+          <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         </div>
+
+        {/* Desktop Nav */}
         <nav>
           <ul className="hidden lg:flex space-x-6 mx-auto font-light">
-            {links.map((link, index) => {
-              const animationDelay = `delay-${(index + 1) * 1000}ms`;
-              return (
-                <li
-                  key={link}
-                  className={`relative group flex items-center animate-slide-down`}
+            {links.map((link, index) => (
+              <li
+                key={link}
+                ref={(el) => (linkRefs.current[index] = el)}
+                className="relative group flex items-center"
+              >
+                <div
+                  className={`flex items-center ${
+                    link === "Services" ? "cursor-pointer" : ""
+                  }`}
+                  onClick={() => {
+                    handleSelection(link);
+                    if (link === "Services") {
+                      handleServiceDropdown();
+                    } else {
+                      isHoverHandle(false);
+                    }
+                  }}
+                  onMouseEnter={() =>
+                    link === "Services" && isHoverHandle(true)
+                  }
+                  onMouseLeave={() =>
+                    link === "Services" && !isHover && isHoverHandle(false)
+                  }
                 >
-                  <div
-                    className={`flex items-center ${
-                      link === "Services" ? "cursor-pointer" : ""
-                    }`}
-                    onClick={() => {
-                      handleSelection(link);
-                      if (link == "Services") {
-                        handleServiceDropdown();
-                      } else {
-                        isHoverHandle(false);
-                      }
-                    }}
-                    onMouseEnter={() =>
+                  <Link
+                    to={`/${link.toLowerCase()}`}
+                    className={`hover:text-red-500 transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md lg:text-lg ${
+                      selected === link ? "text-red-500 " : "text-white"
+                    } ${
+                      link === "Contact"
+                        ? "bg-red-600 hover:bg-red-700 rounded p-0.5 px-2 text-white"
+                        : ""
+                    } `}
+                    onMouseOver={() =>
                       link === "Services" && isHoverHandle(true)
                     }
-                    onMouseLeave={() =>
-                      link === "Services" && !isHover && isHoverHandle(false)
+                    onMouseOut={() =>
+                      link === "Services" && isHoverHandle(false)
                     }
+                    onClick={(e) => {
+                      if (link === "Services") e.preventDefault();
+                    }}
                   >
-                    <Link
-                      to={`/${link.toLowerCase()}`}
-                      className={`hover:text-red-500  ${
-                        link === "Contact" ? "hover:text-white" : ""
-                      } transform transition-transform duration-300 hover:scale-105 cursor-pointer text-md lg:text-lg ${
-                        selected === link ? "text-red-500" : "text-white"
-                      } ${
-                        link === "Contact"
-                          ? "bg-red-600 hover:bg-red-700 rounded p-0.5 px-2 text-white"
-                          : ""
-                      }`}
-                      onMouseOver={(link) =>
-                        link === "Services" && isHoverHandle(true)
-                      }
-                      onMouseOut={(link) =>
-                        link === "Services" && isHoverHandle(false)
-                      }
-                      onClick={(e) => {
-                        if (link == "Services") return e.preventDefault();
-                      }}
-                    >
-                      {link}
-                    </Link>
+                    {link}
+                  </Link>
+                </div>
+
+                {/* Services Dropdown */}
+                {link === "Services" && (
+                  <div className="absolute top-full left-[-900%]">
+                    <ServicesDropdown
+                      isServiceDropdownOpen={isServiceDropdownOpen}
+                      handleServiceDropdown={handleServiceDropdown}
+                    />
                   </div>
-                  {/* Render Dropdown */}
-                  {link === "Services" && (
-                    <div className="absolute top-full left-[-900%]">
-                      <ServicesDropdown
-                        isServiceDropdownOpen={isServiceDropdownOpen}
-                        handleServiceDropdown={handleServiceDropdown}
-                      />
-                    </div>
-                  )}
-                </li>
-              );
-            })}
+                )}
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

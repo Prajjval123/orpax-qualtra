@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import HomeServices from "../components/HomeServices";
 import HomeProjects from "../components/HomeProjects";
-import Testimonials from "./Testimonials";
 import HomeProducts from "../components/HomeProducts";
 import HomeClients from "../components/HomeClients";
-import Clients from "./Clients";
 import HomeTestimonials from "../components/HomeTestimonials";
+import { GlobalContext } from "../context/GlobalContext";
+import FlickerImage from "../components/FlickerImage";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 const Home = () => {
+  const { loading, error, homepageData } = useContext(GlobalContext);
+
+  if (loading || error || !homepageData) {
+    return (
+      <div class="text-center absolute top-[50%] left-[50%]">
+        <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-red-500 mx-auto"></div>
+        <h2 class="text-zinc-900 dark:text-white mt-4">Loading...</h2>
+      </div>
+    );
+  }
+
   return (
     <div className="relative flex flex-col gap-10 px-8 md:px-8 lg:px-12">
       <Hero />
@@ -97,6 +109,7 @@ const Home = () => {
         src="/assets/For_Developing/Background/Dot.png"
         className="absolute top-[290rem] left-[2rem]  w-10 h-10 mr-52"
       />
+      <ScrollToTopButton />
     </div>
   );
 };

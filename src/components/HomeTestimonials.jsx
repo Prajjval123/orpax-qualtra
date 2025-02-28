@@ -1,24 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+import sanityClient from "../sanityClient";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-//   {
-//     name: "Dr. B. P. Thiagarajan Senior Manager, The Nielsen Company",
-//     description:
-//       "This is to certify that Mr. Arnab Paul and his team have developed a GIS-based application software tool for the project, namely, Mapping of all private Health Facilities in the district of Agra, which was sponsored by the Futures Group, New Delhi.",
-//   },
-//   {
-//     name: "Mr. Sandeep Ghosh Executive Director, IIMS Dataworks",
-//     description:
-//       "We are extremely satisfied with the Factfinder 1.0 software they have designed and developed for us and it is now being actively used by over 60 firms and organizations (comprising of the leading public and private sector banks, all the major mutual funds, all life insurance firms, financial market regulators, SROs and the Union Government) operating out of India.",
-//   },
-//   {
-//     name: "Mr. John Doe CEO, XYZ Corporation",
-//     description:
-//       "Their team consistently exceeded our expectations with their professionalism and innovative solutions.",
-//   },
-// ];
 
 const testimonials = [
   {
@@ -68,19 +53,35 @@ const testimonials = [
 
 const HomeTestimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const headingRef = useRef(null);
+  const [testimonialsData, setTestimonialsData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    gsap.fromTo(
-      headingRef.current,
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
-    );
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000);
+
+    sanityClient
+      .fetch(
+        `*[_type == "testimonials"][0]{
+              testimonialItems[]{
+                name,
+                designation,
+                descriptions
+              }
+            }`
+      )
+      .then((data) => {
+        setTestimonialsData(data.testimonialItems);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching testimonials:", error);
+        setLoading(false);
+      });
+
     return () => clearInterval(interval);
   }, []);
 
@@ -95,6 +96,13 @@ const HomeTestimonials = () => {
       prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
     );
   };
+
+  if (loading) return <div>Loading testimonials...</div>;
+
+  if (!testimonialsData) {
+    return <div>No testimonials found.</div>;
+  }
+
 
   return (
     <>
@@ -123,7 +131,7 @@ const HomeTestimonials = () => {
                   transform: `translateX(-${currentIndex * 100}%)`,
                 }}
               >
-                {testimonials.map((testimonial, index) => (
+                {testimonialsData.map((testimonial, index) => (
                   <div
                     key={index}
                     className=" flex-shrink-0 w-full flex flex-col justify-center px-6 sm:px-24 py-4"
@@ -166,7 +174,6 @@ const HomeTestimonials = () => {
         <div className=" text-gray-100 lg:py-16">
           <div className="container mx-auto  lg:px-16 text-center lg:text-left">
             <h1
-              ref={headingRef}
               className="text-4xl md:text-5xl font-semibold mb-12 lg:mb-24 text-center "
             >
               Testimonials

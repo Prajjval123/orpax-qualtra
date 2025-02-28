@@ -1,84 +1,81 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Typewriter from "typewriter-effect";
+import { GlobalContext } from "../context/GlobalContext";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-const cards = [
-  {
-    number: 1,
-    industry: "IT",
-    description:
-      "Offering expert advice on technology planning, implementation, and digital transformation. Designing, developing, and maintaining custom software tailored to specific business needs.",
-    image: "/assets/For_Developing/Three_Divisions/information-technology.png",
-    href: "/",
-  },
-  {
-    number: 2,
-    industry: "Art & Interiors",
-    description:
-      "Offers a convenient way to discover unique, high-quality pieces from the comfort of their homes. Making art more accessible.",
-    image: "/assets/For_Developing/Three_Divisions/abstract.png",
-    href: "https://www.qualtradeal.com",
-  },
-  {
-    number: 3,
-    industry: "E-commerce",
-    description:
-      "It serves as a virtual storefront, allowing customers to browse, compare, and purchase items conveniently from anywhere, at any time.",
-    image: "/assets/For_Developing/Three_Divisions/ecommerce.png",
-    href: "https://www.us-indiaartculturecenter.org",
-  },
-];
-
-const divisions = [
-  { name: "IT", href: "/" },
-  { name: "Art & Interiors", href: "https://www.us-indiaartculturecenter.org" },
-  { name: "E-Commerce B2B", href: "https://www.qualtradeal.com" },
-];
-
 const HeroSection = () => {
-  // Main Heading
-  const cardsRef = useRef([]);
+  // Get data from context
+  const { homepageData, loading, error } = useContext(GlobalContext);
+  const heroData = homepageData?.hero || {};
+
+  // Destructure hero fields
+  const {
+    serviceCards = [],
+    divisions = [],
+    divisionsHeading = "",
+    heading = [],
+    subheading = [],
+    typingTexts = [],
+  } = heroData;
+
+  // Animation refs
   const headingRef = useRef(null);
   const subHeadingRef = useRef(null);
-  // We Solve, We Deliver...
-  const typingRef = useRef(null);
+  const cardsRef = useRef([]); // store multiple refs
   const typingHeadingRef = useRef(null);
-  // Divisions Part
+  const typingRef = useRef(null);
   const divisionsRef = useRef(null);
 
-  const typingTexts = ["We Understand", "We Solve", "We Deliver"];
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-
   useEffect(() => {
-    // Animate the heading
-    gsap.fromTo(
-      headingRef.current,
-      { opacity: 0, x: -50 },
-      { opacity: 1, x: 0, duration: 1, delay: 1 }
-    );
+    // Only animate if we have the data
+    if (loading || error || !homepageData) return;
 
-    // Animate the subheading
-    gsap.fromTo(
-      subHeadingRef.current,
-      { opacity: 0, x: -50 },
-      { opacity: 1, x: 0, duration: 1, delay: 1.5 }
-    );
+    // Animate heading
+    if (headingRef.current) {
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: "power3.in",
+          delay: 1,
+        }
+      );
+    }
 
-    // Animate cards on scroll
+    // Animate subheading
+    if (subHeadingRef.current) {
+      gsap.fromTo(
+        subHeadingRef.current,
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: "power3.in",
+          delay: 1.5,
+        }
+      );
+    }
+
+    // Animate each card on scroll
     cardsRef.current.forEach((card, index) => {
+      if (!card) return;
       gsap.fromTo(
         card,
         { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 1.2,
+          ease: "power3.inOut",
           delay: index * 0.2,
-          ease: "power3.out",
           scrollTrigger: {
             trigger: card,
             start: "top 80%",
@@ -87,163 +84,161 @@ const HeroSection = () => {
       );
     });
 
-    // Typing effect logic
-    const cycleText = () => {
-      gsap.to(typingRef.current, {
-        opacity: 0,
-        duration: 0.5,
-        onComplete: () => {
-          setCurrentTextIndex(
-            (prevIndex) => (prevIndex + 1) % typingTexts.length
-          );
-          gsap.to(typingRef.current, { opacity: 1, duration: 0.5 });
-        },
-      });
-    };
+    // Animate the typing heading container
+    if (typingHeadingRef.current) {
+      gsap.fromTo(
+        typingHeadingRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.inOut",
+          delay: 2,
+        }
+      );
+    }
 
-    //Animate the typing Heading
-    gsap.fromTo(
-      typingHeadingRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, delay: 2 }
-    );
+    // Animate the divisions part
+    if (divisionsRef.current) {
+      gsap.fromTo(
+        divisionsRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.inOut",
+          delay: 2.5,
+        }
+      );
+    }
+  }, [loading, error, homepageData]);
 
-    //Animate the divisions part
-    gsap.fromTo(
-      divisionsRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, delay: 2.5 }
-    );
+  // Handle loading/errors
+  if (loading) return <div>Loading hero...</div>;
+  if (error) return <div>Error loading hero data.</div>;
+  if (!homepageData) return <div>No homepage data found.</div>;
 
-    const interval = setInterval(cycleText, 2000); // Change text every 2 seconds
-    return () => clearInterval(interval);
-  }, []);
   return (
     <div className="gap-8 relative mt-16 z-10 flex flex-col">
-      {/* Hero Content */}
+      {/* ─────────────────────────────────────────────────────────────────────────
+          HERO CONTENT
+      ────────────────────────────────────────────────────────────────────────── */}
       <div>
-        <div className="flex flex-col">
-          {/* Typing Title */}
-          <h1
-            ref={headingRef}
-            className="text-4xl lg:text-5xl font-semibold leading-snug text-center md:text-left max-w-4xl opacity-100 animate-fade-in-later "
-          >
-            Transforming Your <span className="text-red-500">Challenges</span>
-            <br className="hidden md:block" /> Into{" "}
-            <br className="block md:hidden" /> Tailored Solutions.
-          </h1>
+        {/* HEADING */}
+        <h1
+          ref={headingRef}
+          className="text-4xl lg:text-5xl font-semibold leading-snug text-center md:text-left max-w-4xlr"
+        >
+          {heading[0]}{" "}
+          <span className="text-red-500">{heading[1]} </span>
+          <br className="hidden md:block" />
+          {heading[2]}{" "}
+          <br className="block md:hidden" />
+          {heading[3]}
+        </h1>
 
-          {/* Content Section */}
-          <div
-            ref={subHeadingRef}
-            className="mt-6 text-lg opacity-100 animate-fade-in-later"
-          >
-            <p className="font-normal text-lg max-w-2xl text-justify">
-              Running a business, whether{" "}
-              <span className="text-red-500 font-semibold">big</span>,{" "}
-              <span className="text-red-500 font-semibold">small</span> or{" "}
-              <span className="text-red-500 font-semibold">medium</span>,
-              constantly involves challenges. <br></br>At OQ, we look forward to
-              helping you by working as an extension of your team to better
-              understand your requirements, seek solutions for your bottlenecks,
-              and deliver high-quality solutions. We specialize in understanding
-              your needs.
+        {/* SUBHEADING */}
+        <div
+          ref={subHeadingRef}
+          className="mt-6 text-lg max-w-2xl text-justify"
+        >
+          {subheading.length > 6 ? (
+            <p>
+              {subheading[0]}
+              <span className="text-red-500 font-semibold"> {subheading[1]}</span>{" "}
+              <span className="text-red-500 font-semibold">{subheading[2]}</span>{" "}
+              {subheading[3]}{" "}
+              <span className="text-red-500 font-semibold">{subheading[4]}</span>
+              {subheading[5]}
+              <br />
+              {subheading[6]}
             </p>
-          </div>
-
-          <div className="mt-12" ref={typingHeadingRef}>
-            {/* Typing Animation */}
-            <h2 className="mt-4 text-4xl lg:text-5xl text-center md:text-left font-medium text-red-600">
-              <Typewriter
-                options={{
-                  strings: ["We Understand..", "We Solve..", "We Deliver.."],
-                  autoStart: true,
-                  loop: true, // Set to false if you want it to stop after one cycle
-                  deleteSpeed: 50, // Speed for deleting text
-                  delay: 75, // Speed for typing text
-                  pauseFor: 1000, // Pause between strings
-                }}
-              />
-            </h2>
-          </div>
-
-          <div className="flex justify-center flex-col" ref={divisionsRef}>
-            <h3 className="text-3xl text-center md:text-left mt-8 text-bold font-semibold">
-              Our 3 Divisions
-            </h3>
-            <div className="mt-4 w-1/2 flex-grow sm:flex-1 sm:flex sm:space-x-4">
-              {divisions.map((division, index) => (
-                <a
-                  href={division.href}
-                  target="_blank"
-                  className={`flex-1 md:flex py-2 w-full md:py-0 sm:w-48 relative inline-block md:mr-2 cursor-pointer`}
-                >
-                  <div className="bg-transparent w-full text-lg px-6 py-1 pr-10 rounded border border-gray-600 appearance-none hover:outline-none hover:ring-2 hover:ring-red-500">
-                    <span className="bg-black animate-slide-down">
-                      {division.name}
-                    </span>
-                  </div>
-                  {/* Arrow inside dropdown */}
-                  <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                    {/* <img src="/assets/For_Developing/Arrow/next.png" alt="" className="w-3 h-3 invert rotate-90" /> */}
-                    <img
-                      src="/assets/For_Developing/Arrow/next.png"
-                      alt=""
-                      className="w-3 h-3 invert -rotate-45"
-                    />
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
+          ) : (
+            <p>{subheading.join(" ")}</p>
+          )}
         </div>
-        {/* Side Image */}
-        <div>
-          <img
-            src="/assets/additional_images/Computer_bg.png"
-            alt="Background Decor"
-            className="absolute w-2/3 object-contain opacity-100 from-red-500 via-transparent to-blue-600 mix-blend-lighten shadow-blue-500/50 sm:w-2/5 sm:-top-16 sm:right-12 hidden lg:block animate-fade-in-slow"
-          />
-          <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="absolute top-10 right-10 w-20 h-20 shadow-[0_0_0_0_rgba(255,0,0,0.5)]"
-          />
-          <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="absolute top-0 right-80 w-10 h-10 mr-52"
-          />
-          <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="absolute top-[22rem] left-[20rem] w-10 h-10 mr-52"
-          />
-          <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="absolute  top-[30rem] left-[40rem] w-16 h-16 mr-52"
-          />
-          {/* Computer Bg Light Image */}
-          {/* <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="hidden lg:block absolute top-20 right-60 w-80 h-80 opacity-100 rounded-full blur-[20px] shadow-[0_0_100px_0px_rgba(255,0,0,0.5)]"
-          /> */}
-          
-          <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="absolute w-20 h-20"
-          />
-          <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="absolute w-20 h-20"
-          />
-          <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="absolute w-20 h-20"
-          />
+
+        {/* TYPING HEADING */}
+        <div className="mt-12" ref={typingHeadingRef}>
+          <h2
+            ref={typingRef}
+            className="mt-4 text-4xl lg:text-5xl text-center md:text-left font-medium text-red-600"
+          >
+            <Typewriter
+              options={{
+                strings: typingTexts,
+                autoStart: true,
+                loop: true,
+                deleteSpeed: 50,
+                delay: 75,
+                pauseFor: 1000,
+              }}
+            />
+          </h2>
+        </div>
+
+        {/* DIVISIONS */}
+        <div className="flex justify-center flex-col mt-8" ref={divisionsRef}>
+          <h3 className="text-3xl text-center md:text-left mt-4 font-semibold">
+            {divisionsHeading}
+          </h3>
+          <div className="mt-4 flex flex-col md:flex-row md:space-x-4">
+  {divisions.map((division, index) => (
+    <a
+      href={division.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      key={index}
+      className="relative flex items-center py-2 px-6 mb-2 md:mb-0 bg-transparent text-lg border border-gray-600 rounded hover:ring-2 hover:ring-red-500 w-full md:w-auto"
+    >
+      {/* Division text */}
+      <p className="mr-4">{division.name}</p>
+
+      {/* Arrow pinned to the right */}
+      <span className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+        <img
+          src="/assets/For_Developing/Arrow/next.png"
+          alt=""
+          className="w-3 h-3 invert -rotate-45"
+        />
+      </span>
+    </a>
+  ))}
+</div>
+
         </div>
       </div>
 
+      {/* DECORATIVE IMAGES (as in your original code) */}
+      <div>
+        <img
+          src="/assets/additional_images/Computer_bg.png"
+          alt="Background Decor"
+          className="absolute w-2/3 object-contain opacity-100 from-red-500 via-transparent to-blue-600 mix-blend-lighten shadow-blue-500/50 sm:w-2/5 sm:-top-16 sm:right-12 hidden lg:block animate-fade-in-slow"
+        />
+        <img
+          src="/assets/For_Developing/Background/Dot.png"
+          className="absolute top-10 right-10 w-20 h-20"
+        />
+        <img
+          src="/assets/For_Developing/Background/Dot.png"
+          className="absolute top-0 right-80 w-10 h-10 mr-52"
+        />
+        <img
+          src="/assets/For_Developing/Background/Dot.png"
+          className="absolute top-[22rem] left-[20rem] w-10 h-10 mr-52"
+        />
+        <img
+          src="/assets/For_Developing/Background/Dot.png"
+          className="absolute top-[30rem] left-[40rem] w-16 h-16 mr-52"
+        />
+      </div>
+
+      {/* SERVICE CARDS */}
       <div className="relative mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 text-center lg:text-left gap-12 bg-repeat">
-        {/* IT Card */}
-        {cards.map((card, index) => (
+        {serviceCards.map((card, index) => (
           <div
             key={card.number}
             ref={(el) => (cardsRef.current[index] = el)}
@@ -253,7 +248,7 @@ const HeroSection = () => {
               <div className="flex justify-between items-center">
                 <div className="flex flex-col justify-center space-y-2">
                   <span className="text-red-600 text-3xl md:text-4xl font-medium">
-                    0{card.number}.
+                    {card.number}.
                   </span>
                 </div>
                 <img
@@ -273,14 +268,13 @@ const HeroSection = () => {
               <a
                 href={card.href}
                 target="blank"
-                className="bg-red-700 text-xs p-0.5 px-2  rounded hover:bg-red-600"
+                className="bg-red-700 text-xs p-0.5 px-2 rounded hover:bg-red-600"
               >
                 Know More
               </a>
             </div>
           </div>
         ))}
-        
       </div>
     </div>
   );
