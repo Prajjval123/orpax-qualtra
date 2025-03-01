@@ -56,7 +56,7 @@ const HomeClients = () => {
           >
             Clients
           </h1>
-          <div className="grid grid-cols-2 w-full md:grid-cols-3 xl:grid-cols-4  lg:px-16 gap-8 mt-24 mb-12">
+          <div className="grid grid-cols-1 w-full md:grid-cols-3 xl:grid-cols-4  lg:px-16 gap-8 mt-24 mb-12">
             {clientImages.map((client, index) => (
               <div
                 key={index}

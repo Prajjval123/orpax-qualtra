@@ -1,3 +1,4 @@
+// Header.jsx
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -6,23 +7,18 @@ import Sidebar from "./Sidebar";
 import { GlobalContext } from "../context/GlobalContext";
 import gsap from "gsap";
 
-// (Optional) If you need ScrollTrigger later
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// gsap.registerPlugin(ScrollTrigger);
-
 const Header = () => {
   const [selected, setSelected] = useState("");
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
   const [isHover, setIsHover] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const { homepageData, loading, error } = useContext(GlobalContext);
 
-  // Extract links from context data
+  const { homepageData, loading, error } = useContext(GlobalContext);
   const links = homepageData?.header?.links || [];
 
-  // Refs for GSAP animations
+  // GSAP Refs
   const headerRef = useRef(null);
-  const linkRefs = useRef([]); // store refs for each link
+  const linkRefs = useRef([]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -43,25 +39,18 @@ const Header = () => {
     setIsHover(hover);
   };
 
-  // Animate the header + links after data loads
+  // Animate header & nav links
   useEffect(() => {
-    if (loading || error || !homepageData) return; // Guard clause
+    if (loading || error || !homepageData) return;
 
-    // Animate the entire header from top
     if (headerRef.current) {
       gsap.fromTo(
         headerRef.current,
         { opacity: 0, y: -50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.inOut",
-        }
+        { opacity: 1, y: 0, duration: 1, ease: "power3.inOut" }
       );
     }
 
-    // Animate each nav link in a staggered sequence
     linkRefs.current.forEach((linkEl, i) => {
       if (!linkEl) return;
       gsap.fromTo(
@@ -81,11 +70,11 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="bg-blackBackground flex justify-center items-center h-24 py-4 pt-8 z-50 px-12"
+      className="bg-blackBackground z-100 flex justify-center items-center h-24 py-4 pt-8 px-4 sm:px-6 lg:px-12"
     >
       <div className="w-full mx-auto flex justify-between items-center">
+        {/* Logo */}
         <Link to="/home">
-          {/* LOGO + Subtext */}
           <div className="flex flex-col">
             <img src="/assets/logo.png" alt="Logo" className="w-44" />
             <p className="text-md text-gray-400 font-medium text-center">
@@ -94,7 +83,7 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Hamburger Icon for Mobile */}
+        {/* Hamburger (mobile) */}
         <div className="ml-auto lg:hidden">
           <button onClick={toggleSidebar}>
             {isSidebarOpen ? (
@@ -103,7 +92,10 @@ const Header = () => {
               <FaBars className="text-2xl" />
             )}
           </button>
-          {/* Sidebar Component */}
+          {/* 
+            If you want the <Sidebar> in the Header, you can keep it here. 
+            But ideally, place <Sidebar> in App.jsx for a global overlay. 
+          */}
           <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         </div>
 
@@ -128,12 +120,8 @@ const Header = () => {
                       isHoverHandle(false);
                     }
                   }}
-                  onMouseEnter={() =>
-                    link === "Services" && isHoverHandle(true)
-                  }
-                  onMouseLeave={() =>
-                    link === "Services" && !isHover && isHoverHandle(false)
-                  }
+                  onMouseEnter={() => link === "Services" && isHoverHandle(true)}
+                  onMouseLeave={() => link === "Services" && !isHover && isHoverHandle(false)}
                 >
                   <Link
                     to={`/${link.toLowerCase()}`}
@@ -144,12 +132,8 @@ const Header = () => {
                         ? "bg-red-600 hover:bg-red-700 rounded p-0.5 px-2 text-white"
                         : ""
                     } `}
-                    onMouseOver={() =>
-                      link === "Services" && isHoverHandle(true)
-                    }
-                    onMouseOut={() =>
-                      link === "Services" && isHoverHandle(false)
-                    }
+                    onMouseOver={() => link === "Services" && isHoverHandle(true)}
+                    onMouseOut={() => link === "Services" && isHoverHandle(false)}
                     onClick={(e) => {
                       if (link === "Services") e.preventDefault();
                     }}
