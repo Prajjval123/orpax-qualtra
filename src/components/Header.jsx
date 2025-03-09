@@ -1,4 +1,3 @@
-// Header.jsx
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -70,9 +69,9 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="bg-blackBackground z-100 flex justify-center items-center h-24 py-4 pt-8 px-4 sm:px-6 lg:px-12"
+      className="bg-blackBackground z-[100] flex items-center h-24 py-4 px-4 sm:px-6 lg:px-12"
     >
-      <div className="w-full mx-auto flex justify-between items-center">
+      <div className="max-w-screen-xl w-full mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/home">
           <div className="flex flex-col">
@@ -83,8 +82,8 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Hamburger (mobile) */}
-        <div className="ml-auto lg:hidden">
+        {/* Hamburger Icon for small & medium screens */}
+        <div className="ml-auto block lg:hidden">
           <button onClick={toggleSidebar}>
             {isSidebarOpen ? (
               <FaTimes className="text-2xl" />
@@ -92,14 +91,9 @@ const Header = () => {
               <FaBars className="text-2xl" />
             )}
           </button>
-          {/* 
-            If you want the <Sidebar> in the Header, you can keep it here. 
-            But ideally, place <Sidebar> in App.jsx for a global overlay. 
-          */}
-          <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         </div>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav for large screens */}
         <nav>
           <ul className="hidden lg:flex space-x-6 mx-auto font-light">
             {links.map((link, index) => (
@@ -121,7 +115,9 @@ const Header = () => {
                     }
                   }}
                   onMouseEnter={() => link === "Services" && isHoverHandle(true)}
-                  onMouseLeave={() => link === "Services" && !isHover && isHoverHandle(false)}
+                  onMouseLeave={() =>
+                    link === "Services" && !isHover && isHoverHandle(false)
+                  }
                 >
                   <Link
                     to={`/${link.toLowerCase()}`}
@@ -156,6 +152,9 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+
+      {/* Sidebar (renders outside the nav) */}
+      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
     </header>
   );
 };

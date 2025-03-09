@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import emailjs from "@emailjs/browser";
-// import ReCAPTCHA from "react-google-recaptcha";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -17,20 +15,16 @@ const Contact = () => {
     message: "",
   });
 
-  // If you enable ReCAPTCHA:
-  // const [verified, setVerified] = useState(false);
-
   const form = useRef();
   const navigate = useNavigate();
 
   // GSAP references
   const headingRef = useRef(null);
   const formRef = useRef(null);
-  const detailRefs = useRef([]); // array of references for each detail box
+  const detailRefs = useRef([]); // Array of references for each detail box
 
   // Animate on mount
   useEffect(() => {
-    // Timeline for heading + form
     const tl = gsap.timeline();
 
     // Heading fade in from below
@@ -50,7 +44,7 @@ const Contact = () => {
         duration: 1,
         ease: "power3.inOut",
       },
-      "<0.3" // start 0.3s after heading begins
+      "<0.3"
     );
 
     // Detail boxes scroll-trigger animation
@@ -74,40 +68,14 @@ const Contact = () => {
     });
   }, []);
 
-  // Send email
-  const sendEmail = (e) => {
+  // New form submission handler: logs details to console
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      message: formData.message,
-    };
-
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log("SUCCESS!", result.text);
-          console.log("Form submitted:", formData);
-          navigate("/thank-you");
-        },
-        (error) => {
-          console.log("FAILED...", error);
-        }
-      );
+    console.log("Form submitted:", formData);
+    // Optionally, navigate or reset the form if desired.
+    // navigate("/thank-you");
   };
 
-  // For ReCAPTCHA, if you decide to enable it:
-  // const onChange = (value) => {
-  //   setVerified(!verified);
-  // };
   const onChange = (value) => {
     console.log("ReCAPTCHA value:", value);
     setVerified(!verified);
@@ -132,7 +100,7 @@ const Contact = () => {
           {/* Contact Form */}
           <form
             ref={formRef}
-            onSubmit={sendEmail}
+            onSubmit={handleSubmit}
             className="flex flex-col gap-6 w-full max-w-2xl mx-auto lg:mx-0 bg-gray-800 p-8 rounded-lg shadow-md"
           >
             <input
@@ -183,7 +151,6 @@ const Contact = () => {
             <button
               type="submit"
               className="bg-blue-600 hover:bg-blue-700 p-4 rounded-md font-medium text-lg transition-colors duration-300"
-              // disabled={!verified}
             >
               Send Message
             </button>
@@ -211,16 +178,23 @@ const Contact = () => {
                 </span>
               </p>
               <p>
-                Phone:{" "}
-                <span className="text-gray-400">
-                  +91 9810041039, +91-9319644022
-                </span>
+                Phone:
+                <a href="tel:+919810041039" className="text-gray-400 ml-2">
+                  +91 9810041039
+                </a>
+                ,
+                <a href="tel:+919319644022" className="text-gray-400 ml-2">
+                  +91-9319644022
+                </a>
               </p>
               <p>
-                Email:{" "}
-                <span className="text-gray-400">
+                Email:
+                <a
+                  href="mailto:arnab.paul@orpaxqualtra.com"
+                  className="text-gray-400 ml-2"
+                >
                   arnab.paul@orpaxqualtra.com
-                </span>
+                </a>
               </p>
             </div>
 
@@ -241,13 +215,19 @@ const Contact = () => {
                 </span>
               </p>
               <p>
-                Phone: <span className="text-gray-400">+1 647-771-4348</span>
+                Phone:
+                <a href="tel:+16477714348" className="text-gray-400 ml-2">
+                  +1 647-771-4348
+                </a>
               </p>
               <p>
-                Email:{" "}
-                <span className="text-gray-400 flex-wrap text-wrap">
+                Email:
+                <a
+                  href="mailto:prasun.das@orpaxqualtra.com"
+                  className="text-gray-400 ml-2"
+                >
                   prasun.das@orpaxqualtra.com
-                </span>
+                </a>
               </p>
             </div>
           </div>

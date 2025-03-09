@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  // State for form
+  // State remains if needed elsewhere
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -24,11 +24,12 @@ const Footer = () => {
   const phone = footer?.phone;
   const email = footer?.email;
 
-  // Refs for GSAP
+  // Refs for GSAP animations
   const headingRef = useRef(null);
   const addressRef = useRef(null);
   const iconsRef = useRef([]);
-  const newsletterRef = useRef(null);
+  // Renamed ref: using mapRef instead of newsletterRef for the new map section
+  const mapRef = useRef(null);
   const sitemapRef = useRef(null);
 
   // Animate once data is ready
@@ -88,10 +89,10 @@ const Footer = () => {
       );
     });
 
-    // Animate newsletter from right
-    if (newsletterRef.current) {
+    // Animate map section from right
+    if (mapRef.current) {
       gsap.fromTo(
-        newsletterRef.current,
+        mapRef.current,
         { opacity: 0, x: 50 },
         {
           opacity: 1,
@@ -99,14 +100,14 @@ const Footer = () => {
           duration: 1.2,
           ease: "power3.inOut",
           scrollTrigger: {
-            trigger: newsletterRef.current,
+            trigger: mapRef.current,
             start: "top 90%",
           },
         }
       );
     }
 
-    // Animate sitemap from bottom
+    // Animate sitemap (navigation links) from bottom
     if (sitemapRef.current) {
       gsap.fromTo(
         sitemapRef.current,
@@ -124,22 +125,6 @@ const Footer = () => {
       );
     }
   }, [loading, error, footer]);
-
-  // Form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    navigate("/thank-you");
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  // ReCAPTCHA handler
-  const onChange = (value) => {
-    console.log("ReCAPTCHA value:", value);
-  };
 
   if (loading) return <div>Loading Footer...</div>;
   if (error) return <div>Error loading Footer data.</div>;
@@ -190,7 +175,9 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="h-full text-center flex flex-col gap-2">
-            <h1 className="text-2xl lg:text-3xl text-nowrap">Follow us on:</h1>
+            <h1 className="text-2xl lg:text-3xl text-nowrap">
+              Follow us on:
+            </h1>
             <div className="flex flex-col justify-center gap-3">
               {icons?.map((icon, i) => (
                 <a
@@ -216,51 +203,22 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Newsletter */}
-          <div ref={newsletterRef} className="w-full h-full flex flex-col gap-4">
-            <h3 className="text-2xl lg:text-3xl text-center">
-              Newsletters Signup
-            </h3>
-            <form
-              className="flex flex-col items-center justify-center"
-              onSubmit={handleSubmit}
-            >
-              <div className="flex flex-col w-full gap-2 items-center">
-                <input
-                  type="email"
-                  placeholder="Enter Your Email Address"
-                  className="p-2 pl-4 w-full md:w-1/3 lg:w-full rounded-md bg-zinc-800 font-thin text-sm focus:ring-2 focus:ring-red-500 focus:outline-none transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                />
-                <div className="flex justify-center">
-                  {/* Optional: ReCAPTCHA */}
-                  <ReCAPTCHA
-                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                    onChange={onChange}
-                    className="rounded-lg shadow-md"
-                    theme="dark"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full md:w-1/3 lg:w-full bg-red-600 text-sm px-4 p-2 rounded-md hover:bg-red-700 transition-transform transform hover:scale-105"
-                >
-                  SUBMIT
-                </button>
-              </div>
-            </form>
+          {/* Map Section (replacing Newsletter) */}
+          <div ref={mapRef} className="w-full flex flex-col gap-4">
+            <h3 className="text-2xl lg:text-3xl text-center">Our Location</h3>
+            <div className="w-full h-64">
+              <iframe
+                title="Google Map"
+                className="w-full h-full rounded-lg border"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345094245!2d144.9537363153162!3d-37.81720997975196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577a88ef6e3db0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1611659365393!5m2!1sen!2sau"
+                allowFullScreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
-
-          <img
-            src="/assets/For_Developing/Background/Dot.png"
-            className="absolute -top-60 -left-60 hidden lg:block opacity-40"
-          />
         </div>
 
-        {/* Sitemap */}
+        {/* Sitemap (Navigation Links) */}
         <div
           ref={sitemapRef}
           className="border-t border-gray-700 mt-10 pt-6 text-gray-300"

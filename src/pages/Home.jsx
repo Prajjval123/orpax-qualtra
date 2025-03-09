@@ -29,12 +29,6 @@ const Home = () => {
       <HomeClients />
       <HomeTestimonials />
 
-      {/* Large screen images only */}
-      {/* 
-        Use `hidden lg:block absolute ...` 
-        so these appear on lg+ but remain hidden on mobile/tablet. 
-      */}
-
       {/* Example #1 */}
       <img
         src="/assets/For_Developing/Background/Dot.png"
