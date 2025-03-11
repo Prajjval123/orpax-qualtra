@@ -71,7 +71,7 @@ const Header = () => {
       ref={headerRef}
       className="bg-blackBackground z-[100] flex items-center h-24 py-4 px-4 sm:px-6 lg:px-12"
     >
-      <div className="max-w-screen-xl w-full mx-auto flex justify-between items-center">
+      <div className="w-full mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/home">
           <div className="flex flex-col">
